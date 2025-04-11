@@ -13,6 +13,9 @@ const paths = {
         getHref: ()=>'/'
     },
     auth: {
+        login: {
+            getHref: ()=>"/auth/login"
+        }
     },
     app: {
         root: {

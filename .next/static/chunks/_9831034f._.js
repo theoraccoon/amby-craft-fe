@@ -12,7 +12,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$button$2f$button$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@chakra-ui/react/dist/esm/button/button.mjs [app-client] (ecmascript)");
 ;
 ;
-// Define possible variants for buttons
 const buttonVariants = {
     primary: {
         bg: "#F8AF43",
@@ -22,10 +21,12 @@ const buttonVariants = {
         }
     },
     secondary: {
-        bg: "gray.500",
-        color: "white",
+        bg: "#FFFFFF",
+        color: "#181818",
         _hover: {
-            bg: "gray.600"
+            bg: "#181818",
+            color: "white",
+            borderColor: "#F5A500"
         }
     },
     outline: {
@@ -40,7 +41,7 @@ const buttonVariants = {
     },
     tertiary: {
         bg: "#333333",
-        color: "#FFFFFF",
+        color: "",
         border: "2px solid #FFFFFF",
         _hover: {
             bg: "#F5A500",
@@ -56,23 +57,34 @@ const buttonVariants = {
         }
     }
 };
-const CustomButton = ({ children, variant = "primary", ...rest })=>{
+const CustomButton = ({ children, variant = "primary", leftIcon, rightIcon, ...rest })=>{
     const variantStyles = buttonVariants[variant] || buttonVariants.primary;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$button$2f$button$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-        width: "225px",
-        height: "40px",
-        _hover: variantStyles._hover,
+        width: "full",
+        height: [
+            "40px",
+            "45px",
+            "50px"
+        ],
+        fontSize: [
+            "sm",
+            "md",
+            "lg"
+        ],
         bg: variantStyles.bg,
         color: variantStyles.color,
+        _hover: variantStyles._hover,
         borderRadius: "10px",
         size: "md",
         className: "shadow-md",
+        leftIcon: leftIcon,
+        rightIcon: rightIcon,
         ...rest,
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/ui/button/customButton.tsx",
-        lineNumber: 45,
-        columnNumber: 9
+        lineNumber: 52,
+        columnNumber: 5
     }, this);
 };
 _c = CustomButton;
@@ -108,6 +120,7 @@ const InputField = ({ label, error, highlight, isDisabled, ...rest })=>{
         isDisabled: isDisabled,
         children: [
             label && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$form$2d$control$2f$form$2d$label$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormLabel"], {
+                color: "white",
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/components/ui/input/input.tsx",
@@ -118,13 +131,24 @@ const InputField = ({ label, error, highlight, isDisabled, ...rest })=>{
                 ...rest,
                 ...highlightStyles,
                 isDisabled: isDisabled,
-                borderColor: error ? "red.500" : "gray.300",
+                borderColor: error ? "red.500" : "white",
                 _focus: {
-                    borderColor: "blue.500",
+                    borderColor: "#F8AF43",
                     boxShadow: "sm"
                 },
-                height: "40px",
-                width: "300px"
+                width: "full",
+                height: [
+                    "40px",
+                    "45px",
+                    "50px"
+                ],
+                fontSize: [
+                    "sm",
+                    "md",
+                    "lg"
+                ],
+                backgroundColor: "#333333",
+                color: "white"
             }, void 0, false, {
                 fileName: "[project]/src/components/ui/input/input.tsx",
                 lineNumber: 32,
@@ -134,7 +158,7 @@ const InputField = ({ label, error, highlight, isDisabled, ...rest })=>{
                 children: error
             }, void 0, false, {
                 fileName: "[project]/src/components/ui/input/input.tsx",
-                lineNumber: 41,
+                lineNumber: 44,
                 columnNumber: 19
             }, this)
         ]
@@ -165,6 +189,9 @@ const paths = {
         getHref: ()=>'/'
     },
     auth: {
+        login: {
+            getHref: ()=>"/auth/login"
+        }
     },
     app: {
         root: {

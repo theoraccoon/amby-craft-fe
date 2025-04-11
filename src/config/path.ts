@@ -4,9 +4,11 @@ export const paths = {
     },
   
     auth: {
-      // Your auth paths here
+      login: {
+        getHref: () => "/auth/login",
+      },
     },
-  
+    
     app: {
       root: {
         getHref: () => '/app',
