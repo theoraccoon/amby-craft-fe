@@ -14,8 +14,13 @@ export const paths = {
         getHref: () => '/app',
       },
       about: {
-        getHref: () => '/about',  // Remove '/app' to resolve correctly
+        getHref: () => 'app/about',  // Remove '/app' to resolve correctly
       },
+      
+    dashboard: {
+      getHref: () => '/app/dashboard',
+    },
+      
     },
     
     public: {

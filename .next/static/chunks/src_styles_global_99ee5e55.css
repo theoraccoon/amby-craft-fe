@@ -708,10 +708,6 @@
     height: calc(var(--spacing) * 10);
   }
 
-  .h-\[10\%\] {
-    height: 10%;
-  }
-
   .h-\[15\%\] {
     height: 15%;
   }
@@ -722,10 +718,6 @@
 
   .h-\[25\%\] {
     height: 25%;
-  }
-
-  .h-\[30\%\] {
-    height: 30%;
   }
 
   .h-\[40\%\] {
@@ -2621,14 +2613,6 @@
     font-size: 4px;
   }
 
-  .text-\[6px\] {
-    font-size: 6px;
-  }
-
-  .text-\[10px\] {
-    font-size: 10px;
-  }
-
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
@@ -2752,14 +2736,6 @@
 
   .text-\[\#336699\]\/\[\.35\] {
     color: oklab(49.9314% -.0330435 -.0929666 / .35);
-  }
-
-  .text-\[6p\] {
-    color: 6p;
-  }
-
-  .text-\[10\] {
-    color: 10;
   }
 
   .text-\[var\(--primary\)\] {
@@ -3697,12 +3673,6 @@
   }
 
   @media (width >= 40rem) {
-    .sm\:justify-end {
-      justify-content: flex-end;
-    }
-  }
-
-  @media (width >= 40rem) {
     .sm\:p-20 {
       padding: calc(var(--spacing) * 20);
     }
@@ -3734,26 +3704,14 @@
   }
 
   @media (width >= 40rem) {
-    .sm\:text-\[6px\] {
-      font-size: 6px;
-    }
-  }
-
-  @media (width >= 40rem) {
-    .sm\:text-\[10px\] {
-      font-size: 10px;
-    }
-  }
-
-  @media (width >= 40rem) {
     .sm\:underline {
       text-decoration-line: underline;
     }
   }
 
   @media (width >= 48rem) {
-    .md\:col-span-2 {
-      grid-column: span 2 / span 2;
+    .md\:col-span-1 {
+      grid-column: span 1 / span 1;
     }
   }
 
@@ -3764,8 +3722,8 @@
   }
 
   @media (width >= 48rem) {
-    .md\:col-span-4 {
-      grid-column: span 4 / span 4;
+    .md\:col-span-5 {
+      grid-column: span 5 / span 5;
     }
   }
 
@@ -3794,76 +3752,8 @@
   }
 
   @media (width >= 48rem) {
-    .md\:text-sm {
-      font-size: var(--text-sm);
-      line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-xs {
-      font-size: var(--text-xs);
-      line-height: var(--tw-leading, var(--text-xs--line-height));
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[1px\] {
-      font-size: 1px;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[3px\] {
-      font-size: 3px;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[4px\] {
-      font-size: 4px;
-    }
-  }
-
-  @media (width >= 48rem) {
     .md\:text-\[6px\] {
       font-size: 6px;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[7px\] {
-      font-size: 7px;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[8px\] {
-      font-size: 8px;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[10px\] {
-      font-size: 10px;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[6\] {
-      color: 6;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:text-\[px\] {
-      color: px;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:col-span-1 {
-      grid-column: span 1 / span 1;
     }
   }
 
@@ -3880,8 +3770,14 @@
   }
 
   @media (width >= 64rem) {
-    .lg\:flex {
-      display: flex;
+    .lg\:col-span-6 {
+      grid-column: span 6 / span 6;
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:col-span-8 {
+      grid-column: span 8 / span 8;
     }
   }
 
@@ -3892,14 +3788,14 @@
   }
 
   @media (width >= 64rem) {
-    .lg\:grid-cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .lg\:grid-cols-6 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
   }
 
   @media (width >= 64rem) {
-    .lg\:grid-cols-6 {
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+    .lg\:grid-cols-8 {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
     }
   }
 
@@ -3923,44 +3819,8 @@
   }
 
   @media (width >= 64rem) {
-    .lg\:text-\[1px\] {
-      font-size: 1px;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:text-\[4px\] {
-      font-size: 4px;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:text-\[7px\] {
-      font-size: 7px;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:text-\[8px\] {
-      font-size: 8px;
-    }
-  }
-
-  @media (width >= 64rem) {
     .lg\:text-\[10px\] {
       font-size: 10px;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:text-\[7\] {
-      color: 7;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:text-\[px\] {
-      color: px;
     }
   }
 

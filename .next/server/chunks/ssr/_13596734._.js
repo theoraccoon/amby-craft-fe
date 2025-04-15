@@ -22,7 +22,10 @@ const paths = {
             getHref: ()=>'/app'
         },
         about: {
-            getHref: ()=>'/about'
+            getHref: ()=>'app/about'
+        },
+        dashboard: {
+            getHref: ()=>'/app/dashboard'
         }
     },
     public: {

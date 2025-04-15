@@ -126,9 +126,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$form$2d$control$2f$form$2d$label$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@chakra-ui/react/dist/esm/form-control/form-label.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@chakra-ui/react/dist/esm/input/input.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$form$2d$control$2f$form$2d$error$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@chakra-ui/react/dist/esm/form-control/form-error.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2d$group$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@chakra-ui/react/dist/esm/input/input-group.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2d$element$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@chakra-ui/react/dist/esm/input/input-element.mjs [app-ssr] (ecmascript)");
 ;
 ;
-const InputField = ({ label, error, highlight, isDisabled, ...rest })=>{
+const InputField = ({ label, error, highlight, isDisabled, leftIcon, rightIcon, leftLabel, rightLabel, ...rest })=>{
     const highlightStyles = highlight ? {
         borderColor: "orange.400",
         boxShadow: "0 0 0 1px orange"
@@ -137,53 +139,105 @@ const InputField = ({ label, error, highlight, isDisabled, ...rest })=>{
         isInvalid: !!error,
         isDisabled: isDisabled,
         children: [
-            label && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$form$2d$control$2f$form$2d$label$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormLabel"], {
-                color: "white",
-                children: label
-            }, void 0, false, {
+            (label || rightLabel) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex justify-between text-white text-xs mt-1",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$form$2d$control$2f$form$2d$label$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormLabel"], {
+                        color: "white",
+                        fontSize: [
+                            "sm",
+                            "md",
+                            "lg"
+                        ],
+                        children: label
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/input/input.tsx",
+                        lineNumber: 45,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$form$2d$control$2f$form$2d$label$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormLabel"], {
+                        color: "#f8af43",
+                        fontSize: [
+                            "sm",
+                            "md",
+                            "lg"
+                        ],
+                        children: rightLabel
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/input/input.tsx",
+                        lineNumber: 46,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/ui/input/input.tsx",
-                lineNumber: 31,
-                columnNumber: 19
+                lineNumber: 44,
+                columnNumber: 32
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                ...rest,
-                ...highlightStyles,
-                isDisabled: isDisabled,
-                borderColor: error ? "red.500" : "white",
-                _focus: {
-                    borderColor: "#F8AF43",
-                    boxShadow: "sm"
-                },
-                width: "full",
-                height: [
-                    "40px",
-                    "45px",
-                    "50px"
-                ],
-                fontSize: [
-                    "sm",
-                    "md",
-                    "lg"
-                ],
-                backgroundColor: "#333333",
-                color: "white"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2d$group$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputGroup"], {
+                children: [
+                    leftIcon && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2d$element$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputLeftElement"], {
+                        pointerEvents: "none",
+                        children: leftIcon
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/input/input.tsx",
+                        lineNumber: 50,
+                        columnNumber: 11
+                    }, this),
+                    rightIcon && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2d$element$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputRightElement"], {
+                        pointerEvents: "none",
+                        marginTop: 2,
+                        children: rightIcon
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/input/input.tsx",
+                        lineNumber: 56,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$input$2f$input$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                        ...rest,
+                        ...highlightStyles,
+                        isDisabled: isDisabled,
+                        borderColor: error ? "red.500" : "white",
+                        _focus: {
+                            borderColor: "#F8AF43",
+                            boxShadow: "sm"
+                        },
+                        width: "full",
+                        height: [
+                            "40px",
+                            "45px",
+                            "50px"
+                        ],
+                        fontSize: [
+                            "sm",
+                            "md",
+                            "lg"
+                        ],
+                        backgroundColor: "#333333",
+                        color: "white"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/input/input.tsx",
+                        lineNumber: 61,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/ui/input/input.tsx",
-                lineNumber: 32,
-                columnNumber: 9
+                lineNumber: 48,
+                columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$form$2d$control$2f$form$2d$error$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormErrorMessage"], {
                 children: error
             }, void 0, false, {
                 fileName: "[project]/src/components/ui/input/input.tsx",
-                lineNumber: 44,
-                columnNumber: 19
+                lineNumber: 79,
+                columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ui/input/input.tsx",
-        lineNumber: 30,
-        columnNumber: 7
+        lineNumber: 43,
+        columnNumber: 5
     }, this);
 };
 const __TURBOPACK__default__export__ = InputField;
@@ -210,7 +264,10 @@ const paths = {
             getHref: ()=>'/app'
         },
         about: {
-            getHref: ()=>'/about'
+            getHref: ()=>'app/about'
+        },
+        dashboard: {
+            getHref: ()=>'/app/dashboard'
         }
     },
     public: {
