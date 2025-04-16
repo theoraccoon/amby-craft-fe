@@ -1,6 +1,5 @@
 "use client"
 
-
 import React, { useState } from 'react';
 // Make sure to import your icons correctly, e.g.:
 import { BiSolidGridAlt, BiBookOpen, BiBook, BiSolidBox } from 'react-icons/bi';
@@ -30,11 +29,11 @@ function SidebarMenu() {
     const baseSpanClasses = "!text-xs";
 
     return (
-        <div className='flex flex-col'>
-            <div className=" ">
+        <div className='flex flex-col  w-full h-screen'>
+            <div className="w-full relative h-[15%] ">
                 <Image
+                 className="!relative"
                     src={imageUrlAmbylon}
-                    className='h-[20%]'
                     alt="Login Background"
                     layout="fill"
                     objectFit="contain"
@@ -42,7 +41,7 @@ function SidebarMenu() {
                     priority
                 />
             </div>
-            <div className="!mt-[12rem]">
+            <div className="h-[85%] p-10">
 
                 <ul>
                     {menuItems.map((item) => {
@@ -53,16 +52,16 @@ function SidebarMenu() {
 
 
                         const liClasses = `
-            ${baseLiClasses}
-            ${isActive
+                           ${baseLiClasses}
+                           ${isActive
                                 ? '!border-l-[5px] !border-[#F8AF43]'
                                 : 'opacity-50'
                             }
           `;
 
                         const spanClasses = `
-             ${baseSpanClasses}
-             ${isActive
+                       ${baseSpanClasses}
+                        ${isActive
                                 ? 'font-bold'
                                 : '!font-normal'
                             }
@@ -75,9 +74,15 @@ function SidebarMenu() {
                                 onClick={() => handleItemClick(item.id)}
                             >
                                 <Icon className={baseIconClasses} />
-                                <span className={spanClasses.trim()}>
+                                <span
+                                    className={`
+                                      hidden lg:inline-block text-xs
+                                 ${spanClasses}
+                               `.trim()}
+                                >
                                     {item.text}
                                 </span>
+
                             </li>
                         );
                     })}
