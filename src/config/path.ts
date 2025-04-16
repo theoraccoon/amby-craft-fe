@@ -1,3 +1,5 @@
+'use client';
+
 export const paths = {
     home: {
       getHref: () => '/',
@@ -11,14 +13,14 @@ export const paths = {
     
     app: {
       root: {
-        getHref: () => '/app',
+        getHref: () => '/',
       },
       about: {
-        getHref: () => 'app/about',  // Remove '/app' to resolve correctly
+        getHref: () => '/about',
       },
       
     dashboard: {
-      getHref: () => '/app/dashboard',
+      getHref: () => '/dashboard',
     },
       
     },
