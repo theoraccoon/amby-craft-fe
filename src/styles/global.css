@@ -40,9 +40,23 @@
   }
 }
 
-body {
-  /* background: var(--background); */
+/*  Heading styles */ 
+h1, h2, h3, h4 {
   color: var(--foreground);
   font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 100%;
+}
+
+/* You can set specific sizes if needed individually: */
+h1 {
+  font-size: 24px;
+}
+
+/* Body & paragraph styles */
+body, p {
+  font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
 }
