@@ -35,6 +35,7 @@
     --color-green-700: oklch(52.7% .154 150.069);
     --color-green-800: oklch(44.8% .119 151.328);
     --color-green-900: oklch(39.3% .095 152.535);
+    --color-teal-900: oklch(38.6% .063 188.416);
     --color-blue-100: oklch(93.2% .032 255.585);
     --color-blue-200: oklch(88.2% .059 254.128);
     --color-blue-300: oklch(80.9% .105 251.813);
@@ -64,6 +65,7 @@
     --text-base--line-height: calc(1.5 / 1);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -581,12 +583,28 @@
     margin-top: calc(var(--spacing) * 4);
   }
 
+  .mr-4 {
+    margin-right: calc(var(--spacing) * 4);
+  }
+
+  .\!mb-7 {
+    margin-bottom: calc(var(--spacing) * 7) !important;
+  }
+
+  .\!mb-12 {
+    margin-bottom: calc(var(--spacing) * 12) !important;
+  }
+
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
   }
 
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
+  }
+
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
   }
 
   .box-border {
@@ -602,6 +620,10 @@
     display: block;
     -webkit-box-orient: horizontal;
     -webkit-line-clamp: unset;
+  }
+
+  .\!inline-block {
+    display: inline-block !important;
   }
 
   .block {
@@ -946,6 +968,10 @@
 
   .cursor-not-allowed {
     cursor: not-allowed;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
   }
 
   .touch-pan-left {
@@ -1495,6 +1521,10 @@
     gap: calc(var(--spacing) * 2);
   }
 
+  .gap-2\.5 {
+    gap: calc(var(--spacing) * 2.5);
+  }
+
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
@@ -1895,9 +1925,29 @@
     border-bottom-width: 1px;
   }
 
+  .\!border-l {
+    border-left-style: var(--tw-border-style) !important;
+    border-left-width: 1px !important;
+  }
+
+  .\!border-l-4 {
+    border-left-style: var(--tw-border-style) !important;
+    border-left-width: 4px !important;
+  }
+
+  .\!border-l-\[5px\] {
+    border-left-style: var(--tw-border-style) !important;
+    border-left-width: 5px !important;
+  }
+
   .border-l {
     border-left-style: var(--tw-border-style);
     border-left-width: 1px;
+  }
+
+  .border-l-\[5px\] {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 5px;
   }
 
   .border-dashed {
@@ -1928,6 +1978,14 @@
   .border-solid {
     --tw-border-style: solid;
     border-style: solid;
+  }
+
+  .\!border-\[\#F8AF43\] {
+    border-color: #f8af43 !important;
+  }
+
+  .border-\[\#F8AF43\] {
+    border-color: #f8af43;
   }
 
   .border-black {
@@ -1962,6 +2020,10 @@
 
   .bg-\[\#181818\] {
     background-color: #181818;
+  }
+
+  .bg-\[\#222222\] {
+    background-color: #222;
   }
 
   .bg-\[rgb\(255\,0\,0\)\] {
@@ -2012,6 +2074,10 @@
 
   .bg-gray-900 {
     background-color: var(--color-gray-900);
+  }
+
+  .bg-teal-900 {
+    background-color: var(--color-teal-900);
   }
 
   .bg-white {
@@ -2525,6 +2591,14 @@
     padding-bottom: calc(var(--spacing) * 20);
   }
 
+  .\!pl-6 {
+    padding-left: calc(var(--spacing) * 6) !important;
+  }
+
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+
   .text-center {
     text-align: center;
   }
@@ -2589,9 +2663,24 @@
     font-family: var(--font-geist-sans);
   }
 
+  .\!text-sm {
+    font-size: var(--text-sm) !important;
+    line-height: var(--tw-leading, var(--text-sm--line-height)) !important;
+  }
+
+  .\!text-xs {
+    font-size: var(--text-xs) !important;
+    line-height: var(--tw-leading, var(--text-xs--line-height)) !important;
+  }
+
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
   }
 
   .text-sm {
@@ -2618,6 +2707,11 @@
     line-height: 1;
   }
 
+  .\!font-normal {
+    --tw-font-weight: var(--font-weight-normal) !important;
+    font-weight: var(--font-weight-normal) !important;
+  }
+
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -2626,6 +2720,11 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
 
   .font-semibold {
@@ -3758,6 +3857,12 @@
   }
 
   @media (width >= 64rem) {
+    .lg\:col-span-1 {
+      grid-column: span 1 / span 1;
+    }
+  }
+
+  @media (width >= 64rem) {
     .lg\:col-span-2 {
       grid-column: span 2 / span 2;
     }
@@ -3776,14 +3881,8 @@
   }
 
   @media (width >= 64rem) {
-    .lg\:col-span-8 {
-      grid-column: span 8 / span 8;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .lg\:col-span-7 {
+      grid-column: span 7 / span 7;
     }
   }
 
