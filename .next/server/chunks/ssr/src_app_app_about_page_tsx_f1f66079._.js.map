@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/JimohMary/Desktop/coderaccoon/ambylon-craft/src/app/app/about/page.tsx"],"sourcesContent":["'use client';\r\n\r\nimport { useRouter, useSearchParams } from 'next/navigation';\r\nimport { paths } from '@/config/path';\r\nimport LoginForm from '@/features/auth/components/login-form';\r\n\r\nimport React from 'react'\r\n\r\nexport default function page() {\r\n    return (\r\n        <p>Hiehe</p>)\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAQe,SAAS;IACpB,qBACI,8OAAC;kBAAE;;;;;;AACX","debugId":null}}]
-}

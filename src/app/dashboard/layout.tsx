@@ -1,27 +1,19 @@
-
 'use client';
 
-import Image from "next/image";
 import "../../styles/global.css"
+import SidebarMenu from "@/components/layout/sidebar";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid lg:grid-cols-8 md:grid-cols-8 h-screen w-full">
-      {/* Sidebar (2/3 on desktop) */}
-      <div className="hidden md:block lg:col-span-1 md:col-span-1 relative bg-amber-900">
-        {/* <Image
-          className="!relative"
-          src="/images/login-background.png"
-          alt="Login Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          priority
-        /> */}
+    <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] lg:grid-cols-[250px_1fr] h-screen w-full">
+      
+      {/* Sidebar */}
+      <div className="hidden md:block bg-[#282828]">
+        <SidebarMenu />
       </div>
 
-      {/* Main Content (1/3 on desktop) */}
-      <div className="lg:col-span-7 md:col-span-7 bg-[#181818] mx-20">
+      {/* Main Content */}
+      <div className="bg-[#181818] px-4 md:px-8 lg:px-20 overflow-y-auto">
         <div className="h-full flex flex-col items-center justify-center">
           {children}
         </div>
