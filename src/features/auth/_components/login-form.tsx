@@ -3,7 +3,7 @@
 import InputField from "@/components/ui/input/input";
 import Image from "next/image";
 import '../../../styles/global.css';
-import CustomButton from "@/components/ui/button/customButton";
+import CustomButton from "@/components/ui/button/custom-button";
 import { CiLogin } from "react-icons/ci";
 import { IoLogoGoogle } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";

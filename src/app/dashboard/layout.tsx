@@ -1,6 +1,8 @@
 // app/auth/login/layout.tsx
+'use client';
+
 import Image from "next/image";
-import '../../../styles/global.css';
+import "../../styles/global.css"
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
