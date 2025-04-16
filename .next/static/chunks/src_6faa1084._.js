@@ -12,8 +12,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$
 ;
 const theme = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$extend$2d$theme$2f$extend$2d$theme$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["extendTheme"])({
     fonts: {
-        heading: `'Comfortaa', cursive`,
-        body: `'Comfortaa', cursive`
+        heading: `'Open Sans', sans-serif`,
+        body: `'Open Sans', sans-serif`
+    },
+    components: {
+        FormLabel: {
+            baseStyle: {
+                fontFamily: `'Open San', sans-serif`
+            }
+        }
     }
 });
 const __TURBOPACK__default__export__ = theme;

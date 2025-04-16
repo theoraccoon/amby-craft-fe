@@ -1,13 +1,13 @@
-'use client';
+'useClient'
+import '../../../styles/global.css';
 
-import { useRouter, useSearchParams } from 'next/navigation';
-import { paths } from '@/config/path';
-import LoginForm from '@/features/auth/_components/login-form';
+import LoginForm from "@/features/auth/_components/login-form";
 
-import React from 'react'
+export default function Page() {
 
-export default function page() {
   return (
-    <LoginForm/>
-  )
-}
+    <>
+      <LoginForm />
+    </>
+  );
+} 

@@ -7,7 +7,6 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  Text,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
@@ -69,13 +68,8 @@ const InputField = ({
           fontSize={["sm", "md", "lg"]}
           backgroundColor="#333333"
           color="white"
-          // pl={leftIcon ? "2.5rem" : undefined}
-          // pr={rightIcon ? "2.5rem" : undefined}
         />
-      </InputGroup>
-
-
-     
+      </InputGroup> 
       {error && <FormErrorMessage>{error}</FormErrorMessage>}
     </FormControl>
   );
