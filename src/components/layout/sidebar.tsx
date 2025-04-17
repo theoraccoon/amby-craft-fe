@@ -24,13 +24,13 @@ function SidebarMenu() {
     };
 
 
-    const baseLiClasses = "flex items-center gap-4 p-4 text-white !pl-6 !mb-7 cursor-pointer";
+    const baseLiClasses = "flex items-center gap-4 !p-2 text-white !pl-6 !mb-3 !border-l-[5px] !border-[#282828]  cursor-pointer";
     const baseIconClasses = "text-base";
     const baseSpanClasses = "!text-xs";
 
     return (
         <div className='flex flex-col  w-full h-screen'>
-            <div className="w-full relative h-[15%] ">
+            <div className="w-full relative h-[15%] !my-7">
                 <Image
                  className="!relative"
                     src={imageUrlAmbylon}
@@ -54,7 +54,7 @@ function SidebarMenu() {
                         const liClasses = `
                            ${baseLiClasses}
                            ${isActive
-                                ? '!border-l-[5px] !border-[#F8AF43]'
+                                ? ' !border-[#F8AF43] '
                                 : 'opacity-50'
                             }
           `;
@@ -73,6 +73,7 @@ function SidebarMenu() {
                                 className={liClasses.trim()}
                                 onClick={() => handleItemClick(item.id)}
                             >
+                                <a href="#" className="flex items-center gap-4">
                                 <Icon className={baseIconClasses} />
                                 <span
                                     className={`
@@ -82,6 +83,7 @@ function SidebarMenu() {
                                 >
                                     {item.text}
                                 </span>
+                                </a>
 
                             </li>
                         );
