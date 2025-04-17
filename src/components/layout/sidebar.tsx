@@ -5,14 +5,16 @@ import React, { useState } from 'react';
 import { BiSolidGridAlt, BiBookOpen, BiBook, BiSolidBox } from 'react-icons/bi';
 import Image from "next/image";
 const imageUrlAmbylon = "/images/amby-svg.svg"
+import Link from 'next/link';
 
 // Define the menu item data (or import it)
 const menuItems = [
-    { id: 'dashboard', text: 'Dashboard', IconComponent: BiSolidGridAlt },
-    { id: 'courses', text: 'Courses', IconComponent: BiBookOpen },
-    { id: 'microlearning', text: 'Microlearning', IconComponent: BiBook },
-    { id: 'question_banks', text: 'Question Banks', IconComponent: BiSolidBox },
-];
+    { id: 'dashboard', text: 'Dashboard', IconComponent: BiSolidGridAlt, path: '/dashboard' },
+    { id: 'courses', text: 'Courses', IconComponent: BiBookOpen, path: '/courses' },
+    { id: 'microlearning', text: 'Microlearning', IconComponent: BiBook, path: '/microlearning' },
+    { id: 'question_banks', text: 'Question Banks', IconComponent: BiSolidBox, path: '/question-banks' },
+  ];
+  
 
 function SidebarMenu() {
 
@@ -68,6 +70,7 @@ function SidebarMenu() {
           `;
 
                         return (
+                            <Link key={item.id} href={item.path} passHref>
                             <li
                                 key={item.id}
                                 className={liClasses.trim()}
@@ -84,6 +87,7 @@ function SidebarMenu() {
                                 </span>
 
                             </li>
+                            </Link>
                         );
                     })}
                 </ul>

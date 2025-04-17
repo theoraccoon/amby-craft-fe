@@ -22,6 +22,10 @@ export const paths = {
     dashboard: {
       getHref: () => '/dashboard',
     },
+
+    courses: {
+      getHref: () => '/courses',
+    },
       
     },
     
