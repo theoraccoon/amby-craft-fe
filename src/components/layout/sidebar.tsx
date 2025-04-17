@@ -5,8 +5,10 @@ import React, { useState } from 'react';
 import { BiSolidGridAlt, BiBookOpen, BiBook, BiSolidBox } from 'react-icons/bi';
 import Image from "next/image";
 const imageUrlAmbylon = "/images/amby-svg.svg"
+import { useRouter, usePathname } from 'next/navigation';
 
-// Define the menu item data (or import it)
+
+
 const menuItems = [
     { id: 'dashboard', text: 'Dashboard', IconComponent: BiSolidGridAlt },
     { id: 'courses', text: 'Courses', IconComponent: BiBookOpen },
@@ -16,13 +18,18 @@ const menuItems = [
 
 function SidebarMenu() {
 
-    const [activeItemId, setActiveItemId] = useState('dashboard');
-
-
+    const router = useRouter();
+    const pathname = usePathname();
+    
+  
+    const activeItemId = pathname.split('/')[1] || 'dashboard';
+  
     const handleItemClick = (id: string) => {
-        setActiveItemId(id);
+      router.push(`/${id}`);
     };
 
+
+    
 
     const baseLiClasses = "flex items-center gap-4 p-4 text-white !pl-6 !mb-7 cursor-pointer";
     const baseIconClasses = "text-base";
