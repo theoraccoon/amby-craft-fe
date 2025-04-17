@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* Main Content */}
             <div className="bg-[#181818] flex flex-col h-screen px-4 md:px-8 lg:px-20">
               <Header />
-              <div className="flex-1 overflow-y-auto">
+              <div className="flex flex-col overflow-y-auto">
                 {children}
               </div>
             </div>
