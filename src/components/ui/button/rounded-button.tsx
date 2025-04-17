@@ -32,31 +32,31 @@ const buttonVariants = {
   },
 };
 
-interface CustomButtonProps extends ButtonProps {
+interface RoundedButtonProps extends ButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "tertiary" | "danger";
   leftIcon?: ReactElement; 
   rightIcon?: ReactElement; 
 }
 
-const CustomButton = ({
+const RoundedButton = ({
   children,
   variant = "primary",
   leftIcon,
   rightIcon,
   ...rest
-}: CustomButtonProps) => {
+}: RoundedButtonProps) => {
   const variantStyles = buttonVariants[variant] || buttonVariants.primary;
 
   return (
     <Button
-    width={"full"}
-    height={["40px", "45px", "50px"]}
-    fontSize={["sm", "md", "lg"]} 
+      width={"full"}
+      height={["40px", "45px", "50px"]}
+      fontSize={["sm", "md", "lg"]} 
       bg={variantStyles.bg}
       color={variantStyles.color}
       _hover={variantStyles._hover}
-      borderRadius="10px"
+      borderRadius="30px"
       size="md"
       className="shadow-md"
       leftIcon={leftIcon}
@@ -68,4 +68,4 @@ const CustomButton = ({
   );
 };
 
-export default CustomButton;
+export default RoundedButton;
