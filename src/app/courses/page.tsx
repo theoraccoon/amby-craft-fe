@@ -3,10 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { paths } from '@/config/path';
 import LoginForm from '@/features/auth/_components/login-form';
-
-
 import CourseCard from '@/components/ui/card/course-card';
-
 import React from 'react'
 
 export default function CoursesPage() {
