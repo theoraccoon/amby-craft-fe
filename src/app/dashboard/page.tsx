@@ -16,7 +16,7 @@ const dashboardItems = [
 export default function DashboardPage() {
 
   return (
-    <div className='w-full !p-8'>
+    <div className='w-full !p-8 '>
 
       <div className='grid sm:grid-cols-3 gap-x-8 !w-full  gap-y-3'>
         {dashboardItems.map((item) => {
@@ -87,13 +87,14 @@ export default function DashboardPage() {
 
         </div>
         <div className='hidden sm:flex gap-x-2'>
-            <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
-            <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
-            <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
-            <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
+          <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
+          <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
+          <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
+          <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
         </div>
-        <FiChevronRight  className='hidden sm: text-white'/>
+        <FiChevronRight className='hidden sm: text-white' />
       </div>
     </div>
+
   )
 }
