@@ -9,11 +9,9 @@ const SearchInputField = () => {
       borderRadius="60px"
       bg="#2C2C2C"
     >
-      <InputLeftElement
-        pointerEvents="none"
-        height="full"
-        children={<BiSearch color="#A0AEC0" size="20px" />}
-      />
+      <InputLeftElement pointerEvents="none" height="full">
+        <BiSearch color="#A0AEC0" size="20px" />
+      </InputLeftElement>
       <Input
         placeholder="Search..."
         borderRadius="60px"
