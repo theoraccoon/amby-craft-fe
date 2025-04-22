@@ -41,7 +41,7 @@ export default function DashboardPage() {
           )
 
           return (
-            <div key={item.id} className={`rounded-[1.2rem] bg-[${item.backgrounndStyle}] !border !border-[${item.borderStyle}] inline-block z-10`}>
+            <div key={item.id} className={`rounded-[1.2rem] !border  inline-block z-10`} style={{ backgroundColor: item.backgrounndStyle, borderColor: item.borderStyle }}>
               <div className='flex items-center gap-x-2.5 !p-7 relative'>
 
                 {topCurves}
@@ -66,11 +66,11 @@ export default function DashboardPage() {
         }
         )}
       </div>
-      <div className='bg-[#222222] flex justify-between items-center !p-6 !mt-8 rounded-[1.2rem]'>
+      <div className='bg-[#222222] flex justify-between items-center !p-3 sm:!p-5 !mt-8 rounded-[1.2rem]'>
         <div className='flex items-center gap-x-4'>
           <Image
             src="/images/clock-image.png"
-            className='block max-w-[150px] max-h-[150px] object-contain'
+            className='block max-w-[120px] max-h-[120px] sm:max-w-[150px] sm:max-h-[150px] object-contain rounded-[1.2rem]'
             alt="Login Background"
             fill={false}
             width={250}
@@ -79,9 +79,9 @@ export default function DashboardPage() {
             quality={100}
             priority
           />
-          <div className='flex flex-col !gap-y-4 text-white ' >
-            <h5 className='text-[18px] font-semibold'>Time management and Impact on Work</h5>
-            <p className='font-normal text-xs opacity-50 max-w-[369px]'>Office ipsum squad circle no innovation while pretend synergize disband eager hour right ballpark well.</p>
+          <div className='flex flex-col !gap-y-4 text-white overflow-hidden' >
+            <h5 className='text-[18px] font-semibold !text-nowrap !text-ellipsis max-w-[150px] sm:max-w-full'>Time management and Impact on Work</h5>
+            <p className='font-normal text-xs opacity-50 max-w-[369px] overflow-hidden line-clamp-2 sm:overflow-visible sm:line-clamp-none'>Office ipsum squad circle no innovation while pretend synergize disband eager hour right ballpark well.</p>
             <small className='text-[#F8AF43] text-xs font-normal '>created by Eric Andeeerson</small>
           </div>
 
