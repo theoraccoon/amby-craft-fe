@@ -27,7 +27,7 @@ const InputField = ({
   isDisabled,
   leftIcon,
   rightIcon,
-  leftLabel,
+  // leftLabel,
   rightLabel,
   ...rest
 }: InputFieldProps) => {
