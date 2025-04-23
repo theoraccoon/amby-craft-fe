@@ -1,10 +1,5 @@
-@import "tailwindcss";
-/* src/styles/globals.css */
-@import 'tailwindcss/preflight';
-/* Replaces @tailwind base */
-
-/* Replaces @tailwind base */
-
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 
@@ -17,7 +12,7 @@
   --secondary-foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --primary: #F8AF43;
     --secondary: #F8AF43;
