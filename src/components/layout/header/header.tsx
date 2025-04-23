@@ -1,6 +1,8 @@
 'use client';
+
 import SearchInputField from '../../ui/input/search-input';
-import ToggleTextWithIcon from '../../ui/button/text-icon-button';
+import HeaderActionsPanel from './header-actions-panel';
+import Nav from './nav-header';
 
 export default function Header() {
 
@@ -8,15 +10,16 @@ export default function Header() {
 <div className="hidden md:flex w-full flex-col h-[8vh] justify-center">
   <div className="flex items-center w-full justify-between">
     {/* Search Bar */}
-    <div className="flex items-center   w-[30%] bg-amber-700  ">
+    <div className="flex items-center h-full w-[20%]">
       <SearchInputField />
     </div>
-    <div className="flex items-center justify-center w-[30%] ">
-     <ToggleTextWithIcon/>
+    <div className="flex items-center  h-full w-[30%] ">
+    <Nav/>
     </div>
-    <div className="flex items-center justify-center w-[30%] ">
-      <SearchInputField />
+    <div className="flex items-center justify-end w-[50%] ">
+      <HeaderActionsPanel/>
     </div>
+    
   </div>
 </div>
 
