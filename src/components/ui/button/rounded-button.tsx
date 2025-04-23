@@ -50,9 +50,9 @@ const RoundedButton = ({
 
   return (
     <Button
-      width={"full"}
+      width={"500px"}
       height={["40px"]}
-      fontSize={["sm", "md", "lg"]} 
+      fontSize={["sm"]} 
       bg={variantStyles.bg}
       color={variantStyles.color}
       _hover={variantStyles._hover}

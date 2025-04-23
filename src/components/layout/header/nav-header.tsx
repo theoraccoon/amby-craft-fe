@@ -15,9 +15,10 @@ const navItems = [
 export default function Nav() {
     const [activeLabel, setActiveLabel] = useState('Home');
   return (
-    <div className="flex w-[70%] h-full  justify-around ">
+    <div className="flex w-[70%] h-full  ">
     {navItems.map((item) => (
         <ToggleTextWithIcon
+          
           key={item.label}
           icon={item.icon}
           label={item.label}

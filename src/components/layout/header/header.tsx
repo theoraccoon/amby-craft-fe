@@ -13,10 +13,10 @@ export default function Header() {
     <div className="flex items-center h-full w-[20%]">
       <SearchInputField />
     </div>
-    <div className="flex items-center  h-full w-[30%]">
+    <div className="flex items-center  h-full w-[30%] ">
     <Nav/>
     </div>
-    <div className="flex items-center justify-center w-[50%]">
+    <div className="flex items-center justify-end w-[50%] ">
       <HeaderActionsPanel/>
     </div>
     

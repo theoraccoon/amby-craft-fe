@@ -28,7 +28,7 @@ export default function ToggleTextWithIcon({
         active ? activeColor : inactiveColor
       }`}
     >
-      <div className='m-10 !p-3  '>{icon}</div>
+      <div className='!ml-10 !p-3   '>{icon}</div>
       <span className="text-sm font-medium">{label}</span>
     </div>
   );
