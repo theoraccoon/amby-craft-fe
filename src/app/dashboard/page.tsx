@@ -5,6 +5,7 @@ import { BiBookOpen, BiBook, BiBox } from 'react-icons/bi';
 import { GoArrowRight } from "react-icons/go";
 import { FiChevronRight } from "react-icons/fi";
 import Image from "next/image";
+import CourseCard from '@/components/ui/card/course-card';
 
 
 const dashboardItems = [
@@ -13,10 +14,46 @@ const dashboardItems = [
   { id: 'microlearning', text: 'Total Question Bank', count: 11, IconComponent: BiBox, borderStyle: '#00BA7F', backgrounndStyle: '#00BA7F26', curvesColor: '#00BA7F', borderColor: '#00BA7F26' },
 ];
 
+const courseItems = [
+  {
+    image: "/images/course-thumb-1.png",
+    title: "Time management and Impact on Work",
+    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    author: "Desmond Essuman",
+    lessons: 22,
+    date: "18/04/25"
+  },
+  {
+    image: "/images/course-thumb-1.png",
+    title: "Content Management Systems",
+    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    author: "Desmond Essuman",
+    lessons: 22,
+    date: "18/04/25"
+  },
+  {
+    image: "/images/course-thumb-1.png",
+    title: "Design for inclusivity and Design Systems",
+    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    author: "Desmond Essuman",
+    lessons: 22,
+    date: "18/04/25"
+  },
+  {
+    image: "/images/course-thumb-1.png",
+    title: "Design for inclusivity and Design Systems",
+    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    author: "Desmond Essuman",
+    lessons: 22,
+    date: "18/04/25"
+  }
+
+]
+
 export default function DashboardPage() {
 
   return (
-    <div className='w-full !p-8 '>
+    <div className='w-full !p-8 !mt-4'>
 
       <div className='grid sm:grid-cols-3 gap-x-8 !w-full  gap-y-3'>
         {dashboardItems.map((item) => {
@@ -45,7 +82,7 @@ export default function DashboardPage() {
               <div className='flex items-center gap-x-2.5 !p-7 relative'>
 
                 {topCurves}
-                <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !p-3 z-10">
+                <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !p-4 z-10">
 
                   <Icon className='!text-xl !text-[#F8AF43]' />
                 </div>
@@ -66,6 +103,7 @@ export default function DashboardPage() {
         }
         )}
       </div>
+      <p className='text-white !mt-13'>Continue</p>
       <div className='bg-[#222222] flex justify-between items-center !p-3 sm:!p-5 !mt-8 rounded-[1.2rem]'>
         <div className='flex items-center gap-x-4'>
           <Image
@@ -80,7 +118,7 @@ export default function DashboardPage() {
             priority
           />
           <div className='flex flex-col !gap-y-4 text-white overflow-hidden' >
-            <h5 className='text-[18px] font-semibold !text-nowrap !text-ellipsis max-w-[150px] sm:max-w-full'>Time management and Impact on Work</h5>
+            <h5 className='text-[18px] font-semibold !text-nowrap !text-ellipsis max-w-[150px] sm:max-w-full font-comfortaa'>Time management and Impact on Work</h5>
             <p className='font-normal text-xs opacity-50 max-w-[369px] overflow-hidden line-clamp-2 sm:overflow-visible sm:line-clamp-none'>Office ipsum squad circle no innovation while pretend synergize disband eager hour right ballpark well.</p>
             <small className='text-[#F8AF43] text-xs font-normal '>created by Eric Andeeerson</small>
           </div>
@@ -93,6 +131,23 @@ export default function DashboardPage() {
           <div className='h-[35px] w-[35px] rounded-full aspect-square bg-white'></div>
         </div>
         <FiChevronRight className='hidden sm: text-white' />
+      </div>
+      <p className='text-white !mt-10'>Recently published</p>
+      <div className='grid sm:grid-cols-4  gap-x-6 gap-y-3 !mt-8 flex-nowrap'>
+        {courseItems.map((item, index) => {
+          return(
+        <CourseCard
+          image={item.image}
+          key={index}
+          title={item.title}
+          description={item.description}
+          author={item.author}
+          lessons={item.lessons}
+          date={item.date}
+        />
+          )
+      }
+        )}
       </div>
     </div>
 
