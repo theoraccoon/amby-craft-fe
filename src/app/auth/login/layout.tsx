@@ -1,7 +1,7 @@
 'useClient'
 
 import Image from "next/image";
-import '../../../styles/global.css';
+import '../../../styles/globals.css';
 
 export default function LoginFormLayout({ children }: { children: React.ReactNode }) {
     const imageUrl = "/images/login-background.png"

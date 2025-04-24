@@ -1,5 +1,5 @@
-'useClient'
-import '../../../styles/global.css';
+'use client'
+
 
 import LoginForm from "@/features/auth/_components/login-form";
 

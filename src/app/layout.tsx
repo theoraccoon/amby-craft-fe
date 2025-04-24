@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import { Providers } from "./provider";
 import SidebarMenu from "@/components/layout/sidebar";
 import { Comfortaa, Open_Sans } from "next/font/google";
+import { useEffect, useState } from "react";
 
 const comfortaa = Comfortaa({
   subsets: ["latin"],
@@ -15,12 +16,30 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700", "800"],
 });
-
+const checkAuthentication = () => {
+  return false; 
+};
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsAuthenticated(checkAuthentication());
+  }, []);
+
+  if (!isAuthenticated) {
+    return (
+      <html lang="en" className={`${comfortaa.className} ${openSans.className}`}>
+        <body className="bg-[#181818]">
+          {children}
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" className={`${comfortaa.className} ${openSans.className}`}>
       <body>
