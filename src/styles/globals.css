@@ -36,8 +36,7 @@
 }
 
 /*  Heading styles */ 
-h1, h2, h3, h4 {
-  color: var(--foreground);
+h1, h2, h3, h4 , h5{
   font-family: "Comfortaa", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -54,4 +53,45 @@ h1 {
 body, p {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
+}
+
+
+
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1); /* almost invisible */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-container:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3); /* visible on hover */
+}
+
+/* For Firefox */
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scroll-container:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }

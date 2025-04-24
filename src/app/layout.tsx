@@ -32,9 +32,9 @@ export default function RootLayout({
             </div>
 
             {/* Main Content */}
-            <div className="bg-[#181818] flex flex-col h-screen">
+            <div className="bg-[#181818] flex flex-col h-screen sm:!px-14 ">
               <Header />
-              <div className="flex flex-col overflow-y-auto">{children}</div>
+              <div className="flex flex-col overflow-y-auto no-scrollbar">{children}</div>
             </div>
           </Providers>
         </div>

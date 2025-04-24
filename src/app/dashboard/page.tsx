@@ -78,7 +78,7 @@ const courseItems = [
 
 export default function DashboardPage() {
   return (
-    <div className='w-full !p-8 !mt-4 '>
+    <div className='w-full  !mt-4 '>
       <div className="overflow-hidden w-full">
         <div className='grid grid-cols-3 gap-x-8 !w-full  gap-y-3 min-w-[70rem] overflow-x-auto'>
           {dashboardItems.map((item) => {
