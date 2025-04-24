@@ -27,14 +27,14 @@ const CourseInfoCard: FC<CourseCardProps> = ({
           <Image src={imageUrl} alt={title} layout="fill" objectFit="cover" />
         </div>
         <div className="flex flex-col">
-          <h3 className="font-comfortaa text-white font-[600] text-[1.13rem] text-lg leading-snug !mb-3">{title}</h3>
+          <h3 className="font-comfortaa text-white font-[600] text-[1.13rem]  leading-snug !mb-3">{title}</h3>
           <p className="font-opensans font-[400] text-[1rem]  text-zinc-400 leading-normal !mt-2">{description}</p>
         </div>
       </div>
 
       <div className="flex items-center gap-14 text-base whitespace-nowrap">
         <div className="flex items-center gap-2">
-          <div className="bg-[#F8AF43] text-black font-semibold rounded-full w-7 h-7 flex items-center justify-center text-sm">
+          <div className="bg-primary text-black font-semibold rounded-full w-7 h-7 flex items-center justify-center text-sm">
             {initials}
           </div>
           <span className="font-opensans text-[#ffff] font-[600] text-[0.8rem]">{instructor}</span>
