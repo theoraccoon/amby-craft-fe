@@ -38,7 +38,7 @@ export default function LoginForm() {
 
                     />
                 </div>
-                <div className="mt-2 w-full">
+                <div className="mt-2 w-full ">
 
                     <InputField
                         label="Password"
