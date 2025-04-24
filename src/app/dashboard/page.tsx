@@ -132,7 +132,7 @@ export default function DashboardPage() {
                 key={item.id}
                 className={`rounded-[1.2rem]  !border  inline-block z-10 !min-w-[22rem]`} style={{ backgroundColor: item.backgrounndStyle, borderColor: item.borderStyle }}
               >
-                <div className="flex items-center gap-x-2.5 !p-7 relative">
+                <div className="flex items-center gap-x-6 !p-7 relative">
                   {topCurves}
                   <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10">
                     <Icon className="!text-xl !text-[#F8AF43]" />
@@ -164,14 +164,15 @@ export default function DashboardPage() {
         <div className='flex items-center gap-x-4'>
           <Image
             src="/images/clock-image.png"
-            className='block max-w-[120px] max-h-[120px] sm:max-w-[150px] sm:max-h-[150px] object-contain rounded-[1.2rem]'
+            className='block max-w-[120px] max-h-[120px] sm:!max-w-[150px] sm:!max-h-[150px] object-contain rounded-[1.2rem]'
             alt="Login Background"
             fill={false}
             width={250}
             height={250}
-            objectFit="contain"
+            objectFit="cover"
             quality={100}
             priority
+            style={{ objectFit: "cover", height: 150 }}
           />
           <div className='flex flex-col !gap-y-4 text-white !overflow-hidden' >
             <h5 className='text-[18px] font-semibold !text-nowrap !text-ellipsis max-w-[150px] sm:max-w-full font-comfortaa'>Time management and Impact on Work</h5>
