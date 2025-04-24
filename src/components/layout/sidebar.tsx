@@ -2,7 +2,7 @@
 
 import React from 'react';
 // Make sure to import your icons correctly, e.g.:
-import { BiSolidGridAlt, BiBookOpen, BiBookAlt ,} from 'react-icons/bi';
+import {  BiBookOpen, BiBookAlt ,} from 'react-icons/bi';
 import { MdGridView } from "react-icons/md";
 import { FiArchive } from "react-icons/fi";
 import Image from "next/image";
