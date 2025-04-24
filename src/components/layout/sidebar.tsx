@@ -2,7 +2,9 @@
 
 import React from 'react';
 // Make sure to import your icons correctly, e.g.:
-import { BiSolidGridAlt, BiBookOpen, BiBook, BiSolidBox } from 'react-icons/bi';
+import { BiSolidGridAlt, BiBookOpen, BiBookAlt ,} from 'react-icons/bi';
+import { MdGridView } from "react-icons/md";
+import { FiArchive } from "react-icons/fi";
 import Image from "next/image";
 const imageUrlAmbylon = "/images/amby-svg.svg"
 import { useRouter, usePathname } from 'next/navigation';
@@ -10,10 +12,10 @@ import { useRouter, usePathname } from 'next/navigation';
 
 
 const menuItems = [
-    { id: 'dashboard', text: 'Dashboard', IconComponent: BiSolidGridAlt },
+    { id: 'dashboard', text: 'Dashboard', IconComponent: MdGridView },
     { id: 'courses', text: 'Courses', IconComponent: BiBookOpen },
-    { id: 'microlearning', text: 'Microlearning', IconComponent: BiBook },
-    { id: 'question_banks', text: 'Question Banks', IconComponent: BiSolidBox },
+    { id: 'microlearning', text: 'Microlearning', IconComponent: BiBookAlt },
+    { id: 'question_banks', text: 'Question Banks', IconComponent: FiArchive },
 ];
 
 function SidebarMenu() {
