@@ -49,7 +49,7 @@ function SidebarMenu() {
                     priority
                 />
             </div>
-            <div className="h-[85%] p-10">
+            <div className="h-[85%] ">
 
                 <ul>
                     {menuItems.map((item) => {
