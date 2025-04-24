@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${comfortaa.className} ${openSans.className}`}>
       <body>
-        <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] lg:grid-cols-[250px_1fr] h-screen w-full">
+        <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] lg:grid-cols-[250px_1fr] h-screen w-full overflow-hidden">
           <Providers>
             {/* Sidebar */}
             <div className="hidden md:block bg-[#282828] h-screen">
@@ -32,7 +32,7 @@ export default function RootLayout({
             </div>
 
             {/* Main Content */}
-            <div className="bg-[#181818] flex flex-col h-screen !px-10 md:px-8 lg:!px-10 !py-5">
+            <div className="bg-[#181818] flex flex-col h-screen">
               <Header />
               <div className="flex flex-col overflow-y-auto">{children}</div>
             </div>

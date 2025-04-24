@@ -8,7 +8,7 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      <div className="h-full flex flex-col items-center justify-center">
+      <div className="h-full flex flex-col items-center ">
         {children}
       </div>
     </>
