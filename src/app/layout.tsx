@@ -1,6 +1,7 @@
 "use client";
 
-import Header from "@/components/layout/header";
+
+import Header from "@/components/layout/header/header";
 import "../styles/globals.css";
 import { Providers } from "./provider";
 import SidebarMenu from "@/components/layout/sidebar";

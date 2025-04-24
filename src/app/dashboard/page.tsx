@@ -78,85 +78,86 @@ const courseItems = [
 
 export default function DashboardPage() {
   return (
-    <div className='w-full !p-8 !mt-4'>
-
-      <div className='grid sm:grid-cols-3 gap-x-8 !w-full  gap-y-3'>
-        {dashboardItems.map((item) => {
-          const Icon = item.IconComponent;
-          const topCurves = (
-            <svg
-              width="75"
-              height="61"
-              viewBox="0 0 75 61"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="!w-auto !h-auto absolute top-0 left-0"
-            >
-              <g opacity="0.3">
-                <path
-                  d="M74 0.5C74 33 59.3 87.3 0.5 44.5"
-                  stroke={item.curvesColor}
-                />
-                <path
-                  d="M59 0.5C60 25.3333 49.7 68.4 0.5 42"
-                  stroke={item.curvesColor}
-                />
-              </g>
-            </svg>
-          );
-
-          const bottomCurves = (
-            <svg
-              width="91"
-              height="40"
-              viewBox="0 0 91 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="!w-auto !h-auto absolute top-0 right-0"
-            >
-              <g opacity="0.3">
-                <path
-                  d="M2.5 39.5C20.1667 29.8333 62.2 14 89 28"
-                  stroke={item.curvesColor}
-                />
-                <path
-                  d="M0.5 39.5C9.16667 19.3333 39.3 -14.9 90.5 9.5"
-                  stroke={item.curvesColor}
-                />
-              </g>
-            </svg>
-          );
-
-          return (
-            <div
-              key={item.id}
-              className={`rounded-[1.2rem]  !border  inline-block z-10`} style={{ backgroundColor: item.backgrounndStyle, borderColor: item.borderStyle }}  
-            >
-              <div className="flex items-center gap-x-2.5 !p-7 relative">
-                {topCurves}
-                <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10">
-                  <Icon className="!text-xl !text-[#F8AF43]" />
-                </div>
-                <div className="inline-flex flex-col">
-                  <p className="mb-0 text-2xl font-semibold text-white">
-                    {item.count}
-                  </p>
-                  <p className="mb-0 text-xs font-normal text-[#FFFFFF99]">
-                    {item.text}
-                  </p>
-                </div>
-              </div>
-              <div
-                className={`!border-t !border-t-[${item.borderColor}] flex justify-between text-white !p-4 relative overflow-hidden w-full`}
-                style={{ borderTopColor: item.borderColor }}
+    <div className='w-full !p-8 !mt-4 '>
+      <div className="overflow-hidden w-full">
+        <div className='grid grid-cols-3 gap-x-8 !w-full  gap-y-3 min-w-[70rem] overflow-x-auto'>
+          {dashboardItems.map((item) => {
+            const Icon = item.IconComponent;
+            const topCurves = (
+              <svg
+                width="75"
+                height="61"
+                viewBox="0 0 75 61"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="!w-auto !h-auto absolute top-0 left-0"
               >
-                {bottomCurves}
-                <span className="text-xs">View all</span>
-                <GoArrowRight />
+                <g opacity="0.3">
+                  <path
+                    d="M74 0.5C74 33 59.3 87.3 0.5 44.5"
+                    stroke={item.curvesColor}
+                  />
+                  <path
+                    d="M59 0.5C60 25.3333 49.7 68.4 0.5 42"
+                    stroke={item.curvesColor}
+                  />
+                </g>
+              </svg>
+            );
+
+            const bottomCurves = (
+              <svg
+                width="91"
+                height="40"
+                viewBox="0 0 91 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="!w-auto !h-auto absolute top-0 right-0"
+              >
+                <g opacity="0.3">
+                  <path
+                    d="M2.5 39.5C20.1667 29.8333 62.2 14 89 28"
+                    stroke={item.curvesColor}
+                  />
+                  <path
+                    d="M0.5 39.5C9.16667 19.3333 39.3 -14.9 90.5 9.5"
+                    stroke={item.curvesColor}
+                  />
+                </g>
+              </svg>
+            );
+
+            return (
+              <div
+                key={item.id}
+                className={`rounded-[1.2rem]  !border  inline-block z-10 !min-w-[22rem]`} style={{ backgroundColor: item.backgrounndStyle, borderColor: item.borderStyle }}
+              >
+                <div className="flex items-center gap-x-2.5 !p-7 relative">
+                  {topCurves}
+                  <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10">
+                    <Icon className="!text-xl !text-[#F8AF43]" />
+                  </div>
+                  <div className="inline-flex flex-col">
+                    <p className="mb-0 text-2xl font-semibold text-white">
+                      {item.count}
+                    </p>
+                    <p className="mb-0 text-xs font-normal text-[#FFFFFF99]">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className={`!border-t !border-t-[${item.borderColor}] flex justify-between text-white !p-4 relative overflow-hidden w-full`}
+                  style={{ borderTopColor: item.borderColor }}
+                >
+                  {bottomCurves}
+                  <span className="text-xs">View all</span>
+                  <GoArrowRight />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
       <p className='text-white !mt-12'>Continue</p>
       <div className='bg-[#222222] flex justify-between items-center !p-3 sm:!p-5 !mt-8 rounded-[1.2rem]'>
@@ -187,21 +188,24 @@ export default function DashboardPage() {
         <FiChevronRight className="hidden sm:block text-white" />
       </div>
       <p className='text-white !mt-10'>Recently published</p>
-      <div className='grid sm:grid-cols-4  gap-x-6 gap-y-3 !mt-8 flex-nowrap'>
+      <div className='overflow-hidden'>
+      <div className='grid  grid-cols-4  gap-x-6 gap-y-3 !mt-8  items-center place-content-center min-w-[70rem]'>
         {courseItems.map((item, index) => {
-          return(
-        <CourseCard
-          image={item.image}
-          key={index}
-          title={item.title}
-          description={item.description}
-          author={item.author}
-          lessons={item.lessons}
-          date={item.date}
-        />
+          return (
+            <CourseCard
+              image={item.image}
+              key={index}
+              title={item.title}
+              description={item.description}
+              author={item.author}
+              lessons={item.lessons}
+              date={item.date}
+            />
           )
-      }
+        }
         )}
+      </div>
+      
       </div>
     </div>
   );

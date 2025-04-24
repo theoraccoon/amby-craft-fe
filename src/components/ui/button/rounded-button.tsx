@@ -5,7 +5,7 @@ import { ReactNode, ReactElement } from "react";
 const buttonVariants = {
   primary: {
     bg: "#F8AF43",
-    color: "white",
+    color: "#000000",
     _hover: { bg: "#F5A500" },
   },
   secondary: {
@@ -20,7 +20,7 @@ const buttonVariants = {
     _hover: { bg: "#F5A500", color: "white", borderColor: "#F5A500" },
   },
   tertiary: {
-    bg: "#333333",
+    bg: "#000000",
     color: "",
     border: "2px solid #FFFFFF",
     _hover: { bg: "#F5A500", color: "white", borderColor: "#F5A500" },
@@ -50,9 +50,9 @@ const RoundedButton = ({
 
   return (
     <Button
-      width={"full"}
-      height={["40px", "45px", "50px"]}
-      fontSize={["sm", "md", "lg"]} 
+      width={"500px"}
+      height={["40px"]}
+      fontSize={["sm"]} 
       bg={variantStyles.bg}
       color={variantStyles.color}
       _hover={variantStyles._hover}

@@ -1,20 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ToggleTextWithIconProps } from '@/types';
 
-import { FiUser } from 'react-icons/fi';
+export default function ToggleTextWithIcon({
+  icon,
+  label,
+  activeColor = 'text-[#F8AF43]',
+  inactiveColor = 'text-white',
+  defaultActive = false,
+  onToggle,
+}: ToggleTextWithIconProps) {
+  const [active, setActive] = useState(defaultActive);
 
-export default function ToggleTextWithIcon() {
-  const [active, setActive] = useState(false);
+  useEffect(() => {
+    setActive(defaultActive);
+  }, [defaultActive]);
+
+  const handleClick = () => {
+    onToggle?.(!active); 
+  };
 
   return (
     <div
-      onClick={() => setActive(!active)}
-      className={`flex items-center space-x-2 cursor-pointer px-4 py-2 rounded-xl  transition-colors  ${active ? ' text-[#F8AF43]' : 'bg-transparent text-white'
-        }`}
+      onClick={handleClick}
+      className={`flex items-center  cursor-pointer rounded-xl transition-colors  ${
+        active ? activeColor : inactiveColor
+      }`}
     >
-      <FiUser />
-      <span className="text-sm font-medium m-[10px]">Private</span>
+      <div className='!ml-10 !p-3   '>{icon}</div>
+      <span className="text-sm font-medium">{label}</span>
     </div>
   );
 }
+
