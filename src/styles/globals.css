@@ -5,11 +5,13 @@
 
 :root {
   --primary: #F8AF43;
-  --secondary: #F8AF43;
+  --secondary: #FFFFFF;
   --background: #0a0a0a;
+  --tertiary:#333333;
   --foreground: #ededed;
-  --primary-foreground: #171717;
+  --primary-foreground: #181818;
   --secondary-foreground: #ffffff;
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -94,4 +96,12 @@ body, p {
 
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
+}
+
+
+
+@layer utilities {
+  .glow-shadow {
+    box-shadow: 0 0 24px #F8AF4340;
+  }
 }

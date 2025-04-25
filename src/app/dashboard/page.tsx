@@ -14,7 +14,7 @@ const dashboardItems = [
     count: 25,
     IconComponent: BiBookOpen,
     borderStyle: "#F8AF43",
-    backgrounndStyle: "#F8AF4326",
+    backgroundStyle: "#F8AF4326",
     curvesColor: "#F8AF43",
     borderColor: "#F8AF4326",
   },
@@ -80,7 +80,7 @@ export default function DashboardPage() {
   return (
     <div className='w-full  !mt-4 '>
       <div className="overflow-hidden w-full">
-        <div className='grid grid-cols-3 gap-x-8 !w-full  gap-y-3 min-w-[70rem] overflow-x-auto'>
+        <div className='grid grid-cols-3 gap-x-8 !w-full  gap-y-3 min-w-[70rem] '>
           {dashboardItems.map((item) => {
             const Icon = item.IconComponent;
             const topCurves = (
@@ -130,11 +130,11 @@ export default function DashboardPage() {
             return (
               <div
                 key={item.id}
-                className={`rounded-[1.2rem]  !border  inline-block z-10 !min-w-[22rem]`} style={{ backgroundColor: item.backgrounndStyle, borderColor: item.borderStyle }}
+                className={`rounded-[1.2rem]  !border  inline-block z-10 !min-w-[22rem] mt-20`} style={{ backgroundColor: item.backgroundStyle, borderColor: item.borderStyle }}
               >
                 <div className="flex items-center gap-x-6 !p-7 relative">
                   {topCurves}
-                  <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10">
+                  <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10 ">
                     <Icon className="!text-xl !text-[#F8AF43]" />
                   </div>
                   <div className="inline-flex flex-col">

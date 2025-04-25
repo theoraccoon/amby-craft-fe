@@ -14,6 +14,7 @@ module.exports = {
         secondary: "#FFFFFF",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        tertiary: "var(--tertiary)",
         "primary-foreground": "var(--primary-foreground)",
         "secondary-foreground": "var(--secondary-foreground)",
       },
