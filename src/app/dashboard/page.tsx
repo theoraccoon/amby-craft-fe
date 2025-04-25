@@ -94,7 +94,6 @@ const courseItems = [
     date: "18/04/25"
   },
   
-
   
 ];
 
@@ -103,7 +102,7 @@ export default function DashboardPage() {
     <div className="w-full   ">
       <div className=" w-full ">
         <div
-          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-800 flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]"
+          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]"
          
         >
           {dashboardItems.map((item) => {
