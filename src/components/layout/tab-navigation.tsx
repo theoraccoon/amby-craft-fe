@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BiBookOpen, BiBookAlt } from 'react-icons/bi';
-import { FiUserPlus, FiPlus, } from 'react-icons/fi';
+import { FiPlus, } from 'react-icons/fi';
 import { MdGridView } from "react-icons/md";
 import { FiArchive } from "react-icons/fi";
 
