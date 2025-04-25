@@ -75,7 +75,7 @@ export default function RootLayout({
               <div className="hidden md:block bg-[#282828] h-screen">
                 <SidebarMenu />
               </div>
-              <div className="md:hidden fixed bg-[#181818] w-full border-t  border-[#444] flex justify-around items-center h-[90px] z-50 px-5 pt-5">
+              <div className="md:hidden fixed bg-[#181818] w-full border-t  border-[#444] flex justify-around items-center h-[90px] z-50 px-5 pt">
                    <MobileViewHeader/>    
               </div>
               {/* Main Content */}
