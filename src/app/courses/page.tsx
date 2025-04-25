@@ -10,7 +10,7 @@ export default function CoursesPage() {
     <div className="flex flex-col gap-10 w-full !mt-8 ">
    
    <h2 className="text-[14px] font-semibold tracking-wide text-secondary pb-[18px]">Folders</h2>
-    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px]">
      
     {folders.map((folder, idx) => (
         <FolderCard 
