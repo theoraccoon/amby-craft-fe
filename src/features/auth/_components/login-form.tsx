@@ -1,8 +1,8 @@
-'useClient'
+'use client'
 
 import InputField from "@/components/ui/input/input";
 import Image from "next/image";
-import '../../../styles/global.css';
+import '../../../styles/globals.css'
 import CustomButton from "@/components/ui/button/custom-button";
 import { CiLogin } from "react-icons/ci";
 import { IoLogoGoogle } from "react-icons/io";
@@ -38,7 +38,7 @@ export default function LoginForm() {
 
                     />
                 </div>
-                <div className="mt-2 w-full">
+                <div className="mt-2 w-full ">
 
                     <InputField
                         label="Password"
