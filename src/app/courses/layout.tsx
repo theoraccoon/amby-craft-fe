@@ -9,7 +9,7 @@ export default function CoursesLayout({
 }) {
   return (
     <>
-      <div className="h-full flex flex-col items-center justify-center">
+      <div className="h-full flex flex-col  justify-center">
         {children}
       </div>
     </>
