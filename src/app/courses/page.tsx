@@ -7,9 +7,9 @@ import { folders } from "@/data/folders-card-data";
 
 export default function CoursesPage() {
   return (
-    <div className="flex flex-col gap-10 w-full !mt-8">
+    <div className="flex flex-col gap-10 w-full !mt-8 ">
    
-    <h2 className="text-[14px] font-semibold tracking-wide text-secondary ">Folders</h2>
+   <h2 className="text-[14px] font-semibold tracking-wide text-secondary pb-[18px]">Folders</h2>
     <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
      
     {folders.map((folder, idx) => (
@@ -24,7 +24,7 @@ export default function CoursesPage() {
 
 
 
-    <h2 className="text-[14px] font-semibold tracking-wide  text-seconday">Content</h2>
+    <h2 className="text-[14px] font-semibold tracking-wide text-secondary">Content</h2>
     <section className="flex flex-col gap-4">
     {[1, 2, 3].map((_, i) => (
       <div  key={i}>
