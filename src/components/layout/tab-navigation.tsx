@@ -39,7 +39,7 @@ export default function TabNavigator() {
 
             <div className=' w-[20%] h-full flex justify-center items-center'>
                 <div className="glow-shadow bg-primary w-[45px] h-[45px] rounded-full flex justify-center items-center">
-                    <FiPlus />
+                    <FiPlus size={20} />
                 </div>
 
             </div>
