@@ -12,7 +12,7 @@ export default function ResetPasswordForm() {
   const imageUrlAmbylon = "/images/amby-svg.svg";
 
   return (
-    <div className="w-full flex flex-col justify-center gap-4 text-white">
+    <div className="flex flex-col justify-center gap-4 text-white h-screen">
       {/* Logo */}
       <div className="w-full h-[8rem] relative">
         <Image
@@ -43,7 +43,7 @@ export default function ResetPasswordForm() {
 
       {/* Input Field */}
       <div className="flex flex-col gap-4 w-full ">
-        <InputField label="Email" placeholder="Enter your email" type="email" />
+        <InputField label="Email" type="email" />
       </div>
 
       {/* Button */}
@@ -52,7 +52,7 @@ export default function ResetPasswordForm() {
       </div>
 
       {/* Footer */}
-      <div className="text-center mt-6 text-xs w-full space-y-2">
+      <div className="text-center my-6 text-xs w-full space-y-2">
         <p className="text-white/40">Imprint • Privacy • Platform Terms</p>
       </div>
     </div>

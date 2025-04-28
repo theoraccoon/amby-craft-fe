@@ -10,11 +10,11 @@ import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
-   const router = useRouter();
+  const router = useRouter();
   const imageUrlAmbylon = "/images/amby-svg.svg";
 
   return (
-    <div className="w-full flex flex-col  justify-center gap-4 text-white">
+    <div className="w-full flex flex-col  justify-center gap-4 text-white h-screen">
       {/* Logo */}
       <div className=" w-full h-[8rem] relative">
         <Image
@@ -33,11 +33,10 @@ export default function LoginForm() {
 
       {/* Input Fields */}
       <div className="flex flex-col gap-4 w-full">
-        <InputField label="First name" placeholder="Enter your first name" />
+        <InputField label="First name" />
         <InputField
           label="Password"
           rightLabel="Forgot password?"
-          placeholder="Enter your password"
           rightIcon={<IoEyeOutline color="white" />}
           rightLabelClick={() => router.push("/auth/reset")}
         />
@@ -45,7 +44,12 @@ export default function LoginForm() {
 
       {/* Buttons */}
       <div className="flex flex-col gap-4 w-full items-center mt-4">
-        <CustomButton leftIcon={<CiLogin />}>Login</CustomButton>
+        <CustomButton
+          leftIcon={<CiLogin />}
+          onClick={() => router.push("/dashboard")}
+        >
+          Login
+        </CustomButton>
 
         <p className="text-white/40 text-sm">Or</p>
 
@@ -55,10 +59,15 @@ export default function LoginForm() {
       </div>
 
       {/* Footer */}
-      <div className="text-center mt-6 text-xs w-full space-y-2">
+      <div className="text-center my-6 text-xs w-full space-y-2">
         <p>
           You don’t have an AMBYLON CRAFT account yet?{" "}
-          <span className="text-primary  cursor-pointer"  onClick={() => router.push("/auth/register")}>Register now</span>
+          <span
+            className="text-primary  cursor-pointer"
+            onClick={() => router.push("/auth/register")}
+          >
+            Register now
+          </span>
         </p>
         <p className="text-white/40">Imprint • Privacy • Platform Terms</p>
       </div>

@@ -11,10 +11,10 @@ import { useRouter } from "next/navigation";
 
 export default function SignUpForm() {
   const imageUrlAmbylon = "/images/amby-svg.svg";
-   const router = useRouter();
+  const router = useRouter();
 
   return (
-    <div className="w-full flex flex-col  justify-center gap-4 text-white">
+    <div className="w-full flex flex-col h-screen justify-center gap-4 text-white bg-black">
       {/* Logo */}
       <div className=" w-full h-[7rem]  relative">
         <Image
@@ -33,12 +33,11 @@ export default function SignUpForm() {
 
       {/* Input Fields */}
       <div className="flex flex-col gap-4 w-full">
-        <InputField label="First name" placeholder="Enter your first name" />
-        <InputField label="Last name" placeholder="Enter your last name" />
-        <InputField label="Email address" placeholder="Enter your email" />
+        <InputField label="First name" />
+        <InputField label="Last name" />
+        <InputField label="Email address" />
         <InputField
           label="Password"
-          placeholder="Enter your password"
           rightIcon={<IoEyeOutline color="white" />}
           type="password"
         />
@@ -46,7 +45,12 @@ export default function SignUpForm() {
 
       {/* Buttons */}
       <div className="flex flex-col gap-4 w-full items-center mt-4">
-        <CustomButton leftIcon={<CiLogin />}>Login</CustomButton>
+        <CustomButton
+          leftIcon={<CiLogin />}
+          onClick={() => router.push("/dashboard")}
+        >
+          Create Account
+        </CustomButton>
 
         <p className="text-white/40 text-sm">Or</p>
 
@@ -56,10 +60,15 @@ export default function SignUpForm() {
       </div>
 
       {/* Footer */}
-      <div className="text-center mt-6 text-xs w-full ">
+      <div className="text-center my-6 text-xs w-full ">
         <p>
           Already have an AMBYLON CRAFT account? ?{" "}
-          <span className="text-primary  cursor-pointer" onClick={() => router.push("/auth/login")}>Sign in</span>
+          <span
+            className="text-primary  cursor-pointer"
+            onClick={() => router.push("/auth/login")}
+          >
+            Sign in
+          </span>
         </p>
         <p className="text-white/40">Imprint • Privacy • Platform Terms</p>
       </div>
