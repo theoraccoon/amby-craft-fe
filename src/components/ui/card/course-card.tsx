@@ -30,23 +30,23 @@ const CourseCard: React.FC<CourseCardProps> = ({
         {title}
       </h3>
 
-      <p className="font-opensans text-gray-400 text-xs !mb-4 leading-relaxed">
+      <p className="font-['open_sans'] text-gray-400 text-xs !mb-4 leading-relaxed">
         {description}
       </p>
       <div className="flex justify-between items-center text-sm text-gray-300">
         <div className="flex items-center gap-[9px]">
           <User className="text-primary" width={16} height={16} />
-          <span className="text-secondary text-xs">{author}</span>
+          <span className="font-['open_sans'] text-secondary text-xs">{author}</span>
         </div>
         <div className="flex items-center gap-[9px]">
           <Layers className="text-primary" width={16} height={16} />
-          <span className="text-secondary font-[400] text-xs">
+          <span className="font-['open_sans'] text-secondary font-[400] text-xs">
             {lessons} lessons
           </span>
         </div>
         <div className="flex items-center gap-[9px]">
           <Calendar className="text-primary" width={16} height={16} />
-          <span className="text-secondary font-[400] text-xs">{date}</span>
+          <span className="font-['open_sans'] text-secondary font-[400] text-xs">{date}</span>
         </div>
       </div>
     </div>
