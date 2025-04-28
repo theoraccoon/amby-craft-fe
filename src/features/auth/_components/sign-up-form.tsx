@@ -62,7 +62,7 @@ export default function SignUpForm() {
       {/* Footer */}
       <div className="text-center my-6 text-xs w-full ">
         <p>
-          Already have an AMBYLON CRAFT account? ?{" "}
+          Already have an AMBYLON CRAFT account?{" "}
           <span
             className="text-primary  cursor-pointer"
             onClick={() => router.push("/auth/login")}
