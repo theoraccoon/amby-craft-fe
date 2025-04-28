@@ -29,7 +29,7 @@ export default function TabNavigator() {
                                 className={`p-2 rounded-full cursor-pointer transition-all flex items-center justify-center  w-[56px] h-[35px]
                   ${isActive ? 'bg-[#F8AF43]' : ''}`}
                             >
-                                <Icon color={isActive ? 'black' : 'white'} size={20} />
+                                <Icon color={isActive ? 'black' : 'white'} size={17.28} />
                             </div>
                         );
                     })}

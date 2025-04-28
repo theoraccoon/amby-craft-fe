@@ -1,10 +1,8 @@
-
-
 "use client";
 
 import React from "react";
-import { Comfortaa, Open_Sans } from "next/font/google";// Example if you're using a font
-import "../styles/globals.css"
+import { Comfortaa, Open_Sans } from "next/font/google"; // Example if you're using a font
+import "../styles/globals.css";
 import { Providers } from "./provider";
 
 const comfortaa = Comfortaa({
@@ -16,8 +14,6 @@ const openSans = Open_Sans({
   weight: ["300", "400", "600", "700", "800"],
 });
 
-
-
 export default function RootLayout({
   children,
 }: {
@@ -26,9 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${comfortaa.className} ${openSans.className}`}>
       <body className={comfortaa.className}>
-      <Providers>
-      {children}
-      </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

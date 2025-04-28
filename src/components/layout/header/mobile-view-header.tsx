@@ -11,10 +11,10 @@ export default function MobileViewHeader() {
   return (
     <div className='w-full'>
         <SearchInputField
-            leftIcon={<GiHamburgerMenu color="#FFFFFF" size="20px" />}
+            leftIcon={<GiHamburgerMenu color="#FFFFFF" size="18px" />}
            rightIcon={
             <>
-              <div className='relativ h-[30px] w-[30px]'>
+              <div className='relative h-[30px] w-[30px]'>
                       <Image
                         src={profileImage}
                         alt="Profile"
