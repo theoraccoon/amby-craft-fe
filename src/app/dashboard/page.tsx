@@ -217,7 +217,7 @@ export default function DashboardPage() {
             </small>
           </div>
         </div>
-        <div className="hidden sm:flex gap-x-2">
+        <div className="hidden sm:flex gap-x-2 overflow-hidden">
           <div className="h-[35px] w-[35px] rounded-full aspect-square bg-white"></div>
           <div className="h-[35px] w-[35px] rounded-full aspect-square bg-white"></div>
           <div className="h-[35px] w-[35px] rounded-full aspect-square bg-white"></div>

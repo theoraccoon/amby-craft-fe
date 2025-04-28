@@ -1,9 +1,9 @@
-"useClient";
+"use client";
 
 import Image from "next/image";
 import "../../../styles/globals.css";
 
-export default function LoginFormLayout({
+export default function SignUpFormLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export default function LoginFormLayout({
   const imageUrl = "/images/login-background.png";
 
   return (
-    <div className="grid lg:grid-cols-6 md:grid-cols-6 h-screen  w-screen bg-background ">
+    <div className="grid lg:grid-cols-6 md:grid-cols-6 h-screen  w-screen bg-black ">
       {/* Sidebar (2/3 on desktop) */}
       <div className="hidden md:block lg:col-span-4 md:col-span-3 relative">
         <Image

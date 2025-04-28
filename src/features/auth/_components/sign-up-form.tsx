@@ -9,14 +9,14 @@ import { IoLogoGoogle } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
-export default function LoginForm() {
-  const router = useRouter();
+export default function SignUpForm() {
   const imageUrlAmbylon = "/images/amby-svg.svg";
+  const router = useRouter();
 
   return (
-    <div className="w-full flex flex-col  justify-center gap-4 text-white h-screen">
+    <div className="w-full flex flex-col h-screen justify-center gap-4 text-white bg-black">
       {/* Logo */}
-      <div className=" w-full h-[8rem] relative">
+      <div className=" w-full h-[7rem]  relative">
         <Image
           src={imageUrlAmbylon}
           alt="AMBYLON Logo"
@@ -27,18 +27,19 @@ export default function LoginForm() {
       </div>
 
       {/* Form Header */}
-      <h1 className="text-[1.5rem] sm:text-[2rem] mt-20 font-semibold">
-        Login to your account
+      <h1 className="text-[1.5rem] sm:text-[2rem] mt-4 font-semibold ">
+        Enter details to register
       </h1>
 
       {/* Input Fields */}
       <div className="flex flex-col gap-4 w-full">
         <InputField label="First name" />
+        <InputField label="Last name" />
+        <InputField label="Email address" />
         <InputField
           label="Password"
-          rightLabel="Forgot password?"
           rightIcon={<IoEyeOutline color="white" />}
-          rightLabelClick={() => router.push("/auth/reset")}
+          type="password"
         />
       </div>
 
@@ -48,7 +49,7 @@ export default function LoginForm() {
           leftIcon={<CiLogin />}
           onClick={() => router.push("/dashboard")}
         >
-          Login
+          Create Account
         </CustomButton>
 
         <p className="text-white/40 text-sm">Or</p>
@@ -59,14 +60,14 @@ export default function LoginForm() {
       </div>
 
       {/* Footer */}
-      <div className="text-center my-6 text-xs w-full space-y-2">
+      <div className="text-center my-6 text-xs w-full ">
         <p>
-          You don’t have an AMBYLON CRAFT account yet?{" "}
+          Already have an AMBYLON CRAFT account?{" "}
           <span
             className="text-primary  cursor-pointer"
-            onClick={() => router.push("/auth/register")}
+            onClick={() => router.push("/auth/login")}
           >
-            Register now
+            Sign in
           </span>
         </p>
         <p className="text-white/40">Imprint • Privacy • Platform Terms</p>

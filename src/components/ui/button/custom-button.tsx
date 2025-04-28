@@ -5,7 +5,7 @@ import { ReactNode, ReactElement } from "react";
 const buttonVariants = {
   primary: {
     bg: "#F8AF43",
-    color: "white",
+    color: "black",
     _hover: { bg: "#F5A500" },
   },
   secondary: {
