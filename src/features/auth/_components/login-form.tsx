@@ -26,7 +26,7 @@ export default function LoginForm() {
                     />
                 </div>
             </div>
-            <div className=" flex flex-col justify-around  h-[40%]  w-full">
+            <div className=" flex flex-col justify-around  h-[40%]  w-full ">
                 <h1 className="text-white">
                     Login to your account
                 </h1>

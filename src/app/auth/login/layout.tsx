@@ -22,9 +22,9 @@ export default function LoginFormLayout({ children }: { children: React.ReactNod
             </div>
 
             {/* Main Content (1/3 on desktop) */}
-            <div className="lg:col-span-2 md:col-span-3 bg-[#181818]  mx-20 ">
+            <div className="lg:col-span-2 md:col-span-3  mx-20 ">
                 <div className="h-full flex flex-col items-center justify-center">
-                    <div className="h-[80%] flex flex-col  w-[80%] sm:w-[70%]">
+                    <div className="h-[80%] flex flex-col  w-[80%] sm:w-full">
                         {children}
                     </div>
                 </div>

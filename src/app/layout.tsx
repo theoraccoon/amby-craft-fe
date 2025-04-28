@@ -18,7 +18,7 @@ const openSans = Open_Sans({
 
 
 const checkAuthentication = () => {
-  return true;
+  return false;
 };
 
 export default function RootLayout({
