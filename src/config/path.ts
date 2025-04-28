@@ -1,32 +1,36 @@
-'use client';
+"use client";
 
 export const paths = {
-    home: {
-      getHref: () => '/',
+  home: {
+    getHref: () => "/",
+  },
+
+  auth: {
+    login: {
+      getHref: () => "/auth/login",
     },
-  
-    auth: {
-      login: {
-        getHref: () => "/auth/login",
-      },
+    register: {
+      getHref: () => "/auth/register",
     },
-    
-    app: {
-      root: {
-        getHref: () => '/',
-      },
-      about: {
-        getHref: () => '/about',
-      },
-      
+    reset: {
+      getHref: () => "/auth/reset",
+    },
+  },
+
+  app: {
+    root: {
+      getHref: () => "/",
+    },
+    about: {
+      getHref: () => "/about",
+    },
+
     dashboard: {
-      getHref: () => '/dashboard',
+      getHref: () => "/dashboard",
     },
-      
-    },
-    
-    public: {
-      // Your public paths here
-    },
-  } as const;
-  
+  },
+
+  public: {
+    // Your public paths here
+  },
+} as const;

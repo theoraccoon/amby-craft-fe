@@ -18,7 +18,9 @@ interface InputFieldProps extends InputProps {
   rightIcon?: ReactNode;
   leftLabel?: string;
   rightLabel?: string;
+  rightLabelClick?: () => void;
 }
+
 
 const InputField = ({
   label,
@@ -27,6 +29,7 @@ const InputField = ({
   isDisabled,
   leftIcon,
   rightIcon,
+  rightLabelClick,
   // leftLabel,
   rightLabel,
   ...rest
@@ -40,10 +43,23 @@ const InputField = ({
 
   return (
     <FormControl isInvalid={!!error} isDisabled={isDisabled}>
-      {(label || rightLabel) &&<div className="flex justify-between text-white text-xs mt-1">
-        <FormLabel color="white" fontSize={["sm", "md", "lg"]}>{label}</FormLabel>
-          <FormLabel color="#f8af43" fontSize={["sm", "md", "lg"]} >{rightLabel}</FormLabel>
-        </div>}
+    {(label || rightLabel) && (
+  <div className="flex justify-between text-white text-xs mt-1">
+    <FormLabel color="white" fontSize={["sm", "md", "lg"]}>
+      {label}
+    </FormLabel>
+    {rightLabel && (
+      <FormLabel
+        onClick={rightLabelClick}
+        className="cursor-pointer"
+        color="#f8af43"
+        fontSize={["sm", "md", "lg"]}
+      >
+        {rightLabel}
+      </FormLabel>
+    )}
+  </div>
+)}
       <InputGroup>
         {leftIcon && (
           <InputLeftElement pointerEvents="none" >

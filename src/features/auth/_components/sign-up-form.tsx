@@ -9,14 +9,14 @@ import { IoLogoGoogle } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
-export default function LoginForm() {
-   const router = useRouter();
+export default function SignUpForm() {
   const imageUrlAmbylon = "/images/amby-svg.svg";
+   const router = useRouter();
 
   return (
     <div className="w-full flex flex-col  justify-center gap-4 text-white">
       {/* Logo */}
-      <div className=" w-full h-[8rem] relative">
+      <div className=" w-full h-[7rem]  relative">
         <Image
           src={imageUrlAmbylon}
           alt="AMBYLON Logo"
@@ -27,19 +27,20 @@ export default function LoginForm() {
       </div>
 
       {/* Form Header */}
-      <h1 className="text-[1.5rem] sm:text-[2rem] mt-20 font-semibold">
-        Login to your account
+      <h1 className="text-[1.5rem] sm:text-[2rem] mt-4 font-semibold ">
+        Enter details to register
       </h1>
 
       {/* Input Fields */}
       <div className="flex flex-col gap-4 w-full">
         <InputField label="First name" placeholder="Enter your first name" />
+        <InputField label="Last name" placeholder="Enter your last name" />
+        <InputField label="Email address" placeholder="Enter your email" />
         <InputField
           label="Password"
-          rightLabel="Forgot password?"
           placeholder="Enter your password"
           rightIcon={<IoEyeOutline color="white" />}
-          rightLabelClick={() => router.push("/auth/reset")}
+          type="password"
         />
       </div>
 
@@ -55,10 +56,10 @@ export default function LoginForm() {
       </div>
 
       {/* Footer */}
-      <div className="text-center mt-6 text-xs w-full space-y-2">
+      <div className="text-center mt-6 text-xs w-full ">
         <p>
-          You don’t have an AMBYLON CRAFT account yet?{" "}
-          <span className="text-primary  cursor-pointer"  onClick={() => router.push("/auth/register")}>Register now</span>
+          Already have an AMBYLON CRAFT account? ?{" "}
+          <span className="text-primary  cursor-pointer" onClick={() => router.push("/auth/login")}>Sign in</span>
         </p>
         <p className="text-white/40">Imprint • Privacy • Platform Terms</p>
       </div>
