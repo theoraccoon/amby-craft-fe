@@ -1,7 +1,7 @@
 // app/shared/layout.tsx
 "use client";
 
-// Adjust the path as necessary
+
 import SidebarMenu from "@/components/layout/sidebar";
 import Header from "@/components/layout/header/header";
 import { Providers } from "../provider";
