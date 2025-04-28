@@ -7,7 +7,6 @@ import CustomButton from "@/components/ui/button/custom-button";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 
-
 export default function ResetPasswordForm() {
   const router = useRouter();
   const imageUrlAmbylon = "/images/amby-svg.svg";
@@ -37,7 +36,8 @@ export default function ResetPasswordForm() {
       {/* Form Header */}
       <div className="mt-6">
         <h1 className="text-white text-[1.5rem] sm:text-[2rem] leading-tight">
-          Enter email to reset <br /> <span className="text-white">password</span>
+          Enter email to reset <br />{" "}
+          <span className="text-white">password</span>
         </h1>
       </div>
 
@@ -48,7 +48,7 @@ export default function ResetPasswordForm() {
 
       {/* Button */}
       <div className="flex flex-col gap-4 w-full items-center mt-4">
-        <CustomButton >Send</CustomButton>
+        <CustomButton>Send</CustomButton>
       </div>
 
       {/* Footer */}
