@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import "@/styles/globals.css";
-import imageUrl from "/images/login-background.png";
+import imageUrl from "@/images/login-background.png";
 
 export default function ResetFormLayout({
   children,

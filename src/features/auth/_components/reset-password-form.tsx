@@ -6,7 +6,7 @@ import "../../../styles/globals.css";
 import CustomButton from "@/components/ui/button/custom-button";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
-import imageUrlAmbylon from "/images/amby-svg.svg";
+import imageUrlAmbylon from "@/images/amby-svg.svg";
 
 export default function ResetPasswordForm() {
   const router = useRouter();
