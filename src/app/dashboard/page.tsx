@@ -51,7 +51,6 @@ const dashboardItems = [
   {
     id: "micerolearning",
     text: "Total Question Bank",
-    count: 11,
     IconComponent: BiBox,
     borderStyle: "#00BA7F",
     backgrounndStyle: "#00BA7F26",

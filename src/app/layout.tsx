@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Comfortaa, Open_Sans } from "next/font/google"; // Example if you're using a font
+import { Comfortaa, Open_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { Providers } from "./provider";
 import { ViewModeProvider } from "@/context/view-mode-context";

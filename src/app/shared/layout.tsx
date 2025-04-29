@@ -10,7 +10,6 @@ import TabNavigator from "@/components/layout/tab-navigation";
 import { ViewModeProvider } from "@/context/view-mode-context";
 import Header from "@/components/layout/header/header";
 
-
 export default function SharedLayout({ children }: { children: ReactNode }) {
   return (
     <Providers>
