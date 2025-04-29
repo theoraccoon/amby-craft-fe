@@ -1,6 +1,7 @@
 // app/shared/layout.tsx
 "use client";
 
+import { ReactNode } from "react";
 import SidebarMenu from "@/components/layout/sidebar";
 import Header from "@/components/layout/header/header";
 import { Providers } from "../provider";
@@ -8,11 +9,7 @@ import "../../styles/globals.css";
 import MobileViewHeader from "@/components/layout/header/mobile-view-header";
 import TabNavigator from "@/components/layout/tab-navigation";
 
-export default function SharedLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function SharedLayout({ children }: { children: ReactNode }) {
   return (
     <Providers>
       <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] lg:grid-cols-[250px_1fr] h-screen w-full overflow-hidden">

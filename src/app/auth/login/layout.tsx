@@ -1,15 +1,11 @@
-"useClient";
+"use client";
 
 import Image from "next/image";
-import "../../../styles/globals.css";
+import "@/styles/globals.css";
+import imageUrl from "@/images/login-background.png";
+import { ReactNode } from "react";
 
-export default function LoginFormLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const imageUrl = "/images/login-background.png";
-
+export default function LoginFormLayout({ children }: { children: ReactNode }) {
   return (
     <div className="grid lg:grid-cols-6 md:grid-cols-6 h-screen  w-screen bg-background ">
       {/* Sidebar (2/3 on desktop) */}

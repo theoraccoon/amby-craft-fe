@@ -1,29 +1,22 @@
 "use client";
 
 import InputField from "@/components/ui/input/input";
-import Image from "next/image";
-import "../../../styles/globals.css";
+import "@/styles/globals.css";
 import CustomButton from "@/components/ui/button/custom-button";
 import { CiLogin } from "react-icons/ci";
 import { IoLogoGoogle } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import { ReactSVG } from "react-svg";
 
 export default function LoginForm() {
   const router = useRouter();
-  const imageUrlAmbylon = "/images/amby-svg.svg";
 
   return (
     <div className="w-full flex flex-col  justify-center gap-4 text-white h-screen">
       {/* Logo */}
       <div className=" w-full h-[8rem] relative">
-        <Image
-          src={imageUrlAmbylon}
-          alt="AMBYLON Logo"
-          fill
-          className="object-contain"
-          priority
-        />
+        <ReactSVG src="/images/amby-svg.svg" />
       </div>
 
       {/* Form Header */}

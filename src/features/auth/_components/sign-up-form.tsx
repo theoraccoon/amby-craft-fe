@@ -8,9 +8,9 @@ import { CiLogin } from "react-icons/ci";
 import { IoLogoGoogle } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import imageUrlAmbylon from "/images/amby-svg.svg";
 
 export default function SignUpForm() {
-  const imageUrlAmbylon = "/images/amby-svg.svg";
   const router = useRouter();
 
   return (

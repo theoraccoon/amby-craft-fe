@@ -1,4 +1,9 @@
-import { Input, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react";
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+} from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 type SearchInputFieldProps = {
@@ -34,9 +39,7 @@ const SearchInputField = ({
         }}
       />
       {rightIcon && (
-        <InputRightElement height="full">
-          {rightIcon}
-        </InputRightElement>
+        <InputRightElement height="full">{rightIcon}</InputRightElement>
       )}
     </InputGroup>
   );

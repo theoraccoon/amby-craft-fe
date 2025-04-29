@@ -6,10 +6,10 @@ import "../../../styles/globals.css";
 import CustomButton from "@/components/ui/button/custom-button";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
+import imageUrlAmbylon from "/images/amby-svg.svg";
 
 export default function ResetPasswordForm() {
   const router = useRouter();
-  const imageUrlAmbylon = "/images/amby-svg.svg";
 
   return (
     <div className="flex flex-col justify-center gap-4 text-white h-screen">
