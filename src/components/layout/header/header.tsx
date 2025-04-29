@@ -1,13 +1,11 @@
-'use client';
-import { BiSearch } from 'react-icons/bi';
-import SearchInputField from '../../ui/input/search-input';
-import HeaderActionsPanel from './header-actions-panel';
-import Nav from './nav-header';
-
+"use client";
+import { BiSearch } from "react-icons/bi";
+import SearchInputField from "../../ui/input/search-input";
+import HeaderActionsPanel from "./header-actions-panel";
+import Nav from "./nav-header";
+import { useViewMode } from "@/context/view-mode-context";
 
 export default function Header() {
-
-
 
   return (
     <div className="hidden md:flex w-full flex-col h-[8vh] justify-center">
@@ -16,7 +14,6 @@ export default function Header() {
         <div className="flex items-center h-full w-[20%]">
           <SearchInputField
             leftIcon={<BiSearch color="#A0AEC0" size="20px" />}
-       
           />
         </div>
         <div className="flex items-center  h-full w-[30%] ">
@@ -24,11 +21,8 @@ export default function Header() {
         </div>
         <div className="flex items-center justify-end w-[50%] h-10 ">
           <HeaderActionsPanel />
-
         </div>
-
       </div>
     </div>
-
   );
 }
