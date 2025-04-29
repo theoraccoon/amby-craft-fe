@@ -14,7 +14,7 @@ const dashboardItems = [
     count: 25,
     IconComponent: BiBookOpen,
     borderStyle: "#F8AF43",
-    backgrounndStyle: "#F8AF4326",
+    backgroundStyle: "#F8AF4326",
     curvesColor: "#F8AF43",
     borderColor: "#F8AF4326",
   },
@@ -30,6 +30,26 @@ const dashboardItems = [
   },
   {
     id: "microlearning",
+    text: "Total Question Bank",
+    count: 11,
+    IconComponent: BiBox,
+    borderStyle: "#00BA7F",
+    backgrounndStyle: "#00BA7F26",
+    curvesColor: "#00BA7F",
+    borderColor: "#00BA7F26",
+  },
+  {
+    id: "micreolearning",
+    text: "Total Question Bank",
+    count: 11,
+    IconComponent: BiBox,
+    borderStyle: "#00BA7F",
+    backgrounndStyle: "#00BA7F26",
+    curvesColor: "#00BA7F",
+    borderColor: "#00BA7F26",
+  },
+  {
+    id: "micerolearning",
     text: "Total Question Bank",
     count: 11,
     IconComponent: BiBox,
@@ -72,15 +92,19 @@ const courseItems = [
     author: "Desmond Essuman",
     lessons: 22,
     date: "18/04/25"
-  }
-
-]
+  },
+  
+  
+];
 
 export default function DashboardPage() {
   return (
-    <div className='w-full  !mt-4 '>
-      <div className="overflow-hidden w-full">
-        <div className='grid grid-cols-3 gap-x-8 !w-full  gap-y-3 min-w-[70rem] overflow-x-auto'>
+    <div className="w-full   ">
+      <div className=" w-full ">
+        <div
+          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]"
+         
+        >
           {dashboardItems.map((item) => {
             const Icon = item.IconComponent;
             const topCurves = (
@@ -130,11 +154,15 @@ export default function DashboardPage() {
             return (
               <div
                 key={item.id}
-                className={`rounded-[1.2rem]  !border  inline-block z-10 !min-w-[22rem]`} style={{ backgroundColor: item.backgrounndStyle, borderColor: item.borderStyle }}
+                className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 !min-w-[32rem] mt-20`}
+                style={{
+                  backgroundColor: item.backgroundStyle,
+                  borderColor: item.borderStyle,
+                }}
               >
                 <div className="flex items-center gap-x-6 !p-7 relative">
                   {topCurves}
-                  <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10">
+                  <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10 ">
                     <Icon className="!text-xl !text-[#F8AF43]" />
                   </div>
                   <div className="inline-flex flex-col">
@@ -159,12 +187,14 @@ export default function DashboardPage() {
           })}
         </div>
       </div>
-      <p className='text-white !mt-12'>Continue</p>
-      <div className='bg-[#222222] flex justify-between items-center !p-3 sm:!p-5 !mt-8 rounded-[1.2rem]'>
-        <div className='flex items-center gap-x-4'>
+
+      <p className="text-white !mt-12">Continue</p>
+
+      <div className="bg-[#222222] flex justify-between items-center !p-3 sm:!p-5 !mt-8 rounded-[1.2rem]">
+        <div className="flex items-center gap-x-4">
           <Image
             src="/images/clock-image.png"
-            className='block max-w-[120px] max-h-[120px] sm:!max-w-[150px] sm:!max-h-[150px] object-contain rounded-[1.2rem]'
+            className="block max-w-[120px] max-h-[120px] sm:!max-w-[150px] sm:!max-h-[150px] object-contain rounded-[1.2rem]"
             alt="Login Background"
             fill={false}
             width={250}
@@ -174,13 +204,20 @@ export default function DashboardPage() {
             priority
             style={{ objectFit: "cover", height: 150 }}
           />
-          <div className='flex flex-col !gap-y-4 text-white !overflow-hidden' >
-            <h5 className='text-[18px] font-semibold !text-nowrap !text-ellipsis max-w-[150px] sm:max-w-full font-comfortaa'>Time management and Impact on Work</h5>
-            <p className='font-normal text-xs opacity-50 max-w-[369px] overflow-hidden line-clamp-2 sm:overflow-visible sm:line-clamp-none'>Office ipsum squad circle no innovation while pretend synergize disband eager hour right ballpark well.</p>
-            <small className='text-[#F8AF43] text-xs font-normal '>created by Eric Andeeerson</small>
+          <div className="flex flex-col !gap-y-4 text-white !overflow-hidden">
+            <h5 className="text-[18px] font-semibold !text-nowrap !text-ellipsis max-w-[150px] sm:max-w-full font-comfortaa">
+              Time management and Impact on Work
+            </h5>
+            <p className="font-normal text-xs opacity-50 max-w-[369px] overflow-hidden line-clamp-2 sm:overflow-visible sm:line-clamp-none">
+              Office ipsum squad circle no innovation while pretend synergize
+              disband eager hour right ballpark well.
+            </p>
+            <small className="text-[#F8AF43] text-xs font-normal ">
+              created by Eric Andeeerson
+            </small>
           </div>
         </div>
-        <div className="hidden sm:flex gap-x-2">
+        <div className="hidden sm:flex gap-x-2 overflow-hidden">
           <div className="h-[35px] w-[35px] rounded-full aspect-square bg-white"></div>
           <div className="h-[35px] w-[35px] rounded-full aspect-square bg-white"></div>
           <div className="h-[35px] w-[35px] rounded-full aspect-square bg-white"></div>
@@ -188,25 +225,24 @@ export default function DashboardPage() {
         </div>
         <FiChevronRight className="hidden sm:block text-white" />
       </div>
-      <p className='text-white !mt-10'>Recently published</p>
-      <div className='overflow-hidden'>
-      <div className='grid  grid-cols-4  gap-x-6 gap-y-3 !mt-8  items-center place-content-center min-w-[70rem]'>
-        {courseItems.map((item, index) => {
-          return (
-            <CourseCard
-              image={item.image}
-              key={index}
-              title={item.title}
-              description={item.description}
-              author={item.author}
-              lessons={item.lessons}
-              date={item.date}
-            />
-          )
-        }
-        )}
-      </div>
-      
+
+      <p className="text-white !mt-10">Recently published</p>
+      <div className="overflow-hidden">
+        <div className="grid grid-cols-4 gap-x-6 gap-y-3 !mt-8 items-center place-content-center min-w-[70rem]">
+          {courseItems.map((item, index) => {
+            return (
+              <CourseCard
+                image={item.image}
+                key={index}
+                title={item.title}
+                description={item.description}
+                author={item.author}
+                lessons={item.lessons}
+                date={item.date}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
