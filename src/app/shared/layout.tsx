@@ -1,15 +1,16 @@
 // app/shared/layout.tsx
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import SidebarMenu from "@/components/layout/sidebar";
-import Header from "@/components/layout/header/header";
 import { Providers } from "../provider";
 import "../../styles/globals.css";
 import MobileViewHeader from "@/components/layout/header/mobile-view-header";
 import TabNavigator from "@/components/layout/tab-navigation";
-import { Dispatch, SetStateAction } from "react";
+import dynamic from "next/dynamic";
 import { ViewModeProvider } from "@/context/view-mode-context";
+import Header from "@/components/layout/header/header";
+
 
 export default function SharedLayout({ children }: { children: ReactNode }) {
   return (

@@ -16,8 +16,6 @@ export default function HeaderActionsPanel() {
   const [folderName, setFolderName] = useState("");
 
   const { viewMode, setViewMode } = useViewMode();
-
-  console.log(viewMode, "dk");
   const handleCreateFolder = () => {
     console.log("Folder created:", folderName);
     setIsOpen(false);
