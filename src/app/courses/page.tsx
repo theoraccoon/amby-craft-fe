@@ -8,7 +8,7 @@ import { useViewMode } from "@/context/view-mode-context";
 import CourseCard from "@/components/ui/card/course-card";
 
 export default function CoursesPage() {
-  const { viewMode, setViewMode } = useViewMode();
+  const { viewMode } = useViewMode();
 
   return (
     <div className="flex flex-col gap-10 w-full !mt-8 ">
