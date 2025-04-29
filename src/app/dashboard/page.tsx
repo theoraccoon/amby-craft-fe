@@ -5,7 +5,7 @@ import { BiBookOpen, BiBook, BiBox } from "react-icons/bi";
 import { GoArrowRight } from "react-icons/go";
 import { FiChevronRight } from "react-icons/fi";
 import Image from "next/image";
-import CourseCard from '@/components/ui/card/course-card';
+import CourseCard from "@/components/ui/card/course-card";
 
 const dashboardItems = [
   {
@@ -64,47 +64,46 @@ const courseItems = [
   {
     image: "/images/course-thumb-1.png",
     title: "Time management and Impact on Work",
-    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    description:
+      "Office ipsum squad circle no innovation while pretend synergize disband...",
     author: "Desmond Essuman",
     lessons: 22,
-    date: "18/04/25"
+    date: "18/04/25",
   },
   {
     image: "/images/course-thumb-1.png",
     title: "Content Management Systems",
-    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    description:
+      "Office ipsum squad circle no innovation while pretend synergize disband...",
     author: "Desmond Essuman",
     lessons: 22,
-    date: "18/04/25"
+    date: "18/04/25",
   },
   {
     image: "/images/course-thumb-1.png",
     title: "Design for inclusivity and Design Systems",
-    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    description:
+      "Office ipsum squad circle no innovation while pretend synergize disband...",
     author: "Desmond Essuman",
     lessons: 22,
-    date: "18/04/25"
+    date: "18/04/25",
   },
   {
     image: "/images/course-thumb-1.png",
     title: "Design for inclusivity and Design Systems",
-    description: "Office ipsum squad circle no innovation while pretend synergize disband...",
+    description:
+      "Office ipsum squad circle no innovation while pretend synergize disband...",
     author: "Desmond Essuman",
     lessons: 22,
-    date: "18/04/25"
+    date: "18/04/25",
   },
-  
-  
 ];
 
 export default function DashboardPage() {
   return (
     <div className="w-full   ">
       <div className=" w-full ">
-        <div
-          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]"
-         
-        >
+        <div className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]">
           {dashboardItems.map((item) => {
             const Icon = item.IconComponent;
             const topCurves = (
