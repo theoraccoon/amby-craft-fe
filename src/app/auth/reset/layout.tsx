@@ -24,7 +24,7 @@ export default function ResetFormLayout({
       </div>
 
       {/* Main Content (1/3 on desktop) */}
-      <div className="lg:col-span-2 md:col-span-3 w-full flex items-center justify-center px-4">
+      <div className="lg:col-span-2 md:col-span-3 w-full flex items-center justify-center px-7">
         <div className="w-full max-w-md">
           <div className="min-h-[90vh] flex flex-col justify-center">
             {children}

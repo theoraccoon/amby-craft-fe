@@ -50,15 +50,17 @@ const CustomButton = ({
 
   return (
     <Button
+    
     width={"full"}
     height={["40px", "45px", "50px"]}
-    fontSize={["sm", "md", "lg"]} 
+    fontSize={["14px"]} 
       bg={variantStyles.bg}
       color={variantStyles.color}
       _hover={variantStyles._hover}
       borderRadius="10px"
       size="md"
       className="shadow-md"
+      fontWeight={600}
       leftIcon={leftIcon}
       rightIcon={rightIcon}
       {...rest}
