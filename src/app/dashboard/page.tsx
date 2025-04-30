@@ -152,7 +152,7 @@ export default function DashboardPage() {
             return (
               <div
                 key={item.id}
-                className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 !min-w-[32rem] mt-20`}
+                className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 min-w-[21rem] sm:!min-w-[32rem] mt-20`}
                 style={{
                   backgroundColor: item.backgroundStyle,
                   borderColor: item.borderStyle,
@@ -225,7 +225,7 @@ export default function DashboardPage() {
       </div>
 
       <p className="text-white !mt-10">Recently published</p>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818]">
         <div className="grid grid-cols-4 gap-x-6 gap-y-3 !mt-8 items-center place-content-center min-w-[70rem]">
           {courseItems.map((item, index) => {
             return (
