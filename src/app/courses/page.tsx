@@ -26,7 +26,9 @@ export default function CoursesPage() {
       </section>
 
       <h2 className="text-[14px] font-semibold tracking-wide text-secondary">Content</h2>
-      <section className={`flex ${viewMode === 'grid' ? 'flex-row' : 'flex-col'} gap-4`}>
+      <section
+        className={`flex ${viewMode === 'grid' ? 'flex-wrap' : 'flex-col'} gap-4 h-[600px] `}
+      >
         {[1, 2, 3, 4, 5, 6].map((_, i) => (
           <div key={i}>
             {viewMode === 'grid' ? (
