@@ -51,7 +51,7 @@ export default function CoursesPage() {
           Folders
         </span>
         {currentPath.map((folder, idx) => (
-          <span key={idx} className="flex inline-flex items-center">
+          <span key={idx} className=" inline-flex items-center">
             <span className="text-secondary px-5 text-lg">›</span>
             <span
             className={`cursor-pointer hover:underline ${idx === currentPath.length - 1 ? 'text-secondary' : ''}`}
