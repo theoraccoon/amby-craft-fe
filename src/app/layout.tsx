@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Comfortaa, Open_Sans } from "next/font/google"; // Example if you're using a font
+import { Comfortaa, Open_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { Providers } from "./provider";
+import { ViewModeProvider } from "@/context/view-mode-context";
 
 const comfortaa = Comfortaa({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${comfortaa.className} ${openSans.className}`}>
       <body className={comfortaa.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <ViewModeProvider>{children}</ViewModeProvider>
+        </Providers>
       </body>
     </html>
   );
