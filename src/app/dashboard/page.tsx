@@ -37,27 +37,7 @@ const dashboardItems = [
     backgrounndStyle: "#00BA7F26",
     curvesColor: "#00BA7F",
     borderColor: "#00BA7F26",
-  },
-  {
-    id: "micreolearning",
-    text: "Total Question Bank",
-    count: 11,
-    IconComponent: BiBox,
-    borderStyle: "#00BA7F",
-    backgrounndStyle: "#00BA7F26",
-    curvesColor: "#00BA7F",
-    borderColor: "#00BA7F26",
-  },
-  {
-    id: "micerolearning",
-    text: "Total Question Bank",
-    count: 11,
-    IconComponent: BiBox,
-    borderStyle: "#00BA7F",
-    backgrounndStyle: "#00BA7F26",
-    curvesColor: "#00BA7F",
-    borderColor: "#00BA7F26",
-  },
+  }
 ];
 
 const courseItems = [
@@ -99,10 +79,10 @@ const courseItems = [
 
 export default function DashboardPage() {
   return (
-    <div className="w-full   ">
-      <div className=" w-full ">
+    <div className="w-full  mt-4 overflow-y-scroll">
+      <div className=" w-full overflow-hidden">
         <div
-          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]"
+          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-5 sm:gap-x-8  scroll-smooth relative min-w-[]  sm:min-w-[70rem]"
          
         >
           {dashboardItems.map((item) => {
@@ -154,7 +134,7 @@ export default function DashboardPage() {
             return (
               <div
                 key={item.id}
-                className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 !min-w-[32rem] mt-20`}
+                className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 min-w-[21rem] sm:!min-w-[32rem] mt-20`}
                 style={{
                   backgroundColor: item.backgroundStyle,
                   borderColor: item.borderStyle,
@@ -227,7 +207,7 @@ export default function DashboardPage() {
       </div>
 
       <p className="text-white !mt-10">Recently published</p>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818]">
         <div className="grid grid-cols-4 gap-x-6 gap-y-3 !mt-8 items-center place-content-center min-w-[70rem]">
           {courseItems.map((item, index) => {
             return (

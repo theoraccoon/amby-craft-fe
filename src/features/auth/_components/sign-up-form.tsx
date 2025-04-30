@@ -32,7 +32,7 @@ export default function SignUpForm() {
       </h1>
 
       {/* Input Fields */}
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-5 w-full">
         <InputField label="First name" />
         <InputField label="Last name" />
         <InputField label="Email address" />
@@ -44,9 +44,9 @@ export default function SignUpForm() {
       </div>
 
       {/* Buttons */}
-      <div className="flex flex-col gap-4 w-full items-center mt-4">
+      <div className="flex flex-col gap-5 w-full items-center mt-4">
         <CustomButton
-          leftIcon={<CiLogin />}
+          leftIcon={<CiLogin style={{fontWeight:"bold"}} />}
           onClick={() => router.push("/dashboard")}
         >
           Create Account
@@ -54,7 +54,7 @@ export default function SignUpForm() {
 
         <p className="text-white/40 text-sm">Or</p>
 
-        <CustomButton leftIcon={<IoLogoGoogle />} variant="secondary">
+        <CustomButton leftIcon={<IoLogoGoogle className="font-bold"/>} variant="secondary">
           Sign in with Google
         </CustomButton>
       </div>
@@ -70,7 +70,7 @@ export default function SignUpForm() {
             Sign in
           </span>
         </p>
-        <p className="text-white/40">Imprint • Privacy • Platform Terms</p>
+        <p className="text-[#FFFFFF4D]">Imprint • Privacy • Platform Terms</p>
       </div>
     </div>
   );

@@ -42,12 +42,12 @@ export default function ResetPasswordForm() {
       </div>
 
       {/* Input Field */}
-      <div className="flex flex-col gap-4 w-full ">
+      <div className="flex flex-col gap-5 w-full ">
         <InputField label="Email" type="email" />
       </div>
 
       {/* Button */}
-      <div className="flex flex-col gap-4 w-full items-center mt-4">
+      <div className="flex flex-col gap-5 w-full items-center mt-4">
         <CustomButton>Send</CustomButton>
       </div>
 
