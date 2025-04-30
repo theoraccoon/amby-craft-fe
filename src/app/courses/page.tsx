@@ -8,26 +8,30 @@ import  folders  from "@/data/folders-card-data";
 import { rootCourses as initialRootCourses } from "@/data/root-courses-data";
 import TextInputModal from '@/components/modals/input-modal';
 import EmptyState from "./_components/EmptyState";
+import type { Course, Folder } from "@/types/index"; 
 
 export default function CoursesPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [folderName, setFolderName] = useState("");
   const [currentPath, setCurrentPath] = useState<string[]>([]);
 
-  const [rootCourses, setRootCourses] = useState(initialRootCourses);
+  const [rootCourses] = useState(initialRootCourses);
 
   const handleCreateFolder = () => {
     console.log("Folder created:", folderName);
     setIsOpen(false);
   };
 
-  const getCurrentFolder = (): any => {
-    let current: any = { children: folders };
+  const getCurrentFolder = (): Folder => {
+    let current: Folder = { children: folders };
     for (const part of currentPath) {
-      current = current.children?.find((f: any) => f.title === part);
+      current = current.children?.find((f: Folder) => f.title === part)!;
     }
     return current;
   };
+
+  const currentFolder = getCurrentFolder();
+  
 
   return (
     <div className="flex flex-col gap-10 w-full !mt-8">
@@ -126,24 +130,24 @@ export default function CoursesPage() {
         />
       )}
 
-      {getCurrentFolder().courses?.length > 0 && (
-        <>
-          <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
-            Content
-          </h2>
-          <section className="flex flex-col gap-4">
-            {getCurrentFolder().courses.map((course: any, idx: number) => (
-              <CourseInfoCard
-                key={idx}
-                title={course.title}
-                description={course.description}
-                imageUrl={course.imageUrl}
-                instructor={course.instructor}
-                initials={course.initials}
-                lessonsCount={course.lessonsCount}
-                date={course.date}
-              />
-            ))}
+  {currentFolder.courses && currentFolder.courses.length > 0 && (
+  <>
+    <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
+      Content
+    </h2>
+    <section className="flex flex-col gap-4">
+      {currentFolder.courses.map((course: Course, idx: number) => (
+        <CourseInfoCard
+          key={idx}
+          title={course.title}
+          description={course.description}
+          imageUrl={course.imageUrl}
+          instructor={course.instructor}
+          initials={course.initials}
+          lessonsCount={course.lessonsCount}
+          date={course.date}
+        />
+      ))}
           </section>
         </>
       )}
