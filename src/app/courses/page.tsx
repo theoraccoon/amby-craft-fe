@@ -3,45 +3,150 @@
 import CourseInfoCard from "@/components/ui/card/course-info-card";
 import FolderCard from "@/components/ui/card/course-folder-card"
 import React from "react";
-import { folders } from "@/data/folders-card-data";
+import { useState } from 'react';
+import  folders  from "@/data/folders-card-data";
+import { rootCourses as initialRootCourses } from "@/data/root-courses-data";
+import TextInputModal from '@/components/modals/input-modal';
+import EmptyState from "./_components/EmptyState";
 
 export default function CoursesPage() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [folderName, setFolderName] = useState("");
+  const [currentPath, setCurrentPath] = useState<string[]>([]);
+
+  const [rootCourses, setRootCourses] = useState(initialRootCourses);
+
+  const handleCreateFolder = () => {
+    console.log("Folder created:", folderName);
+    setIsOpen(false);
+  };
+
+  const getCurrentFolder = (): any => {
+    let current: any = { children: folders };
+    for (const part of currentPath) {
+      current = current.children?.find((f: any) => f.title === part);
+    }
+    return current;
+  };
+
   return (
-    <div className="flex flex-col gap-10 w-full !mt-8 ">
-   
-   <h2 className="text-[14px] font-semibold tracking-wide text-secondary pb-[18px]">Folders</h2>
-    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px]">
-     
-    {folders.map((folder, idx) => (
-        <FolderCard 
-        key={idx} 
-        title={folder.title}
-        badgeCount={folder.badgeCount}
-        onClick={() => console.log(folder)} />
-      ))}
-      <FolderCard title="New folder" variant="new" onClick={() => console.log('Create folder')} />
-    </section>
+    <div className="flex flex-col gap-10 w-full !mt-8">
+      <TextInputModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        value={folderName}
+        onChange={setFolderName}
+        onDone={handleCreateFolder}
+        title="Create New Folder"
+        placeholder="Enter folder title"
+        confirmText="Create"
+        cancelText="Cancel"
+      />
+
+      <div className="text-[14px] font-semibold tracking-wide text-[#b9b8b8] pb-[18px]">
+        <span
+         className={`cursor-pointer hover:underline ${currentPath.length === 0 ? 'text-secondary' : ''}`}
+         onClick={() => setCurrentPath([])}
+        >
+          Folders
+        </span>
+        {currentPath.map((folder, idx) => (
+          <span key={idx} className="flex inline-flex items-center">
+            <span className="text-secondary px-5 text-lg">›</span>
+            <span
+            className={`cursor-pointer hover:underline ${idx === currentPath.length - 1 ? 'text-secondary' : ''}`}
+            onClick={() => setCurrentPath(currentPath.slice(0, idx + 1))}
+          >
+            {folder}
+          </span>
+          </span>
+        ))}
+      </div>
+
+      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] mb-6">
+        {getCurrentFolder().children?.map((folder: any, idx: number) => (
+          <FolderCard
+            key={idx}
+            title={folder.title}
+            badgeCount={folder.badgeCount}
+            onClick={() =>
+              folder.children || folder.courses
+                ? setCurrentPath([...currentPath, folder.title])
+                : console.log(folder)
+            }
+          />
+        ))}
+        <FolderCard
+          title="New folder"
+          variant="new"
+          onClick={() => setIsOpen(true)}
+        />
+      </section>
 
 
+      {!getCurrentFolder().children?.length &&
+        !getCurrentFolder().courses?.length &&
+        currentPath.length > 0 && (
+          <EmptyState 
+          title="You don’t have any content"
+          subtitle="Created courses will show up here"
+          buttonText="Create Course"
+          onClick={() => console.log("Create Course")}
+          />
+        )}
 
-    <h2 className="text-[14px] font-semibold tracking-wide text-secondary">Content</h2>
-    <section className="flex flex-col gap-4">
-    {[1, 2, 3].map((_, i) => (
-      <div  key={i}>
-     <CourseInfoCard
-        title="Time management and Impact on Work"
-        description="Office ipsum squad circle no innovation while pretend synergize disband eager hour right ballpark well."
-        imageUrl="/images/course-thumb-2.png"
-        instructor="Eric Andeeerson"
-        initials="EA"
-        lessonsCount={22}
-        date="18 April, 2025"
-      />   
-      </div> 
-       ))}
+      {currentPath.length === 0 && rootCourses.length > 0 && (
+        <>
+          <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
+            Content
+          </h2>
+          <section className="flex flex-col gap-4">
+            {rootCourses.map((course: any, idx: number) => (
+              <CourseInfoCard
+                key={idx}
+                title={course.title}
+                description={course.description}
+                imageUrl={course.imageUrl}
+                instructor={course.instructor}
+                initials={course.initials}
+                lessonsCount={course.lessonsCount}
+                date={course.date}
+              />
+            ))}
+          </section>
+        </>
+      )}
 
-    </section>
-  </div>
+      {currentPath.length === 0 && rootCourses.length === 0 && (
+       <EmptyState
+       title="You don’t have any content"
+       subtitle="Created courses will show up here"
+       buttonText="Create Course"
+       onClick={() => console.log("Create Course")}
+        />
+      )}
 
+      {getCurrentFolder().courses?.length > 0 && (
+        <>
+          <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
+            Content
+          </h2>
+          <section className="flex flex-col gap-4">
+            {getCurrentFolder().courses.map((course: any, idx: number) => (
+              <CourseInfoCard
+                key={idx}
+                title={course.title}
+                description={course.description}
+                imageUrl={course.imageUrl}
+                instructor={course.instructor}
+                initials={course.initials}
+                lessonsCount={course.lessonsCount}
+                date={course.date}
+              />
+            ))}
+          </section>
+        </>
+      )}
+    </div>
   );
 }

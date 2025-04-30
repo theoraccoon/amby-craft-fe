@@ -26,7 +26,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </div>
       </div>
 
-      <h3 className="text-white font-[600] text-[1.13rem] leading-[100%] tracking-[0%] font-comfortaa !mb-2">
+      <h3 className="text-white font-[600] text-[1.13rem] leading-[100%] tracking-[0%] font-comfortaa !mb-2 line-clamp-1">
         {title}
       </h3>
 
