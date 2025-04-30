@@ -1,23 +1,21 @@
-"use client";
-import { BiSearch } from "react-icons/bi";
-import SearchInputField from "../../ui/input/search-input";
-import HeaderActionsPanel from "./header-actions-panel";
-import Nav from "./nav-header";
-import { usePathname } from "next/navigation";
+'use client'
+import { BiSearch } from 'react-icons/bi'
+import SearchInputField from '../../ui/input/search-input'
+import HeaderActionsPanel from './header-actions-panel'
+import Nav from './nav-header'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
-  const isDashboardPage = pathname === "/dashboard";
+  const isDashboardPage = pathname === '/dashboard'
 
   return (
     <div className="hidden md:flex w-full flex-col h-[8vh] justify-center">
       <div className="flex items-center w-full justify-between">
         {/* Search Bar */}
         <div className="flex items-center h-full w-[20%]">
-          <SearchInputField
-            leftIcon={<BiSearch color="#A0AEC0" size="20px" />}
-          />
+          <SearchInputField leftIcon={<BiSearch color="#A0AEC0" size="20px" />} />
         </div>
         {!isDashboardPage && (
           <div className="flex items-center h-full w-[30%]">
@@ -29,5 +27,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  );
+  )
 }
