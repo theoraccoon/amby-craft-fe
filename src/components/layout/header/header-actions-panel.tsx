@@ -8,10 +8,11 @@ import RoundedButton from "@/components/ui/button/rounded-button";
 import { useState } from "react";
 import TextInputModal from "@/components/modals/input-modal";
 import { useViewMode } from "@/context/view-mode-context";
-
+import { HeaderActionsPanelProps } from "@/types";
 import { TbMenu2 } from "react-icons/tb";
 
-export default function HeaderActionsPanel() {
+
+export default function HeaderActionsPanel({ isDashboardPage }: HeaderActionsPanelProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [folderName, setFolderName] = useState("");
 
@@ -26,20 +27,23 @@ export default function HeaderActionsPanel() {
     <div className="flex items-center  justify-end w-full  gap-10 ">
       <div className="flex items-center justify-end w-[70%]  gap-10  ">
         <ToggleTextWithIcon icon={<FiUserPlus />} label="Add Team" />
-        <div className="flex items-center gap-4">
-          <TfiLayoutGrid2Alt
-            onClick={() => setViewMode("grid")}
-            color={viewMode === "grid" ? "white" : "#333333"}
-            className="cursor-pointer"
-          />
 
-          <TbMenu2
-            onClick={() => setViewMode("list")}
-            color={viewMode === "list" ? "white" : "#333333"}
-            size={22}
-            className="cursor-pointer"
-          />
-        </div>
+        {!isDashboardPage && (
+          <div className="flex items-center gap-4">
+            <TfiLayoutGrid2Alt
+              onClick={() => setViewMode("grid")}
+              color={viewMode === "grid" ? "white" : "#333333"}
+              className="cursor-pointer"
+            />
+
+            <TbMenu2
+              onClick={() => setViewMode("list")}
+              color={viewMode === "list" ? "white" : "#333333"}
+              size={22}
+              className="cursor-pointer"
+            />
+          </div>
+        )}
       </div>
 
       <div className="flex items-center justify-endw-[30%]  gap-10  ">

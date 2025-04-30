@@ -25,7 +25,7 @@ export default function Header() {
           </div>
         )}
         <div className="flex items-center justify-end w-[50%] h-10 ">
-          <HeaderActionsPanel />
+          <HeaderActionsPanel isDashboardPage={isDashboardPage} />
         </div>
       </div>
     </div>

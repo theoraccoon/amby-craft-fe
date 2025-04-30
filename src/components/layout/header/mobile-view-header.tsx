@@ -4,9 +4,9 @@ import SearchInputField from "@/components/ui/input/search-input";
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
+import profileImage from "@/images/profile-picture.png";
 
 export default function MobileViewHeader() {
-  const profileImage = "/images/profile-picture.png";
   return (
     <div className="w-full">
       <SearchInputField
