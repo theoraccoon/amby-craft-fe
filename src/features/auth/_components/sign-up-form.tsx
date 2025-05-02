@@ -6,7 +6,6 @@ import "../../../styles/globals.css";
 import CustomButton from "@/components/ui/button/custom-button";
 import { CiLogin } from "react-icons/ci";
 import { IoLogoGoogle } from "react-icons/io";
-import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import imageUrlAmbylon from "@/images/amby-svg.svg";
 
@@ -38,7 +37,6 @@ export default function SignUpForm() {
         <InputField label="Email address" />
         <InputField
           label="Password"
-          rightIcon={<IoEyeOutline color="white" />}
           type="password"
         />
       </div>

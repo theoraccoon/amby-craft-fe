@@ -82,7 +82,7 @@ export default function DashboardPage() {
     <div className="w-full  mt-4 overflow-y-scroll">
       <div className=" w-full overflow-hidden">
         <div
-          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-5 sm:gap-x-8  scroll-smooth relative min-w-[]  sm:min-w-[70rem]"
+          className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-5 sm:gap-x-8  scroll-smooth relative   sm:min-w-[70rem]"
          
         >
           {dashboardItems.map((item) => {

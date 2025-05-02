@@ -5,8 +5,8 @@ import Image from "next/image";
 import "../../../styles/globals.css";
 import CustomButton from "@/components/ui/button/custom-button";
 import { IoLogoGoogle } from "react-icons/io";
-import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -34,25 +34,25 @@ export default function LoginForm() {
       <div className="flex flex-col gap-5 w-full">
         <InputField label="Email Address" />
         <InputField
+          type="password"
           label="Password"
           rightLabel="Forgot password?"
-          rightIcon={<IoEyeOutline color="white" />}
+
           rightLabelClick={() => router.push("/auth/reset")}
         />
       </div>
-
       {/* Buttons */}
       <div className="flex flex-col gap-5 w-full items-center mt-4">
         <CustomButton
           leftIcon={
             <Image
-            src="/images/login-icon.svg"
-            alt="AMBYLON Logo"
-            fill
-            className="object-contain !h-3 !w-3 !relative !-top-0.5"
-            priority
-          />
-        }
+              src="/images/login-icon.svg"
+              alt="AMBYLON Logo"
+              fill
+              className="object-contain !h-3 !w-3 !relative !-top-0.5"
+              priority
+            />
+          }
           onClick={() => router.push("/dashboard")}
         >
           Login
@@ -79,5 +79,5 @@ export default function LoginForm() {
         <p className="text-white/40 text-xs md:text-sm ">Imprint • Privacy • Platform Terms</p>
       </div>
     </div>
-  ); 
+  );
 }
