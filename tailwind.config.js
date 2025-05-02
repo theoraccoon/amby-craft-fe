@@ -10,10 +10,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#F8AF43",
-        secondary: "#FFFFFF",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        tertiary: "var(--tertiary)",
         "primary-foreground": "var(--primary-foreground)",
         "secondary-foreground": "var(--secondary-foreground)",
       },
@@ -66,5 +67,6 @@ module.exports = {
       "6xl": "4rem",
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
+
 };

@@ -4,18 +4,19 @@ import InputField from "@/components/ui/input/input";
 import Image from "next/image";
 import "../../../styles/globals.css";
 import CustomButton from "@/components/ui/button/custom-button";
+import { CiLogin } from "react-icons/ci";
 import { IoLogoGoogle } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import imageUrlAmbylon from "@/images/amby-svg.svg";
 
-export default function LoginForm() {
+export default function SignUpForm() {
   const router = useRouter();
-  const imageUrlAmbylon = "/images/amby-svg.svg";
 
   return (
-    <div className="w-full flex flex-col  justify-center gap-4 text-white h-screen">
+    <div className="w-full flex flex-col h-screen justify-center gap-4 text-white bg-black">
       {/* Logo */}
-      <div className=" w-full sm:h-[8rem] relative h-14">
+      <div className=" w-full h-[7rem]  relative">
         <Image
           src={imageUrlAmbylon}
           alt="AMBYLON Logo"
@@ -26,58 +27,51 @@ export default function LoginForm() {
       </div>
 
       {/* Form Header */}
-      <h1 className="text-[1.5rem] sm:text-[2rem] mt-20 mb-10 font-semibold">
-        Login to your account
+      <h1 className="text-[1.5rem] sm:text-[2rem] mt-4 font-semibold ">
+        Enter details to register
       </h1>
 
       {/* Input Fields */}
       <div className="flex flex-col gap-5 w-full">
-        <InputField label="Email Address" />
+        <InputField label="First name" />
+        <InputField label="Last name" />
+        <InputField label="Email address" />
         <InputField
           label="Password"
-          rightLabel="Forgot password?"
           rightIcon={<IoEyeOutline color="white" />}
-          rightLabelClick={() => router.push("/auth/reset")}
+          type="password"
         />
       </div>
 
       {/* Buttons */}
       <div className="flex flex-col gap-5 w-full items-center mt-4">
         <CustomButton
-          leftIcon={
-            <Image
-            src="/images/login-icon.svg"
-            alt="AMBYLON Logo"
-            fill
-            className="object-contain !h-3 !w-3 !relative !-top-0.5"
-            priority
-          />
-        }
+          leftIcon={<CiLogin style={{fontWeight:"bold"}} />}
           onClick={() => router.push("/dashboard")}
         >
-          Login
+          Create Account
         </CustomButton>
 
         <p className="text-white/40 text-sm">Or</p>
 
-        <CustomButton leftIcon={<IoLogoGoogle />} variant="secondary">
+        <CustomButton leftIcon={<IoLogoGoogle className="font-bold"/>} variant="secondary">
           Sign in with Google
         </CustomButton>
       </div>
 
       {/* Footer */}
-      <div className="text-center my-6 text-xs w-full space-y-2">
-        <p className=" text-xs md:text-[0.9375rem] ">
-          You don’t have an AMBYLON CRAFT account yet?{" "}
+      <div className="text-center my-6 text-xs w-full ">
+        <p>
+          Already have an AMBYLON CRAFT account?{" "}
           <span
             className="text-primary  cursor-pointer"
-            onClick={() => router.push("/auth/register")}
+            onClick={() => router.push("/auth/login")}
           >
-            Register now
+            Sign in
           </span>
         </p>
-        <p className="text-white/40 text-xs md:text-sm ">Imprint • Privacy • Platform Terms</p>
+        <p className="text-[#FFFFFF4D]">Imprint • Privacy • Platform Terms</p>
       </div>
     </div>
-  ); 
+  );
 }

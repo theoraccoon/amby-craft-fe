@@ -5,17 +5,19 @@
 
 :root {
   --primary: #F8AF43;
-  --secondary: #F8AF43;
-  --background: #0a0a0a;
+  --secondary: #FFFFFF;
+  --background: #282828;
   --foreground: #ededed;
-  --primary-foreground: #171717;
+  --tertiary: #333333;
+  --primary-foreground: #181818;
   --secondary-foreground: #ffffff;
+
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --primary: #F8AF43;
-    --secondary: #F8AF43;
+    --secondary:  #ffffff;
     --background: #0a0a0a;
     --foreground: #F8AF43;
     --primary-foreground: #171717;
@@ -95,3 +97,14 @@ body, p {
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
+
+
+
+@layer utilities {
+  .glow-shadow {
+    box-shadow: 0 0 24px #F8AF4340;
+  }
+}
+
+
+

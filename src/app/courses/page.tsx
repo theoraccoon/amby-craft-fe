@@ -1,10 +1,13 @@
-"use client";
+ 'use client'
+
 
 import React, { useState } from "react";
 import CourseInfoCard from "@/components/ui/card/course-info-card";
+import CourseCard from '@/components/ui/card/course-card'
 import FolderCard from "@/components/ui/card/course-folder-card";
 import TextInputModal from "@/components/modals/input-modal";
 import EmptyState from "./_components/EmptyState";
+import { useViewMode } from '@/context/view-mode-context'
 
 import folders from "@/data/folders-card-data";
 import { rootCourses as initialRootCourses } from "@/data/root-courses-data";
@@ -12,6 +15,7 @@ import { rootCourses as initialRootCourses } from "@/data/root-courses-data";
 import type { Course, Folder } from "@/types/index";
 
 export default function CoursesPage() {
+  const { viewMode } = useViewMode()
   const [isOpen, setIsOpen] = useState(false);
   const [folderName, setFolderName] = useState("");
   const [currentPath, setCurrentPath] = useState<string[]>([]);
@@ -35,7 +39,7 @@ export default function CoursesPage() {
   const currentFolder = getCurrentFolder();
 
   return (
-    <div className="flex flex-col gap-10 w-full !mt-8">
+     <div className="flex flex-col gap-10 w-full !mt-8">
       <TextInputModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
@@ -109,18 +113,35 @@ export default function CoursesPage() {
           <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
             Content
           </h2>
-          <section className="flex flex-col gap-4">
+          <section className={`flex ${viewMode === 'grid' ? 'flex-wrap' : 'flex-col'} gap-4 h-[600px] `}>
             {rootCourses.map((course: Course, idx: number) => (
-              <CourseInfoCard
-                key={idx}
-                title={course.title}
-                description={course.description}
-                imageUrl={course.imageUrl}
-                instructor={course.instructor}
-                initials={course.initials}
-                lessonsCount={course.lessonsCount}
-                date={course.date}
-              />
+             <div key={idx}>
+             {viewMode === 'grid' ? (
+               <>
+                 <CourseCard
+                   title={course.title}
+                   description={course.description}
+                   image={course.imageUrl}
+                   author={course.instructor}
+                   lessonsCount={course.lessonsCount}
+                   date={course.date}
+                 />
+               </>
+             ) : (
+               <>
+                <CourseInfoCard
+               key={idx}
+               title={course.title}
+               description={course.description}
+               imageUrl={course.imageUrl}
+               instructor={course.instructor}
+               initials={course.initials}
+               lessonsCount={course.lessonsCount}
+               date={course.date}
+             />
+               </>
+             )}
+           </div>
             ))}
           </section>
         </>
@@ -142,9 +163,24 @@ export default function CoursesPage() {
           <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
             Content
           </h2>
-          <section className="flex flex-col gap-4">
+          <section className={`flex ${viewMode === 'grid' ? 'flex-wrap' : 'flex-col'} gap-4 h-[600px] `}>
             {currentFolder.courses.map((course: Course, idx: number) => (
-              <CourseInfoCard
+              <div key={idx}>
+              {viewMode === 'grid' ? (
+                <>
+                  <CourseCard
+                    key={idx}
+                    title={course.title}
+                    description={course.description}
+                    image={course.imageUrl}
+                    author={course.instructor}
+                    lessonsCount={course.lessonsCount}
+                    date={course.date}
+                  />
+                </>
+              ) : (
+                <>
+                 <CourseInfoCard
                 key={idx}
                 title={course.title}
                 description={course.description}
@@ -154,10 +190,14 @@ export default function CoursesPage() {
                 lessonsCount={course.lessonsCount}
                 date={course.date}
               />
+                </>
+              )}
+            </div>
             ))}
           </section>
         </>
       )}
     </div>
   );
+
 }

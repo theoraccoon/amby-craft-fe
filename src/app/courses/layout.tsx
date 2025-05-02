@@ -1,17 +1,9 @@
-"use client";
+import SharedLayout from "@/app/shared/layout";
 
-import "../../styles/globals.css";
-
-export default function CoursesLayout({
+export default function CourseLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <div className="h-full flex flex-col  justify-center">
-        {children}
-      </div>
-    </>
-  );
+  return <SharedLayout>{children}</SharedLayout>;
 }

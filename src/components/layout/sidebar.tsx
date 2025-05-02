@@ -34,7 +34,6 @@ function SidebarMenu() {
     const baseLiClasses = "flex items-center gap-4 !p-2 text-white !pl-6 !mb-3 !border-l-[5px] !border-[#282828]  cursor-pointer";
     
 
-    // const baseLiClasses = "flex items-center gap-4 p-4 text-white !pl-6 !mb-7 cursor-pointer";
     const baseIconClasses = "text-base";
     const baseSpanClasses = "!text-xs";
 

@@ -1,11 +1,10 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { ReactNode, ReactElement } from "react";
 
-
 const buttonVariants = {
   primary: {
     bg: "#F8AF43",
-    color: "white",
+    color: "black",
     _hover: { bg: "#F5A500" },
   },
   secondary: {
@@ -35,8 +34,8 @@ const buttonVariants = {
 interface CustomButtonProps extends ButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "tertiary" | "danger";
-  leftIcon?: ReactElement; 
-  rightIcon?: ReactElement; 
+  leftIcon?: ReactElement;
+  rightIcon?: ReactElement;
 }
 
 const CustomButton = ({
@@ -50,15 +49,17 @@ const CustomButton = ({
 
   return (
     <Button
+    
     width={"full"}
     height={["40px", "45px", "50px"]}
-    fontSize={["sm", "md", "lg"]} 
+    fontSize={["14px"]} 
       bg={variantStyles.bg}
       color={variantStyles.color}
       _hover={variantStyles._hover}
       borderRadius="10px"
       size="md"
       className="shadow-md"
+      fontWeight={600}
       leftIcon={leftIcon}
       rightIcon={rightIcon}
       {...rest}
