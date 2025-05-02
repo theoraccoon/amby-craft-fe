@@ -67,6 +67,7 @@ const courseItems = [
       "Office ipsum squad circle no innovation while pretend synergize disband...",
     author: "Desmond Essuman",
     lessonsCount: 22,
+
     date: "18/04/25",
   },
   {

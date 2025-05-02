@@ -6,4 +6,4 @@ export interface ToggleTextWithIconProps {
     defaultActive?: boolean;
     onToggle?: (active: boolean) => void;
   }
-  
+
