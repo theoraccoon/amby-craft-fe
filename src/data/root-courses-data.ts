@@ -13,7 +13,7 @@ export const rootCourses = [
     {
       title: "Time management and Impact on Work",
       description: "Office ipsum squad circle to innovation while pretend synergize...",
-      imageUrl: "/images/course-thumb-1.png",
+      imageUrl: "/images/course-thumb-2.png",
       instructor: "Desmond Essuman",
       initials: "DE",
       lessonsCount: 22,
@@ -31,7 +31,7 @@ export const rootCourses = [
     {
       title: "Time management and Impact on Work",
       description: "Office ipsum squad circle to innovation while pretend synergize...",
-      imageUrl: "/images/course-thumb-1.png",
+      imageUrl: "/images/course-thumb-2.png",
       instructor: "Desmond Essuman",
       initials: "DE",
       lessonsCount: 22,

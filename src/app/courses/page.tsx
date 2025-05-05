@@ -1,6 +1,5 @@
  'use client'
 
-
 import React, { useState } from "react";
 import CourseInfoCard from "@/components/ui/card/course-info-card";
 import CourseCard from '@/components/ui/card/course-card'
@@ -113,7 +112,7 @@ export default function CoursesPage() {
           <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
             Content
           </h2>
-          <section className={`flex ${viewMode === 'grid' ? 'flex-wrap' : 'flex-col'} gap-4 h-[600px] `}>
+          <section className={`${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6' : 'flex flex-col gap-4'} w-full`}>
             {rootCourses.map((course: Course, idx: number) => (
              <div key={idx}>
              {viewMode === 'grid' ? (
@@ -163,7 +162,7 @@ export default function CoursesPage() {
           <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
             Content
           </h2>
-          <section className={`flex ${viewMode === 'grid' ? 'flex-wrap' : 'flex-col'} gap-4 h-[600px] `}>
+          <section className={`${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6' : 'flex flex-col gap-4'} w-full`}>
             {currentFolder.courses.map((course: Course, idx: number) => (
               <div key={idx}>
               {viewMode === 'grid' ? (
