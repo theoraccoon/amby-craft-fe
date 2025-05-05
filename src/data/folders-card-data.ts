@@ -16,7 +16,25 @@
         {
           title: "React Basics",
           description: "Learn the fundamentals of React.",
+          imageUrl: "/images/course-thumb-2.png",
+          instructor: "Jane Doe",
+          initials: "JD",
+          lessonsCount: 15,
+          date: "20 April, 2025"
+        },
+        {
+          title: "React Basics",
+          description: "Learn the fundamentals of React.",
           imageUrl: "/images/course-thumb-1.png",
+          instructor: "Jane Doe",
+          initials: "JD",
+          lessonsCount: 15,
+          date: "20 April, 2025"
+        },
+        {
+          title: "React Basics",
+          description: "Learn the fundamentals of React.",
+          imageUrl: "/images/course-thumb-2.png",
           instructor: "Jane Doe",
           initials: "JD",
           lessonsCount: 15,

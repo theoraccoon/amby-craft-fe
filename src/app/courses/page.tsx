@@ -7,6 +7,7 @@ import FolderCard from '@/components/ui/card/course-folder-card'
 import TextInputModal from '@/components/modals/input-modal'
 import EmptyState from './_components/EmptyState'
 import { useViewMode } from '@/context/view-mode-context'
+import { FiChevronRight } from 'react-icons/fi'
 
 import folders from '@/data/folders-card-data'
 import { rootCourses as initialRootCourses } from '@/data/root-courses-data'
@@ -51,7 +52,7 @@ export default function CoursesPage() {
         cancelText="Cancel"
       />
 
-      <div className="text-[14px] font-semibold tracking-wide text-[#b9b8b8]">
+      <div className="flex text-[14px] font-semibold tracking-wide text-[#b9b8b8]">
         <span
           className={`cursor-pointer hover:underline ${
             currentPath.length === 0 ? 'text-secondary' : ''
@@ -62,7 +63,7 @@ export default function CoursesPage() {
         </span>
         {currentPath.map((folder, idx) => (
           <span key={idx} className="inline-flex items-center">
-            <span className="text-secondary px-5 text-lg">›</span>
+            <FiChevronRight className="text-secondary mx-2 text-lg" />
             <span
               className={`cursor-pointer hover:underline ${
                 idx === currentPath.length - 1 ? 'text-secondary' : ''
@@ -106,7 +107,11 @@ export default function CoursesPage() {
         <>
           <h2 className="text-[14px] font-semibold tracking-wide text-secondary">Content</h2>
           <section
-            className={`flex ${viewMode === 'grid' ? 'flex-wrap' : 'flex-col'} gap-4 h-[600px] `}
+            className={`${
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'
+                : 'flex flex-col gap-4'
+            } w-full`}
           >
             {rootCourses.map((course: Course, idx: number) => (
               <div key={idx}>
@@ -141,7 +146,6 @@ export default function CoursesPage() {
         </>
       )}
 
-      {/* Empty state when rootCourses is empty */}
       {currentPath.length === 0 && rootCourses.length === 0 && (
         <EmptyState
           title="You don’t have any content"
@@ -151,12 +155,15 @@ export default function CoursesPage() {
         />
       )}
 
-      {/* Folder-level courses */}
       {currentFolder.courses && currentFolder.courses.length > 0 && (
         <>
           <h2 className="text-[14px] font-semibold tracking-wide text-secondary">Content</h2>
           <section
-            className={`flex ${viewMode === 'grid' ? 'flex-wrap' : 'flex-col'} gap-4 h-[600px] `}
+            className={`${
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'
+                : 'flex flex-col gap-4'
+            } w-full`}
           >
             {currentFolder.courses.map((course: Course, idx: number) => (
               <div key={idx}>

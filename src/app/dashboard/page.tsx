@@ -1,103 +1,98 @@
-"use client";
+'use client'
 
-import React from "react";
-import { BiBookOpen, BiBook, BiBox } from "react-icons/bi";
-import { GoArrowRight } from "react-icons/go";
-import { FiChevronRight } from "react-icons/fi";
-import Image from "next/image";
-import CourseCard from "@/components/ui/card/course-card";
+import React from 'react'
+import { BiBookOpen, BiBook, BiBox } from 'react-icons/bi'
+import { GoArrowRight } from 'react-icons/go'
+import { FiChevronRight } from 'react-icons/fi'
+import Image from 'next/image'
+import CourseCard from '@/components/ui/card/course-card'
 
 const dashboardItems = [
   {
-    id: "dashboard",
-    text: "Total Courses",
+    id: 'dashboard',
+    text: 'Total Courses',
     count: 25,
     IconComponent: BiBookOpen,
-    borderStyle: "#F8AF43",
-    backgroundStyle: "#F8AF4326",
-    curvesColor: "#F8AF43",
-    borderColor: "#F8AF4326",
+    borderStyle: '#F8AF43',
+    backgroundStyle: '#F8AF4326',
+    curvesColor: '#F8AF43',
+    borderColor: '#F8AF4326',
   },
   {
-    id: "courses",
-    text: "Total Microlearning",
+    id: 'courses',
+    text: 'Total Microlearning',
     count: 11,
     IconComponent: BiBook,
-    borderStyle: "#9747FF",
-    backgrounndStyle: "#9747FF26",
-    curvesColor: "#9747FF",
-    borderColor: "#9747FF26",
+    borderStyle: '#9747FF',
+    backgrounndStyle: '#9747FF26',
+    curvesColor: '#9747FF',
+    borderColor: '#9747FF26',
   },
   {
-    id: "microlearning",
-    text: "Total Question Bank",
+    id: 'microlearning',
+    text: 'Total Question Bank',
     count: 11,
     IconComponent: BiBox,
-    borderStyle: "#00BA7F",
-    backgrounndStyle: "#00BA7F26",
-    curvesColor: "#00BA7F",
-    borderColor: "#00BA7F26",
+    borderStyle: '#00BA7F',
+    backgrounndStyle: '#00BA7F26',
+    curvesColor: '#00BA7F',
+    borderColor: '#00BA7F26',
   },
   {
-    id: "micreolearning",
-    text: "Total Question Bank",
+    id: 'micreolearning',
+    text: 'Total Question Bank',
     count: 11,
     IconComponent: BiBox,
-    borderStyle: "#00BA7F",
-    backgrounndStyle: "#00BA7F26",
-    curvesColor: "#00BA7F",
-    borderColor: "#00BA7F26",
+    borderStyle: '#00BA7F',
+    backgrounndStyle: '#00BA7F26',
+    curvesColor: '#00BA7F',
+    borderColor: '#00BA7F26',
   },
   {
-    id: "micerolearning",
-    text: "Total Question Bank",
+    id: 'micerolearning',
+    text: 'Total Question Bank',
     IconComponent: BiBox,
-    borderStyle: "#00BA7F",
-    backgrounndStyle: "#00BA7F26",
-    curvesColor: "#00BA7F",
-    borderColor: "#00BA7F26",
+    borderStyle: '#00BA7F',
+    backgrounndStyle: '#00BA7F26',
+    curvesColor: '#00BA7F',
+    borderColor: '#00BA7F26',
   },
-];
+]
 
 const courseItems = [
   {
-    image: "/images/course-thumb-1.png",
-    title: "Time management and Impact on Work",
-    description:
-      "Office ipsum squad circle no innovation while pretend synergize disband...",
-    author: "Desmond Essuman",
+    image: '/images/course-thumb-1.png',
+    title: 'Time management and Impact on Work',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
     lessonsCount: 22,
-
-    date: "18/04/25",
+    date: '18/04/25',
   },
   {
-    image: "/images/course-thumb-1.png",
-    title: "Content Management Systems",
-    description:
-      "Office ipsum squad circle no innovation while pretend synergize disband...",
-    author: "Desmond Essuman",
+    image: '/images/course-thumb-1.png',
+    title: 'Content Management Systems',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
     lessonsCount: 22,
-    date: "18/04/25",
+    date: '18/04/25',
   },
   {
-    image: "/images/course-thumb-1.png",
-    title: "Design for inclusivity and Design Systems",
-    description:
-      "Office ipsum squad circle no innovation while pretend synergize disband...",
-    author: "Desmond Essuman",
+    image: '/images/course-thumb-1.png',
+    title: 'Design for inclusivity and Design Systems',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
     lessonsCount: 22,
-    date: "18/04/25",
+    date: '18/04/25',
   },
   {
-    image: "/images/course-thumb-1.png",
-    title: "Design for inclusivity and Design Systems",
-    description:
-      "Office ipsum squad circle no innovation while pretend synergize disband...",
-    author: "Desmond Essuman",
+    image: '/images/course-thumb-1.png',
+    title: 'Design for inclusivity and Design Systems',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
     lessonsCount: 22,
-    date: "18/04/25",
+    date: '18/04/25',
   },
-];
+]
 
 export default function DashboardPage() {
   return (
@@ -105,7 +100,7 @@ export default function DashboardPage() {
       <div className=" w-full ">
         <div className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]">
           {dashboardItems.map((item) => {
-            const Icon = item.IconComponent;
+            const Icon = item.IconComponent
             const topCurves = (
               <svg
                 width="75"
@@ -116,17 +111,11 @@ export default function DashboardPage() {
                 className="!w-auto !h-auto absolute top-0 left-0"
               >
                 <g opacity="0.3">
-                  <path
-                    d="M74 0.5C74 33 59.3 87.3 0.5 44.5"
-                    stroke={item.curvesColor}
-                  />
-                  <path
-                    d="M59 0.5C60 25.3333 49.7 68.4 0.5 42"
-                    stroke={item.curvesColor}
-                  />
+                  <path d="M74 0.5C74 33 59.3 87.3 0.5 44.5" stroke={item.curvesColor} />
+                  <path d="M59 0.5C60 25.3333 49.7 68.4 0.5 42" stroke={item.curvesColor} />
                 </g>
               </svg>
-            );
+            )
 
             const bottomCurves = (
               <svg
@@ -138,17 +127,14 @@ export default function DashboardPage() {
                 className="!w-auto !h-auto absolute top-0 right-0"
               >
                 <g opacity="0.3">
-                  <path
-                    d="M2.5 39.5C20.1667 29.8333 62.2 14 89 28"
-                    stroke={item.curvesColor}
-                  />
+                  <path d="M2.5 39.5C20.1667 29.8333 62.2 14 89 28" stroke={item.curvesColor} />
                   <path
                     d="M0.5 39.5C9.16667 19.3333 39.3 -14.9 90.5 9.5"
                     stroke={item.curvesColor}
                   />
                 </g>
               </svg>
-            );
+            )
 
             return (
               <div
@@ -165,12 +151,8 @@ export default function DashboardPage() {
                     <Icon className="!text-xl !text-[#F8AF43]" />
                   </div>
                   <div className="inline-flex flex-col">
-                    <p className="mb-0 text-2xl font-semibold text-white">
-                      {item.count}
-                    </p>
-                    <p className="mb-0 text-xs font-normal text-[#FFFFFF99]">
-                      {item.text}
-                    </p>
+                    <p className="mb-0 text-2xl font-semibold text-white">{item.count}</p>
+                    <p className="mb-0 text-xs font-normal text-[#FFFFFF99]">{item.text}</p>
                   </div>
                 </div>
                 <div
@@ -182,7 +164,7 @@ export default function DashboardPage() {
                   <GoArrowRight />
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
@@ -201,15 +183,15 @@ export default function DashboardPage() {
             objectFit="cover"
             quality={100}
             priority
-            style={{ objectFit: "cover", height: 150 }}
+            style={{ objectFit: 'cover', height: 150 }}
           />
           <div className="flex flex-col !gap-y-4 text-white !overflow-hidden">
             <h5 className="text-[18px] font-semibold !text-nowrap !text-ellipsis max-w-[150px] sm:max-w-full font-comfortaa">
               Time management and Impact on Work
             </h5>
             <p className="font-normal text-xs opacity-50 max-w-[369px] overflow-hidden line-clamp-2 sm:overflow-visible sm:line-clamp-none">
-              Office ipsum squad circle no innovation while pretend synergize
-              disband eager hour right ballpark well.
+              Office ipsum squad circle no innovation while pretend synergize disband eager hour
+              right ballpark well.
             </p>
             <small className="text-[#F8AF43] text-xs font-normal ">
               created by Eric Andeeerson
@@ -239,10 +221,10 @@ export default function DashboardPage() {
                 lessonsCount={item.lessonsCount}
                 date={item.date}
               />
-            );
+            )
           })}
         </div>
       </div>
     </div>
-  );
+  )
 }
