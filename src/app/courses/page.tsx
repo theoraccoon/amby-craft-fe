@@ -146,7 +146,6 @@ export default function CoursesPage() {
         </>
       )}
 
-      {/* Empty state when rootCourses is empty */}
       {currentPath.length === 0 && rootCourses.length === 0 && (
         <EmptyState
           title="You don’t have any content"
@@ -156,7 +155,6 @@ export default function CoursesPage() {
         />
       )}
 
-      {/* Folder-level courses */}
       {currentFolder.courses && currentFolder.courses.length > 0 && (
         <>
           <h2 className="text-[14px] font-semibold tracking-wide text-secondary">
