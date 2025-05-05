@@ -7,8 +7,12 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
+  Button,
 } from "@chakra-ui/react";
+import React from "react";
 import { ReactNode } from "react";
+import { IoEyeOutline } from "react-icons/io5";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 interface InputFieldProps extends InputProps {
   label?: string;
@@ -23,6 +27,7 @@ interface InputFieldProps extends InputProps {
 
 const InputField = ({
   label,
+  type,
   error,
   highlight,
   isDisabled,
@@ -35,32 +40,36 @@ const InputField = ({
 }: InputFieldProps) => {
   const highlightStyles = highlight
     ? {
-        borderColor: "orange.400",
-        boxShadow: "0 0 0 1px orange",
-      }
-    : {}; 
+      borderColor: "orange.400",
+      boxShadow: "0 0 0 1px orange",
+    }
+    : {};
+
+
+  const [show, setShow] = React.useState(false)
+  const handleClick = () => setShow(!show)
 
   return (
     <FormControl isInvalid={!!error} isDisabled={isDisabled}>
-    {(label || rightLabel) && (
-  <div className="flex justify-between text-white text-xs mt-1 ">
-    <FormLabel color="white" fontSize={["12px","15px"]}  fontFamily={"'Open Sans', sans-serif"} >
-      {label}
-    </FormLabel>
-    {rightLabel && (
-      <FormLabel
-        onClick={rightLabelClick}
-        className="cursor-pointer font-semibold"
-        color="#f8af43"
-        fontSize={["12px","15px"]}
-        fontWeight={600}
-        fontFamily={"'Open Sans', sans-serif"}
-      >
-        {rightLabel}
-      </FormLabel>
-    )}
-  </div>
-)}
+      {(label || rightLabel) && (
+        <div className="flex justify-between text-white text-xs mt-1 ">
+          <FormLabel color="white" fontSize={["12px", "15px"]} fontFamily={"'Open Sans', sans-serif"} >
+            {label}
+          </FormLabel>
+          {rightLabel && (
+            <FormLabel
+              onClick={rightLabelClick}
+              className="cursor-pointer font-semibold"
+              color="#f8af43"
+              fontSize={["12px", "15px"]}
+              fontWeight={600}
+              fontFamily={"'Open Sans', sans-serif"}
+            >
+              {rightLabel}
+            </FormLabel>
+          )}
+        </div>
+      )}
       <InputGroup>
         {leftIcon && (
           <InputLeftElement pointerEvents="none">{leftIcon}</InputLeftElement>
@@ -72,7 +81,9 @@ const InputField = ({
           </InputRightElement>
         )}
 
+
         <Input
+          type={type === 'password' && show ? 'text' : type}
           {...rest}
           {...highlightStyles}
           isDisabled={isDisabled}
@@ -85,6 +96,14 @@ const InputField = ({
           color="white"
           borderRadius={"10px"}
         />
+
+        {type === 'password' && <InputRightElement width='4.5rem'>
+          <Button h='1.75rem' size='md' onClick={handleClick} className="!bg-transparent" top={2} >
+            {show ? <IoEyeOutline color="white" width={20} height={20}/> : <FaRegEyeSlash color="white" width={20} height={20}/>}
+          </Button>
+        </InputRightElement>
+        }
+
       </InputGroup>
       {error && <FormErrorMessage>{error}</FormErrorMessage>}
     </FormControl>
