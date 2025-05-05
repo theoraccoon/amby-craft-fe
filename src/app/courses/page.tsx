@@ -8,11 +8,13 @@ import FolderCard from "@/components/ui/card/course-folder-card";
 import TextInputModal from "@/components/modals/input-modal";
 import EmptyState from "./_components/EmptyState";
 import { useViewMode } from '@/context/view-mode-context'
+import { FiChevronRight } from "react-icons/fi";
 
 import folders from "@/data/folders-card-data";
 import { rootCourses as initialRootCourses } from "@/data/root-courses-data";
 
 import type { Course, Folder } from "@/types/index";
+
 
 export default function CoursesPage() {
   const { viewMode } = useViewMode()
@@ -52,7 +54,7 @@ export default function CoursesPage() {
         cancelText="Cancel"
       />
 
-      <div className="text-[14px] font-semibold tracking-wide text-[#b9b8b8] pb-[18px]">
+      <div className="flex text-[14px] font-semibold tracking-wide text-[#b9b8b8]">
         <span
           className={`cursor-pointer hover:underline ${
             currentPath.length === 0 ? "text-secondary" : ""
@@ -63,7 +65,7 @@ export default function CoursesPage() {
         </span>
         {currentPath.map((folder, idx) => (
           <span key={idx} className="inline-flex items-center">
-            <span className="text-secondary px-5 text-lg">›</span>
+            <FiChevronRight className="text-secondary mx-2 text-lg" />
             <span
               className={`cursor-pointer hover:underline ${
                 idx === currentPath.length - 1 ? "text-secondary" : ""
