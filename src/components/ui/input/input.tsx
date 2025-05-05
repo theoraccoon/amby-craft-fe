@@ -25,7 +25,6 @@ interface InputFieldProps extends InputProps {
   rightLabelClick?: () => void;
 }
 
-
 const InputField = ({
   label,
   type,
@@ -73,9 +72,7 @@ const InputField = ({
       )}
       <InputGroup>
         {leftIcon && (
-          <InputLeftElement pointerEvents="none" >
-            {leftIcon}
-          </InputLeftElement>
+          <InputLeftElement pointerEvents="none">{leftIcon}</InputLeftElement>
         )}
 
         {rightIcon && (

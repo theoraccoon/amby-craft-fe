@@ -1,7 +1,6 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { ReactNode, ReactElement } from "react";
 
-
 const buttonVariants = {
   primary: {
     bg: "#F8AF43",
@@ -35,8 +34,8 @@ const buttonVariants = {
 interface CustomButtonProps extends ButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "tertiary" | "danger";
-  leftIcon?: ReactElement; 
-  rightIcon?: ReactElement; 
+  leftIcon?: ReactElement;
+  rightIcon?: ReactElement;
 }
 
 const CustomButton = ({
