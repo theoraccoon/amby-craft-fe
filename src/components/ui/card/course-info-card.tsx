@@ -28,7 +28,7 @@ const CourseInfoCard: FC<CourseCardProps> = ({
         </div>
         <div className="flex flex-col">
           <h3 className="font-['comfortaa'] text-secondary font-[600] text-[1.13rem]  leading-snug !mb-2">{title}</h3>
-          <p className="font-opensans font-[400] text-[1rem]  text-zinc-400 leading-normal !mt-2">{description}</p>
+          <p className="font-['open_sans'] font-[400] text-[1rem]  text-zinc-400 leading-normal !mt-2">{description}</p>
         </div>
       </div>
 

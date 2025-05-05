@@ -6,7 +6,7 @@ interface CourseCardProps {
   title: string;
   description: string;
   author: string;
-  lessons: number;
+  lessonsCount: number;
   date: string;
 }
 
@@ -15,7 +15,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   title,
   description,
   author,
-  lessons,
+  lessonsCount,
   date,
 }) => {
   return (
@@ -26,11 +26,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </div>
       </div>
 
-      <h3 className="text-white font-[600] text-[1.13rem] leading-[100%] tracking-[0%] font-comfortaa !mb-2">
+      <h3 className="text-white font-[600] text-[1.13rem] leading-[100%] tracking-[0%] font-comfortaa !mb-2 line-clamp-1">
         {title}
       </h3>
 
-      <p className="font-['open_sans'] text-gray-400 text-xs !mb-4 leading-relaxed">
+      <p className="font-['open_sans'] text-gray-400 text-xs !mb-4 leading-relaxed line-clamp-2">
         {description}
       </p>
       <div className="flex justify-between items-center text-sm text-gray-300">
@@ -41,7 +41,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
         <div className="flex items-center gap-[9px]">
           <Layers className="text-primary" width={16} height={16} />
           <span className="font-['open_sans'] text-secondary font-[400] text-xs">
-            {lessons} lessons
+            {lessonsCount} lessons
           </span>
         </div>
         <div className="flex items-center gap-[9px]">
