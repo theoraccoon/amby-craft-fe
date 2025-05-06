@@ -10,7 +10,8 @@
   --foreground: #ededed;
   --tertiary: #333333;
   --primary-foreground: #181818;
-  --secondary-foreground: #ffffff;
+  --secondary-foreground: #ffffff; 
+   --text-secondary: #ffffff;
 
 }
 
@@ -22,6 +23,7 @@
     --foreground: #F8AF43;
     --primary-foreground: #171717;
     --secondary-foreground: #ffffff;
+    --text-secondary: #ffffff;
   }
 }
 
@@ -34,6 +36,7 @@
     --secondary: #F8AF43;
     --primary-foreground: #171717;
     --secondary-foreground: #ffffff;
+    --text-secondary: #ffffff;
   }
 }
 
