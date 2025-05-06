@@ -62,11 +62,11 @@ export default function DashboardPage() {
           {courseItems.map((item, index) => {
             return (
               <CourseCard
-                image={item.image}
+                image={item.imageUrl}
                 key={index}
                 title={item.title}
                 description={item.description}
-                author={item.author}
+                author={item.instructor}
                 lessonsCount={item.lessonsCount}
                 date={item.date}
               />

@@ -1,4 +1,3 @@
-import { Icon } from '@chakra-ui/react'
 import { GoArrowRight } from 'react-icons/go'
 import { DashboardData } from '../types/type'
 import { BottomCurves } from './BottomCurves'
@@ -16,7 +15,7 @@ export const HeaderCards = (item: DashboardData) => (
     <div className="flex items-center gap-x-6 !p-7 relative">
       <TopCurves color={item.curvesColor} />
       <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10 ">
-        <Icon as={item.IconComponent} color="#F8AF43" boxSize={'20px'} />
+        {item.IconComponent}
       </div>
       <div className="inline-flex flex-col">
         <p className="mb-0 text-2xl font-semibold text-white">{item.count}</p>

@@ -134,7 +134,6 @@ export default function CoursesPage() {
                       description={course.description}
                       imageUrl={course.imageUrl}
                       instructor={course.instructor}
-                      initials={course.initials}
                       lessonsCount={course.lessonsCount}
                       date={course.date}
                     />

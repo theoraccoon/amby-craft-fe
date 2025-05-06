@@ -1,12 +1,14 @@
+import { Icon } from '@chakra-ui/react'
 import { BiBookOpen, BiBook, BiBox } from 'react-icons/bi'
 import { DashboardData } from '../types/type'
+import { Course } from '@/types'
 
 export const dashboardData: DashboardData[] = [
   {
     id: 'dashboard',
     text: 'Total Courses',
     count: 25,
-    IconComponent: BiBookOpen,
+    IconComponent: <Icon as={BiBookOpen} color={'#F8AF43'} />,
     borderStyle: '#F8AF43',
     backgroundStyle: '#F8AF4326',
     curvesColor: '#F8AF43',
@@ -16,7 +18,7 @@ export const dashboardData: DashboardData[] = [
     id: 'courses',
     text: 'Total Microlearning',
     count: 4,
-    IconComponent: BiBook,
+    IconComponent: <Icon as={BiBook} color={'#F8AF43'} />,
     borderStyle: '#9747FF',
     backgroundStyle: '#9747FF26',
     curvesColor: '#9747FF',
@@ -26,7 +28,7 @@ export const dashboardData: DashboardData[] = [
     id: 'microlearning',
     text: 'Total Question Bank',
     count: 24,
-    IconComponent: BiBox,
+    IconComponent: <Icon as={BiBox} color={'#F8AF43'} />,
     borderStyle: '#00BA7F',
     backgroundStyle: '#00BA7F26',
     curvesColor: '#00BA7F',
@@ -36,7 +38,7 @@ export const dashboardData: DashboardData[] = [
     id: 'micreolearning',
     text: 'Total Question Bank',
     count: 18,
-    IconComponent: BiBox,
+    IconComponent: <Icon as={BiBox} color={'#F8AF43'} />, // changed this line
     borderStyle: '#00BA7F',
     backgroundStyle: '#00BA7F26',
     curvesColor: '#00BA7F',
@@ -45,8 +47,8 @@ export const dashboardData: DashboardData[] = [
   {
     id: 'micerolearning',
     text: 'Total Question Bank',
-    IconComponent: BiBox,
     count: 19,
+    IconComponent: <Icon as={BiBox} color={'#F8AF43'} />, // changed this line
     borderStyle: '#00BA7F',
     backgroundStyle: '#00BA7F26',
     curvesColor: '#00BA7F',
@@ -54,36 +56,36 @@ export const dashboardData: DashboardData[] = [
   },
 ]
 
-export const courseItems = [
+export const courseItems: Course[] = [
   {
-    image: '/images/course-thumb-1.png',
+    imageUrl: '/images/course-thumb-1.png',
     title: 'Time management and Impact on Work',
     description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
-    author: 'Desmond Essuman',
+    instructor: 'Desmond Essuman',
     lessonsCount: 22,
     date: '18/04/25',
   },
   {
-    image: '/images/course-thumb-1.png',
+    imageUrl: '/images/course-thumb-1.png',
     title: 'Content Management Systems',
     description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
-    author: 'Desmond Essuman',
+    instructor: 'Desmond Essuman',
     lessonsCount: 22,
     date: '18/04/25',
   },
   {
-    image: '/images/course-thumb-1.png',
+    imageUrl: '/images/course-thumb-1.png',
     title: 'Design for inclusivity and Design Systems',
     description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
-    author: 'Desmond Essuman',
+    instructor: 'Desmond Essuman',
     lessonsCount: 22,
     date: '18/04/25',
   },
   {
-    image: '/images/course-thumb-1.png',
+    imageUrl: '/images/course-thumb-1.png',
     title: 'Design for inclusivity and Design Systems',
     description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
-    author: 'Desmond Essuman',
+    instructor: 'Desmond Essuman',
     lessonsCount: 22,
     date: '18/04/25',
   },
