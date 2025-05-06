@@ -6,10 +6,10 @@ import { createContext, useContext, useState } from 'react'
 const MobileDrawerContext = createContext<{
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
-} | null>(null) 
+} | null>(null)
 
 export const MobileDrawerProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isOpen, setIsOpen] = useState(false) 
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <MobileDrawerContext.Provider value={{ isOpen, setIsOpen }}>
