@@ -19,8 +19,10 @@ const MobileDrawerMenu = () => {
 
   const handleItemClick = useCallback(
     (id: string) => {
-      setIsOpen(!isOpen)
       router.push(`/${id}`)
+      setTimeout(() => {
+        setIsOpen(false)
+      }, 300)
     },
     [router],
   )
