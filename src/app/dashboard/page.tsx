@@ -1,78 +1,13 @@
 'use client'
 
 import React from 'react'
-import { GoArrowRight } from 'react-icons/go'
 import { FiChevronRight } from 'react-icons/fi'
 import Image from 'next/image'
 import CourseCard from '@/components/ui/card/course-card'
 import { courseItems, dashboardData } from '@/features/dashboard/data/dashboardData'
-import { Icon } from '@chakra-ui/react'
-import { DashboardData } from '@/features/dashboard/types/type'
-import { Md3dRotation } from 'react-icons/md'
+import { HeaderCards } from '@/features/dashboard/components/HeaderCards'
 
 export default function DashboardPage() {
-  const BottomCurves = ({ color }: { color: string }) => (
-    <svg
-      width="91"
-      height="40"
-      viewBox="0 0 91 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="!w-auto !h-auto absolute top-0 right-0"
-    >
-      <g opacity="0.3">
-        <path d="M2.5 39.5C20.1667 29.8333 62.2 14 89 28" stroke={color} />
-        <path d="M0.5 39.5C9.16667 19.3333 39.3 -14.9 90.5 9.5" stroke={color} />
-      </g>
-    </svg>
-  )
-
-  const TopCurves = ({ color }: { color: string }) => (
-    <svg
-      width="75"
-      height="61"
-      viewBox="0 0 75 61"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="!w-auto !h-auto absolute top-0 left-0"
-    >
-      <g opacity="0.3">
-        <path d="M74 0.5C74 33 59.3 87.3 0.5 44.5" stroke={color} />
-        <path d="M59 0.5C60 25.3333 49.7 68.4 0.5 42" stroke={color} />
-      </g>
-    </svg>
-  )
-
-  const HeaderCards = (item: DashboardData) => (
-    <div
-      key={item.id}
-      className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 min-w-[21rem] sm:!min-w-[32rem] mt-20`}
-      style={{
-        backgroundColor: item.backgroundStyle,
-        borderColor: item.borderStyle,
-      }}
-    >
-      <div className="flex items-center gap-x-6 !p-7 relative">
-        <TopCurves color={item.curvesColor} />
-        <div className="rounded-lg bg-white inline-flex flex-col items-center justify-center !h-[3.125rem] !w-[3.125rem] z-10 ">
-          <Icon as={item.IconComponent} color="#F8AF43" boxSize={'20px'} />
-        </div>
-        <div className="inline-flex flex-col">
-          <p className="mb-0 text-2xl font-semibold text-white">{item.count}</p>
-          <p className="mb-0 text-xs font-normal text-[#FFFFFF99]">{item.text}</p>
-        </div>
-      </div>
-      <div
-        className={`!border-t !border-t-[${item.borderColor}] flex justify-between text-white !p-4 relative overflow-hidden w-full`}
-        style={{ borderTopColor: item.borderColor }}
-      >
-        <BottomCurves color={item.curvesColor} />
-        <span className="text-xs">View all</span>
-        <GoArrowRight />
-      </div>
-    </div>
-  )
-
   return (
     <div className="w-full">
       <div className=" w-full">
