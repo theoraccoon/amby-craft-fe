@@ -19,7 +19,7 @@ export default function SharedLayout({ children }: { children: ReactNode }) {
     <Providers>
       <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] lg:grid-cols-[250px_1fr] h-screen w-full overflow-hidden">
         {isOpen && (
-          <div className="md:hidden fixed  left-0 z-[60] bg-[#222222] w-[240px] ">
+          <div className="md:hidden fixed  left-0 z-[60] bg-[#222222] w-[185px] ">
             <MobileDrawerMenu />
           </div>
         )}
