@@ -1,0 +1,90 @@
+import { BiBookOpen, BiBook, BiBox } from 'react-icons/bi'
+import { DashboardData } from '../types/type'
+
+export const dashboardData: DashboardData[] = [
+  {
+    id: 'dashboard',
+    text: 'Total Courses',
+    count: 25,
+    IconComponent: BiBookOpen,
+    borderStyle: '#F8AF43',
+    backgroundStyle: '#F8AF4326',
+    curvesColor: '#F8AF43',
+    borderColor: '#F8AF4326',
+  },
+  {
+    id: 'courses',
+    text: 'Total Microlearning',
+    count: 4,
+    IconComponent: BiBook,
+    borderStyle: '#9747FF',
+    backgroundStyle: '#9747FF26',
+    curvesColor: '#9747FF',
+    borderColor: '#9747FF26',
+  },
+  {
+    id: 'microlearning',
+    text: 'Total Question Bank',
+    count: 24,
+    IconComponent: BiBox,
+    borderStyle: '#00BA7F',
+    backgroundStyle: '#00BA7F26',
+    curvesColor: '#00BA7F',
+    borderColor: '#00BA7F26',
+  },
+  {
+    id: 'micreolearning',
+    text: 'Total Question Bank',
+    count: 18,
+    IconComponent: BiBox,
+    borderStyle: '#00BA7F',
+    backgroundStyle: '#00BA7F26',
+    curvesColor: '#00BA7F',
+    borderColor: '#00BA7F26',
+  },
+  {
+    id: 'micerolearning',
+    text: 'Total Question Bank',
+    IconComponent: BiBox,
+    count: 19,
+    borderStyle: '#00BA7F',
+    backgroundStyle: '#00BA7F26',
+    curvesColor: '#00BA7F',
+    borderColor: '#00BA7F26',
+  },
+]
+
+export const courseItems = [
+  {
+    image: '/images/course-thumb-1.png',
+    title: 'Time management and Impact on Work',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
+    lessonsCount: 22,
+    date: '18/04/25',
+  },
+  {
+    image: '/images/course-thumb-1.png',
+    title: 'Content Management Systems',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
+    lessonsCount: 22,
+    date: '18/04/25',
+  },
+  {
+    image: '/images/course-thumb-1.png',
+    title: 'Design for inclusivity and Design Systems',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
+    lessonsCount: 22,
+    date: '18/04/25',
+  },
+  {
+    image: '/images/course-thumb-1.png',
+    title: 'Design for inclusivity and Design Systems',
+    description: 'Office ipsum squad circle no innovation while pretend synergize disband...',
+    author: 'Desmond Essuman',
+    lessonsCount: 22,
+    date: '18/04/25',
+  },
+]

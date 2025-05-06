@@ -3,12 +3,12 @@
 
 import { ReactNode } from 'react'
 import SidebarMenu from '@/components/layout/sidebar'
-import { Providers } from '../provider'
-import '../../styles/globals.css'
+import '../../../styles/globals.css'
 import MobileViewHeader from '@/components/layout/header/mobile-view-header'
 import TabNavigator from '@/components/layout/tab-navigation'
 import { ViewModeProvider } from '@/context/view-mode-context'
 import Header from '@/components/layout/header/header'
+import { Providers } from '@/app/provider'
 
 export default function SharedLayout({ children }: { children: ReactNode }) {
   return (
