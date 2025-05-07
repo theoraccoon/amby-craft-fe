@@ -17,6 +17,7 @@ module.exports = {
         tertiary: "var(--tertiary)",
         "primary-foreground": "var(--primary-foreground)",
         "secondary-foreground": "var(--secondary-foreground)",
+        "text-secondary": "var(--text-secondary)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],

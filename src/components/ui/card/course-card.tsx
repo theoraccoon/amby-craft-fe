@@ -19,14 +19,14 @@ const CourseCard: React.FC<CourseCardProps> = ({
   date,
 }) => {
   return (
-    <div className="bg-[#222222] text-white rounded-2xl overflow-hidden shadow-md !mb-4 !p-4 max-w-[425px]">
+    <div className="bg-[#222222]  rounded-2xl overflow-hidden shadow-md !mb-4 !p-4 max-w-[425px]">
       <div className="rounded-xl overflow-hidden !mb-4">
         <div className="relative w-full h-44">
           <Image src={image} alt={title} fill className="object-cover" />
         </div>
       </div>
 
-      <h3 className="text-white font-[600] text-[1.13rem] leading-[100%] tracking-[0%] font-comfortaa !mb-2 line-clamp-1">
+      <h3 className=" text-text-secondary font-[600] text-[1.13rem] leading-[100%] tracking-[0%] font-comfortaa !mb-2 line-clamp-1">
         {title}
       </h3>
 
@@ -36,17 +36,17 @@ const CourseCard: React.FC<CourseCardProps> = ({
       <div className="flex justify-between items-center text-sm text-gray-300">
         <div className="flex items-center gap-[9px]">
           <User className="text-primary" width={16} height={16} />
-          <span className="font-['open_sans'] text-secondary text-xs">{author}</span>
+          <span className="font-['open_sans'] text-text-secondary text-xs">{author}</span>
         </div>
         <div className="flex items-center gap-[9px]">
           <Layers className="text-primary" width={16} height={16} />
-          <span className="font-['open_sans'] text-secondary font-[400] text-xs">
+          <span className="font-['open_sans'] text-text-secondary font-[400] text-xs">
             {lessonsCount} lessons
           </span>
         </div>
         <div className="flex items-center gap-[9px]">
           <Calendar className="text-primary" width={16} height={16} />
-          <span className="font-['open_sans'] text-secondary font-[400] text-xs">{date}</span>
+          <span className="font-['open_sans'] text-text-secondary font-[400] text-xs">{date}</span>
         </div>
       </div>
     </div>
