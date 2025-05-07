@@ -1,34 +1,38 @@
-// app/page.tsx
+export { default } from '../app/auth/login/page'
 
-'use client'
+// We’re simply re-exporting the real LoginPage here.
+// If you ever want to simulate server-side redirect logic on the client,
+// you can uncomment the block below to check auth and push to /dashboard.
 
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import LoginPage from './auth/login/page'
+// 'use client'
 
-export default function HomePage() {
-  const [authChecked, setAuthChecked] = useState(false)
-  const [isAuth, setIsAuth] = useState(false)
-  const router = useRouter()
+// import { useEffect, useState } from 'react'
+// import { useRouter } from 'next/navigation'
+// import LoginPage from './auth/login/page'
 
-  useEffect(() => {
-    const auth = checkAuthentication()
-    if (auth) {
-      setIsAuth(true)
-      router.replace('/dashboard')
-    } else {
-      setIsAuth(false)
-    }
-    setAuthChecked(true)
-  }, [router])
+// export default function HomePage() {
+//   const [authChecked, setAuthChecked] = useState(false)
+//   const [isAuth, setIsAuth] = useState(false)
+//   const router = useRouter()
 
-  if (!authChecked) {
-    return null
-  }
+//   useEffect(() => {
+//     const auth = checkAuthentication()
+//     if (auth) {
+//       setIsAuth(true)
+//       router.replace('/dashboard')
+//     } else {
+//       setIsAuth(false)
+//     }
+//     setAuthChecked(true)
+//   }, [router])
 
-  return <LoginPage />
-}
+//   if (!authChecked) {
+//     return null
+//   }
 
-function checkAuthentication(): boolean {
-  return true
-}
+//   return <LoginPage />
+// }
+
+// function checkAuthentication(): boolean {
+//   return true
+// }
