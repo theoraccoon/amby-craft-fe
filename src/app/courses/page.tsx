@@ -55,7 +55,7 @@ export default function CoursesPage() {
       <div className="flex text-[14px] font-semibold tracking-wide text-[#b9b8b8]">
         <span
           className={`cursor-pointer hover:underline ${
-            currentPath.length === 0 ? 'text-secondary' : ''
+            currentPath.length === 0 ? 'text-text-secondary ' : ''
           }`}
           onClick={() => setCurrentPath([])}
         >
@@ -63,10 +63,10 @@ export default function CoursesPage() {
         </span>
         {currentPath.map((folder, idx) => (
           <span key={idx} className="inline-flex items-center">
-            <FiChevronRight className="text-secondary mx-2 text-lg" />
+            <FiChevronRight className="text-text-secondary mx-2 text-lg" />
             <span
               className={`cursor-pointer hover:underline ${
-                idx === currentPath.length - 1 ? 'text-secondary' : ''
+                idx === currentPath.length - 1 ? 'text-text-secondary' : ''
               }`}
               onClick={() => setCurrentPath(currentPath.slice(0, idx + 1))}
             >
@@ -105,7 +105,7 @@ export default function CoursesPage() {
 
       {currentPath.length === 0 && rootCourses.length > 0 && (
         <>
-          <h2 className="text-[14px] font-semibold tracking-wide text-secondary">Content</h2>
+          <h2 className="text-[14px] font-semibold tracking-wide text-text-secondary">Content</h2>
           <section
             className={`${
               viewMode === 'grid'
@@ -157,7 +157,7 @@ export default function CoursesPage() {
 
       {currentFolder.courses && currentFolder.courses.length > 0 && (
         <>
-          <h2 className="text-[14px] font-semibold tracking-wide text-secondary">Content</h2>
+          <h2 className="text-[14px] font-semibold tracking-wide text-text-secondary">Content</h2>
           <section
             className={`${
               viewMode === 'grid'
