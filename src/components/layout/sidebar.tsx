@@ -39,9 +39,9 @@ function SidebarMenu() {
 0
     return (
         <div className='flex flex-col  w-full h-screen'>
-            <div className="w-full relative !mt-[3.438rem] !mb-8">
+            <div className="w-full relative !mt-[3rem] !mb-8">
                 <Image
-                    className="!relative !w-[80%] ml-4"
+                    className="!relative !w-[75%] ml-4"
                     src={imageUrlAmbylon}
                     alt="Login Background"
                     fill={true}
@@ -83,7 +83,7 @@ function SidebarMenu() {
                                 className={liClasses.trim()}
                                 onClick={() => handleItemClick(item.id)}
                             >
-                                <a href="" className="flex items-center gap-4 ">
+                                <a className="flex items-center gap-4 ">
                                     <Icon className={baseIconClasses} />
                                     <span
                                         className={`

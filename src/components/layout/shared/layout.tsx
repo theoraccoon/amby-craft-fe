@@ -3,12 +3,12 @@
 
 import { ReactNode } from 'react'
 import SidebarMenu from '@/components/layout/sidebar'
-import { Providers } from '../provider'
-import '../../styles/globals.css'
+import '../../../styles/globals.css'
 import MobileViewHeader from '@/components/layout/header/mobile-view-header'
 import TabNavigator from '@/components/layout/tab-navigation'
 import { ViewModeProvider } from '@/context/view-mode-context'
 import Header from '@/components/layout/header/header'
+import { Providers } from '@/app/provider'
 
 export default function SharedLayout({ children }: { children: ReactNode }) {
   return (
@@ -22,7 +22,7 @@ export default function SharedLayout({ children }: { children: ReactNode }) {
             <MobileViewHeader />
           </div>
           {/* Main Content */}
-          <div className="bg-[#181818] flex flex-col h-screen px-12 ">
+          <div className="bg-[#181818] flex flex-col h-screen px-4 sm:px-12 w-full overflow-hidden">
             <Header />
             <div className="flex-1 overflow-y-auto no-scrollbar">{children}</div>
             <div className="md:hidden fixed bottom-0 left-0 w-full  flex justify-around items-center h-[90px] bg-[#181818]">
