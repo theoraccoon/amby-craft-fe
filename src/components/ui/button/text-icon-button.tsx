@@ -29,7 +29,7 @@ export default function ToggleTextWithIcon({
       }`}
     >
       <div className='!ml-10 !p-3   '>{icon}</div>
-      <span className="text-sm font-medium">{label}</span>
+      <span className="text-xs font-medium">{label}</span>
     </div>
   );
 }

@@ -47,7 +47,7 @@ export default function HeaderActionsPanel({ isDashboardPage }: HeaderActionsPan
 
       <div className="flex items-center justify-endw-[30%]  gap-10  ">
         <div className="flex w-[120px]  gap-10 ">
-          <RoundedButton leftIcon={<FiPlus color="#000000" />} onClick={() => setIsOpen(true)}>
+          <RoundedButton leftIcon={<FiPlus color="#000000" height="12px" />} onClick={() => setIsOpen(true)}>
             Create
           </RoundedButton>
 

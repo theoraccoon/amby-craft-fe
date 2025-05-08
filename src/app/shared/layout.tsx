@@ -22,7 +22,7 @@ export default function SharedLayout({ children }: { children: ReactNode }) {
             <MobileViewHeader />
           </div>
           {/* Main Content */}
-          <div className="bg-[#181818] flex flex-col h-screen px-5 ">
+          <div className="bg-[#181818] flex flex-col h-screen px-12 ">
             <Header />
             <div className="flex-1 overflow-y-auto no-scrollbar">{children}</div>
             <div className="md:hidden fixed bottom-0 left-0 w-full  flex justify-around items-center h-[90px] bg-[#181818]">
