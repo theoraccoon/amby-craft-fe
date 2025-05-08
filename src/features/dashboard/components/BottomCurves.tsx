@@ -1,0 +1,15 @@
+export const BottomCurves = ({ color }: { color: string }) => (
+  <svg
+    width="91"
+    height="40"
+    viewBox="0 0 91 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="!w-auto !h-auto absolute top-0 right-0"
+  >
+    <g opacity="0.3">
+      <path d="M2.5 39.5C20.1667 29.8333 62.2 14 89 28" stroke={color} />
+      <path d="M0.5 39.5C9.16667 19.3333 39.3 -14.9 90.5 9.5" stroke={color} />
+    </g>
+  </svg>
+)

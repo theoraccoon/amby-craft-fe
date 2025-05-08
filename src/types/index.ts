@@ -1,5 +1,3 @@
-export * from "./components/course"
-export * from "./components/text-icon";
-export * from "./components/header";
-
-
+export * from './course'
+export * from './text-icon'
+export * from './header'
