@@ -14,7 +14,8 @@ interface BlockToolbarProps {
   onOpenModal: (type: 'heading' | 'paragraph') => void
 }
 
-export default function BlockToolbar({ onAddBlock, onOpenModal }: BlockToolbarProps) {
+export default function BlockToolbar({}: //  onAddBlock, onOpenModal
+BlockToolbarProps) {
   const blockIcons = [
     { type: 'ai', icon: <IoSparklesSharp color="#F8AF43" />, label: 'Ai' },
     { type: 'ai image', icon: <IoImage color="#F8AF43" />, label: 'Ai Image' },
