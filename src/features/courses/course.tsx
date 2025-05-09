@@ -1,24 +1,26 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState,useRef, useEffect} from 'react'
 import CourseInfoCard from '@/components/ui/card/course-info-card'
 import CourseCard from '@/components/ui/card/course-card'
 import FolderCard from '@/components/ui/card/course-folder-card'
 import TextInputModal from '@/components/modals/input-modal'
 import { useViewMode } from '@/context/view-mode-context'
-import { FiChevronRight } from 'react-icons/fi'
-
+import FolderBreadcrumb from './folder-bread-crumb'
 import folders from '@/data/folders-card-data'
 import { rootCourses as initialRootCourses } from '@/data/root-courses-data'
-
 import type { Course, Folder } from '@/types/index'
 import EmptyState from '@/components/layout/shared/EmptyState'
 
-export default function CoursesBoard() {
+
+export default function CoursesPage() {
   const { viewMode } = useViewMode()
   const [isOpen, setIsOpen] = useState(false)
   const [folderName, setFolderName] = useState('')
   const [currentPath, setCurrentPath] = useState<string[]>([])
+  const [showDropdown, setShowDropdown] = useState(false)
+
+
   const [rootCourses] = useState<Course[]>(initialRootCourses)
 
   const handleCreateFolder = () => {
@@ -37,6 +39,23 @@ export default function CoursesBoard() {
   }
 
   const currentFolder = getCurrentFolder()
+  const dropdownRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false)
+      }
+    }
+    if (showDropdown) {
+      document.addEventListener('mousedown', handleClickOutside)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [showDropdown])
 
   return (
     <div className="flex flex-col gap-10 w-full !mt-8">
@@ -52,30 +71,13 @@ export default function CoursesBoard() {
         cancelText="Cancel"
       />
 
-      <div className="flex text-[14px] font-semibold tracking-wide text-[#b9b8b8]">
-        <span
-          className={`cursor-pointer hover:underline ${
-            currentPath.length === 0 ? 'text-text-secondary ' : ''
-          }`}
-          onClick={() => setCurrentPath([])}
-        >
-          Folders
-        </span>
-        {currentPath.map((folder, idx) => (
-          <span key={idx} className="inline-flex items-center">
-            <FiChevronRight className="text-text-secondary mx-2 text-lg" />
-            <span
-              className={`cursor-pointer hover:underline ${
-                idx === currentPath.length - 1 ? 'text-text-secondary' : ''
-              }`}
-              onClick={() => setCurrentPath(currentPath.slice(0, idx + 1))}
-            >
-              {folder}
-            </span>
-          </span>
-        ))}
-      </div>
-
+      <FolderBreadcrumb
+        currentPath={currentPath}
+        onNavigate={setCurrentPath}
+        dropdownRef={dropdownRef}
+        showDropdown={showDropdown}
+        toggleDropdown={() => setShowDropdown((prev) => !prev)}
+      />
       <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] mb-6">
         {currentFolder.children?.map((folder: Folder, idx: number) => (
           <FolderCard
@@ -134,7 +136,6 @@ export default function CoursesBoard() {
                       description={course.description}
                       imageUrl={course.imageUrl}
                       instructor={course.instructor}
-                      initials={course.initials}
                       lessonsCount={course.lessonsCount}
                       date={course.date}
                     />
