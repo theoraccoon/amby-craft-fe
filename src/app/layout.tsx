@@ -5,6 +5,8 @@ import { Comfortaa, Open_Sans } from 'next/font/google'
 import '../styles/globals.css'
 import { Providers } from './provider'
 import { ViewModeProvider } from '@/context/view-mode-context'
+import { MobileDrawerProvider } from '@/context/mobile-drawer-context'
+import { TabletDrawerProvider } from '@/context/tablet-drawer-context'
 
 const comfortaa = Comfortaa({
   subsets: ['latin'],
@@ -20,7 +22,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${comfortaa.className} ${openSans.className}`}>
       <body className={comfortaa.className}>
         <Providers>
-          <ViewModeProvider>{children}</ViewModeProvider>
+          <ViewModeProvider>
+            <MobileDrawerProvider>
+              <TabletDrawerProvider>{children}</TabletDrawerProvider>
+            </MobileDrawerProvider>
+          </ViewModeProvider>
         </Providers>
       </body>
     </html>
