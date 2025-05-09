@@ -1,60 +1,70 @@
 'use client'
+import { TEXT_BLOCKS, TextBlock } from '@/types'
 import React, { useState } from 'react'
 
-type BlockType =
-  | 'Paragraph'
-  | 'Paragraph with heading'
-  | 'Paragraph with subheading'
-  | 'Heading'
-  | 'Sub heading'
-  | 'Statement A'
-  | 'Statement B'
-  | 'Statement C'
-  | 'Statement D'
-  | 'Note'
+function AddTextBlockModal({
+  type,
+  onClose,
+  onAddBlock,
+}: {
+  type: TextBlock['type']
+  onClose: () => void
+  onAddBlock: (block: TextBlock) => void
+}) {
+  const [selectedType, setSelectedType] = useState<TextBlock['type']>(type)
 
-type Props = {
-  type: BlockType
-}
+  const selectedBlock = TEXT_BLOCKS.find((b) => b.type === selectedType)
 
-const blockContentMap: Record<BlockType, string> = {
-  Paragraph: 'This is a paragraph',
-  'Paragraph with heading': 'This is a paragraph with heading',
-  'Paragraph with subheading': 'This is a paragraph with subheading',
-  Heading: 'This is a heading',
-  'Sub heading': 'This is a sub heading',
-  'Statement A': 'This is Statement A',
-  'Statement B': 'This is Statement B',
-  'Statement C': 'This is Statement C',
-  'Statement D': 'This is Statement D',
-  Note: 'This is a note',
-}
+  const requiresHeading = [
+    'Paragraph with heading',
+    'Paragraph with subheading',
+    'Heading',
+    'Sub heading',
+  ].includes(selectedType)
 
-function AddTextBlockModal({ type }: Props) {
-  const [selectedType, setSelectedType] = useState<BlockType>(type)
+  const requiresParagraph = [
+    'Paragraph',
+    'Paragraph with heading',
+    'Paragraph with subheading',
+  ].includes(selectedType)
 
+  const standaloneTextTypes = ['Statement A', 'Statement B', 'Statement C', 'Statement D', 'Note']
+  const handleAddBlock = () => {
+    if (selectedBlock) {
+      onAddBlock(selectedBlock)
+      onClose()
+    }
+  }
   return (
     <div className="flex w-[495px] h-[395px] text-white p-2">
       {/* Block list */}
       <div className="w-[30%] h-full bg-[#222222] rounded-l-lg p-2 space-y-2 overflow-y-auto no-scrollbar">
-        {Object.keys(blockContentMap).map((block) => (
+        {TEXT_BLOCKS.map((block) => (
           <div
-            key={block}
-            onClick={() => setSelectedType(block as BlockType)}
+            key={block.type}
+            onClick={() => setSelectedType(block.type)}
             className={`cursor-pointer p-2 rounded text-xs ${
-              selectedType === block
-                ? 'bg-tertiary text-white font-bold *:'
+              selectedType === block.type
+                ? 'bg-tertiary text-white font-bold'
                 : 'hover:bg-neutral-700'
             }`}
           >
-            {block}
+            {block.type}
           </div>
         ))}
       </div>
 
       {/* Preview */}
-      <div className="w-[70%] h-full bg-tertiary rounded-r-lg flex items-center justify-center text-center px-4">
-        {blockContentMap[selectedType]}
+      <div className="w-[70%] h-full bg-tertiary rounded-r-lg flex flex-col justify-center items-center text-center px-4 space-y-2">
+        {requiresHeading && <h3 className="text-lg font-semibold">Sample Heading</h3>}
+        {requiresParagraph && <p className="text-sm">This is a sample paragraph for preview.</p>}
+        {standaloneTextTypes.includes(selectedType) && selectedBlock && (
+          <p className="text-sm">{selectedBlock.content}</p>
+        )}
+
+        <button onClick={handleAddBlock} className="mt-4 bg-primary text-white p-2 rounded">
+          Add Block
+        </button>
       </div>
     </div>
   )
