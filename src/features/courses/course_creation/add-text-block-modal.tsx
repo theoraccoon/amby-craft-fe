@@ -27,7 +27,14 @@ function AddTextBlockModal({
 
   const requiresParagraphWithSubHeading = ['Paragraph with subheading'].includes(selectedType)
 
-  const standaloneTextTypes = ['Statement A', 'Statement B', 'Statement C', 'Statement D', 'Note']
+  const standaloneTextTypes = [
+    'Statement A',
+    'Statement B',
+    'Statement C',
+    'Statement D',
+    'Note',
+    'Columns',
+  ]
   const handleAddBlock = () => {
     if (!selectedBlock) {
       console.warn('Selected block not found for type:', selectedType)
@@ -71,35 +78,35 @@ function AddTextBlockModal({
       {/* Preview */}
       <div className="w-[70%] h-full bg-tertiary rounded-r-[15px] flex flex-col justify-center items-start text-center px-3 space-y-2">
         {requiresParagraphWithHeading && (
-          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px">
+          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px">
             <h1 className="text-3xl font-semibold">Heading</h1>
             <p className="text-xs  text-left">{selectedBlock?.content}</p>
           </div>
         )}
         {requiresParagraphWithSubHeading && (
-          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px">
+          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px">
             <h2 className="text-lg ">Sub Heading</h2>{' '}
             <p className="text-xs text-left">{selectedBlock?.content}</p>
           </div>
         )}
         {requiresParagraph && (
-          <p className="flex flex-col justify-center items-start text-xs  bg-[#444444] p-3 rounded-md text-left w-[254px] h-[170px]">
+          <p className="flex flex-col justify-center items-start text-xs  bg-[#444444] p-3 rounded-md text-left w-[300px] h-[170px]">
             {selectedBlock?.content}
           </p>
         )}
         {requiresHeading && (
-          <h1 className="text-3xl flex flex-col justify-center items-start bg-[#444444]  p-3 rounded-md  w-[254px] h-[170px]">
+          <h1 className="text-3xl flex flex-col justify-center items-start bg-[#444444]  p-3 rounded-md  w-[300px] h-[170px]">
             {selectedBlock?.content}
           </h1>
         )}
 
         {requiresSubHeading && (
-          <h2 className="text-lg flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px]">
+          <h2 className="text-lg flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px]">
             {selectedBlock?.content}
           </h2>
         )}
         {standaloneTextTypes.includes(selectedType) && selectedBlock && (
-          <h1 className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px]">
+          <h1 className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px]">
             {selectedBlock?.content}
           </h1>
         )}
