@@ -1,3 +1,4 @@
+
 'use client'
 
 import React, { useState,useRef, useEffect} from 'react'
@@ -101,7 +102,7 @@ export default function CoursesPage() {
             title="You don’t have any content"
             subtitle="Created courses will show up here"
             buttonText="Create Course"
-            onClick={() => console.log('Create Course')}
+              route="/coursecreation"
           />
         )}
 
@@ -152,7 +153,7 @@ export default function CoursesPage() {
           title="You don’t have any content"
           subtitle="Created courses will show up here"
           buttonText="Create Course"
-          onClick={() => console.log('Create Course')}
+          route="/coursecreation"
         />
       )}
 

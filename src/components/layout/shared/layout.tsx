@@ -30,7 +30,7 @@ export default function SharedLayout({ children }: { children: ReactNode }) {
         {/* Main Content */}
         <div className="bg-[#181818] flex flex-col h-screen px-5 ">
           <Header />
-          <div className="flex flex-col overflow-y-auto no-scrollbar">{children}</div>
+          <div className="flex-1 overflow-y-auto no-scrollbar">{children}</div>
           <div className="md:hidden fixed bottom-0 left-0 w-full  flex justify-around items-center h-[90px] bg-[#181818]">
             <TabNavigator />
           </div>
