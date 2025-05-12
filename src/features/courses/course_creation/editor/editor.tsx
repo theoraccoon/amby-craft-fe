@@ -6,7 +6,8 @@ import BlockToolbar from '@/features/courses/course_creation/tool-bar'
 import AddTextBlockModal from '@/features/courses/course_creation/add-text-block-modal'
 import ParagraphBlock from '@/features/courses/course_creation/blocks/text_blocks/paragraph-block'
 import HeadingWithParagraphBlock from '@/features/courses/course_creation/blocks/text_blocks/paragraph-with-headting'
-import { TEXT_BLOCKS, TextBlock } from '@/types'
+import { TextBlock } from '@/types'
+import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 
 export type StoredBlock = TextBlock & { id: string }
 

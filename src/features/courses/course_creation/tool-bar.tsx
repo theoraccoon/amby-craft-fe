@@ -6,7 +6,8 @@ import { MdOutlineTextFields } from 'react-icons/md'
 import { GoListUnordered } from 'react-icons/go'
 import { FiVideo, FiLayers } from 'react-icons/fi'
 import { BsBack } from 'react-icons/bs'
-import { TEXT_BLOCKS, TextBlock } from '@/types'
+import { TextBlock } from '@/types'
+import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
 
 interface BlockToolbarProps {
   onAddBlock: (block: TextBlock) => void
