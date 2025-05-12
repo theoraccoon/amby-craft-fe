@@ -36,7 +36,6 @@ function AddTextBlockModal({
     }
   }
 
-  
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
@@ -68,7 +67,7 @@ function AddTextBlockModal({
       </div>
 
       {/* Preview */}
-      <div className="w-[70%] h-full bg-tertiary rounded-r-lg flex flex-col justify-center items-center text-center px-4 space-y-2">
+      <div className="w-[70%] h-full bg-tertiary rounded-r-lg flex flex-col justify-center items-start text-center px-4 space-y-2">
         {requiresHeading && <h3 className="text-lg font-semibold">Sample Heading</h3>}
         {requiresParagraph && <p className="text-sm">This is a sample paragraph for preview.</p>}
         {standaloneTextTypes.includes(selectedType) && selectedBlock && (
