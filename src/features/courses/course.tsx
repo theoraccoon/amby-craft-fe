@@ -102,7 +102,7 @@ export default function CoursesPage() {
             title="You don’t have any content"
             subtitle="Created courses will show up here"
             buttonText="Create Course"
-              route="/coursecreation"
+            route="/courses/course/creation"
           />
         )}
 
@@ -153,7 +153,7 @@ export default function CoursesPage() {
           title="You don’t have any content"
           subtitle="Created courses will show up here"
           buttonText="Create Course"
-          route="/coursecreation"
+    route="/courses/course/creation"
         />
       )}
 
