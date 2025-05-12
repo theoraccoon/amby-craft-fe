@@ -20,7 +20,7 @@ BlockToolbarProps) {
     { type: 'ai', icon: <IoSparklesSharp color="#F8AF43" />, label: 'Ai' },
     { type: 'ai image', icon: <IoImage color="#F8AF43" />, label: 'Ai Image' },
     { type: 'text', icon: <MdOutlineTextFields />, label: 'Text' },
-    { type: 'List', icon: <GoListUnordered />, label: 'Leading' },
+    { type: 'List', icon: <GoListUnordered />, label: 'List' },
     { type: 'image', icon: <IoImage />, label: 'Image' },
     { type: 'video', icon: <FiVideo />, label: 'Video' },
     { type: 'process', icon: <IoImage />, label: 'Process' },
