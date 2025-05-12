@@ -44,7 +44,7 @@ export const TEXT_BLOCKS: TextBlock[] = [
     type: 'Sub heading',
     content: 'Heading',
   },
-  { type: 'Columns', content: 'This is Statement A' },
+  { type: 'Columns', content: 'This is Columns' },
   { type: 'Statement A', content: 'This is Statement A' },
   { type: 'Statement B', content: 'This is Statement B' },
   { type: 'Statement C', content: 'This is Statement C' },
