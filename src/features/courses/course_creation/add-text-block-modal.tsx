@@ -1,6 +1,6 @@
 'use client'
 import { TEXT_BLOCKS, TextBlock } from '@/types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function AddTextBlockModal({
   type,
@@ -35,6 +35,19 @@ function AddTextBlockModal({
       onClose()
     }
   }
+
+  
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        handleAddBlock()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [selectedBlock])
   return (
     <div className="flex w-[495px] h-[395px] text-white p-2">
       {/* Block list */}
@@ -61,10 +74,6 @@ function AddTextBlockModal({
         {standaloneTextTypes.includes(selectedType) && selectedBlock && (
           <p className="text-sm">{selectedBlock.content}</p>
         )}
-
-        <button onClick={handleAddBlock} className="mt-4 bg-primary text-white p-2 rounded">
-          Add Block
-        </button>
       </div>
     </div>
   )
