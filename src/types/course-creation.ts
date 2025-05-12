@@ -15,6 +15,7 @@ export interface TextBlock {
     | 'Heading'
     | 'Sub heading'
     | 'Statement A'
+    | 'Columns'
     | 'Statement B'
     | 'Statement C'
     | 'Statement D'
