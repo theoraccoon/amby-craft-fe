@@ -3,7 +3,10 @@
 import React from 'react'
 import { Comfortaa, Open_Sans } from 'next/font/google'
 import '../styles/globals.css'
-import SharedLayout from '@/components/layout/shared/layout'
+import { Providers } from './provider'
+import { ViewModeProvider } from '@/context/view-mode-context'
+import { MobileDrawerProvider } from '@/context/mobile-drawer-context'
+import { TabletDrawerProvider } from '@/context/tablet-drawer-context'
 
 const comfortaa = Comfortaa({
   subsets: ['latin'],
@@ -18,7 +21,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${comfortaa.className} ${openSans.className}`}>
       <body className={comfortaa.className}>
-        <SharedLayout>{children}</SharedLayout>
+        <Providers>
+          <ViewModeProvider>
+            <MobileDrawerProvider>
+              <TabletDrawerProvider>{children}</TabletDrawerProvider>
+            </MobileDrawerProvider>
+          </ViewModeProvider>
+        </Providers>
       </body>
     </html>
   )
