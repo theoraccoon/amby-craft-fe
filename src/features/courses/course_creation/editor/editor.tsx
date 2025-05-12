@@ -28,6 +28,8 @@ export default function Editor() {
 
   const handleAddBlockFromModal = (block: TextBlock) => {
     const prefilled = TEXT_BLOCKS.find((b) => b.type === block.type)
+
+    console.log(prefilled, 'eke')
     if (!prefilled) return
     setBlocks((prev) => [...prev, { ...prefilled, id: uuid() }])
     setIsModalOpen(false)
@@ -36,13 +38,7 @@ export default function Editor() {
   const renderBlock = (block: StoredBlock) => {
     switch (block.type) {
       case 'Paragraph':
-        return (
-          <ParagraphBlock
-            key={block.id}
-            content={block.content}
-            onChange={() => {}}
-          />
-        )
+        return <ParagraphBlock key={block.id} content={block.content} onChange={() => {}} />
       case 'Paragraph with heading':
         return (
           <HeadingWithParagraphBlock
@@ -61,10 +57,7 @@ export default function Editor() {
     <div className="flex flex-col items-center space-y-4">
       {blocks.map(renderBlock)}
 
-      <BlockToolbar
-        onAddBlock={handleAddBlockInline}
-        onOpenModal={handleOpenModal}
-      />
+      <BlockToolbar onAddBlock={handleAddBlockInline} onOpenModal={handleOpenModal} />
 
       {isModalOpen && modalBlock && (
         <AddTextBlockModal

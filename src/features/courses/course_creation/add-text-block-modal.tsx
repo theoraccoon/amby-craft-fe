@@ -15,27 +15,29 @@ function AddTextBlockModal({
 
   const selectedBlock = TEXT_BLOCKS.find((b) => b.type === selectedType)
 
-  const requiresHeading = [
-    'Paragraph with heading',
-    'Paragraph with subheading',
-    'Heading',
-    'Sub heading',
-  ].includes(selectedType)
+  const requiresHeading = ['Heading'].includes(selectedType)
 
-  const requiresParagraph = [
-    'Paragraph',
-    'Paragraph with heading',
-    'Paragraph with subheading',
-  ].includes(selectedType)
+  const requiresSubHeading = ['Sub heading'].includes(selectedType)
+
+  console.log(requiresHeading)
+
+  const requiresParagraph = ['Paragraph'].includes(selectedType)
+
+  const requiresParagraphWithHeading = ['Paragraph with heading'].includes(selectedType)
+
+  const requiresParagraphWithSubHeading = ['Paragraph with subheading'].includes(selectedType)
 
   const standaloneTextTypes = ['Statement A', 'Statement B', 'Statement C', 'Statement D', 'Note']
   const handleAddBlock = () => {
-    if (selectedBlock) {
-      onAddBlock(selectedBlock)
-      onClose()
+    if (!selectedBlock) {
+      console.warn('Selected block not found for type:', selectedType)
+      return
     }
+    onAddBlock(selectedBlock)
+    onClose()
   }
 
+  // Handle Enter key press
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
@@ -48,9 +50,9 @@ function AddTextBlockModal({
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [selectedBlock])
   return (
-    <div className="flex w-[495px] h-[395px] text-white p-2">
+    <div className="flex w-[495px] h-[395px] text-white">
       {/* Block list */}
-      <div className="w-[30%] h-full bg-[#222222] rounded-l-lg p-2 space-y-2 overflow-y-auto no-scrollbar">
+      <div className="w-[30%] h-full bg-[#222222] rounded-l-[15px] space-y-2 overflow-y-auto no-scrollbar p-5">
         {TEXT_BLOCKS.map((block) => (
           <div
             key={block.type}
@@ -67,11 +69,39 @@ function AddTextBlockModal({
       </div>
 
       {/* Preview */}
-      <div className="w-[70%] h-full bg-tertiary rounded-r-lg flex flex-col justify-center items-start text-center px-4 space-y-2">
-        {requiresHeading && <h3 className="text-lg font-semibold">Sample Heading</h3>}
-        {requiresParagraph && <p className="text-sm">This is a sample paragraph for preview.</p>}
+      <div className="w-[70%] h-full bg-tertiary rounded-r-[15px] flex flex-col justify-center items-start text-center px-3 space-y-2">
+        {requiresParagraphWithHeading && (
+          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px">
+            <h1 className="text-3xl font-semibold">Heading</h1>
+            <p className="text-xs  text-left">{selectedBlock?.content}</p>
+          </div>
+        )}
+        {requiresParagraphWithSubHeading && (
+          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px">
+            <h2 className="text-lg ">Sub Heading</h2>{' '}
+            <p className="text-xs text-left">{selectedBlock?.content}</p>
+          </div>
+        )}
+        {requiresParagraph && (
+          <p className="flex flex-col justify-center items-start text-xs  bg-[#444444] p-3 rounded-md text-left w-[254px] h-[170px]">
+            {selectedBlock?.content}
+          </p>
+        )}
+        {requiresHeading && (
+          <h1 className="text-3xl flex flex-col justify-center items-start bg-[#444444]  p-3 rounded-md  w-[254px] h-[170px]">
+            {selectedBlock?.content}
+          </h1>
+        )}
+
+        {requiresSubHeading && (
+          <h2 className="text-lg flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px]">
+            {selectedBlock?.content}
+          </h2>
+        )}
         {standaloneTextTypes.includes(selectedType) && selectedBlock && (
-          <p className="text-sm">{selectedBlock.content}</p>
+          <h1 className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[254px] h-[170px]">
+            {selectedBlock?.content}
+          </h1>
         )}
       </div>
     </div>

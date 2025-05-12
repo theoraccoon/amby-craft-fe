@@ -1,0 +1,756 @@
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/src_ef8b0e36._.js", {
+
+"[project]/src/types/course.ts [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({});
+;
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/types/text-icon.ts [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({});
+;
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/types/header.ts [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({});
+;
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/types/course-creation.ts [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "TEXT_BLOCKS": (()=>TEXT_BLOCKS)
+});
+const TEXT_BLOCKS = [
+    {
+        type: 'Paragraph',
+        content: 'Office ipsum you must be muted. Respectively more / drawing-board boy we world weaponize hear turn. Backwards hop work too office responsible tomorrow crystallize mindfulness. Closer baseline win tentative whatever pushback. Pollination comes sky asserts game hear web we. Plan pretend harvest land go support dog that what'
+    },
+    {
+        type: 'Paragraph with heading',
+        content: 'Office ipsum you must be muted. Respectively more / drawing-board boy we world weaponize hear turn. Backwards hop work too office responsible tomorrow crystallize mindfulness. Closer baseline win tentative whatever pushback. Pollination comes sky asserts game hear web we. Plan pretend harvest land go support dog that what'
+    },
+    {
+        type: 'Paragraph with subheading',
+        content: 'Office ipsum you must be muted. Respectively more / drawing-board boy we world weaponize hear turn. Backwards hop work too office responsible tomorrow crystallize mindfulness. Closer baseline win tentative whatever pushback. Pollination comes sky asserts game hear web we. Plan pretend harvest land go support dog that what'
+    },
+    {
+        type: 'Heading',
+        content: 'Heading'
+    },
+    {
+        type: 'Sub heading',
+        content: 'Heading'
+    },
+    {
+        type: 'Statement A',
+        content: 'This is Statement A'
+    },
+    {
+        type: 'Statement B',
+        content: 'This is Statement B'
+    },
+    {
+        type: 'Statement C',
+        content: 'This is Statement C'
+    },
+    {
+        type: 'Statement D',
+        content: 'This is Statement D'
+    },
+    {
+        type: 'Note',
+        content: 'This is a note'
+    }
+];
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/types/index.ts [app-client] (ecmascript) <locals>": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({});
+;
+;
+;
+;
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/types/index.ts [app-client] (ecmascript) <module evaluation>": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname } = __turbopack_context__;
+{
+__turbopack_context__.s({});
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/types/course.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$text$2d$icon$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/types/text-icon.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$header$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/types/header.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/types/course-creation.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/types/index.ts [app-client] (ecmascript) <locals>");
+}}),
+"[project]/src/features/courses/course_creation/tool-bar.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>BlockToolbar)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/io5/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$md$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/md/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$go$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/go/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fi/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/bs/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/types/index.ts [app-client] (ecmascript) <module evaluation>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/types/course-creation.ts [app-client] (ecmascript)");
+'use client';
+;
+;
+;
+;
+;
+;
+;
+const modalTypeMap = {
+    Text: 'Paragraph',
+    Heading: 'Heading'
+};
+function BlockToolbar({ //   onAddBlock,
+onOpenModal }) {
+    const blockIcons = [
+        {
+            type: 'ai',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IoSparklesSharp"], {
+                color: "#F8AF43"
+            }, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 26,
+                columnNumber: 25
+            }, this),
+            label: 'Ai'
+        },
+        {
+            type: 'ai image',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IoImage"], {
+                color: "#F8AF43"
+            }, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 27,
+                columnNumber: 31
+            }, this),
+            label: 'Ai Image'
+        },
+        {
+            type: 'Text',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$md$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MdOutlineTextFields"], {}, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 28,
+                columnNumber: 27
+            }, this),
+            label: 'Text',
+            modal: true
+        },
+        {
+            type: 'List',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$go$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["GoListUnordered"], {}, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 29,
+                columnNumber: 27
+            }, this),
+            label: 'Leading'
+        },
+        {
+            type: 'Image',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IoImage"], {}, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 30,
+                columnNumber: 28
+            }, this),
+            label: 'Image'
+        },
+        {
+            type: 'video',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiVideo"], {}, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 31,
+                columnNumber: 28
+            }, this),
+            label: 'Video'
+        },
+        {
+            type: 'process',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IoImage"], {}, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 32,
+                columnNumber: 30
+            }, this),
+            label: 'Process'
+        },
+        {
+            type: 'flash cards',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BsBack"], {}, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 33,
+                columnNumber: 34
+            }, this),
+            label: 'Flash Cards'
+        },
+        {
+            type: 'sorting',
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiLayers"], {}, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 34,
+                columnNumber: 30
+            }, this),
+            label: 'Sorting'
+        }
+    ];
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "flex gap-2 flex-wrap bg-[#222222] p-2 rounded h-[93px] w-[1023px] items-center justify-around",
+        children: blockIcons.map(({ type, icon, label, modal })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: ()=>{
+                    if (modal && modalTypeMap[type]) {
+                        const targetType = modalTypeMap[type];
+                        const block = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TEXT_BLOCKS"].find((b)=>b.type === targetType);
+                        if (block) onOpenModal(block);
+                    }
+                },
+                className: "flex flex-col items-center px-3 py-2 rounded text-white hover:bg-gray-700",
+                children: [
+                    icon,
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-xs mt-1",
+                        children: label
+                    }, void 0, false, {
+                        fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                        lineNumber: 52,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, type, true, {
+                fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+                lineNumber: 40,
+                columnNumber: 9
+            }, this))
+    }, void 0, false, {
+        fileName: "[project]/src/features/courses/course_creation/tool-bar.tsx",
+        lineNumber: 38,
+        columnNumber: 5
+    }, this);
+}
+_c = BlockToolbar;
+var _c;
+__turbopack_context__.k.register(_c, "BlockToolbar");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/features/courses/course_creation/add-text-block-modal.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>__TURBOPACK__default__export__)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/types/index.ts [app-client] (ecmascript) <module evaluation>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/types/course-creation.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+function AddTextBlockModal({ type, onClose, onAddBlock }) {
+    _s();
+    const [selectedType, setSelectedType] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(type);
+    const selectedBlock = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TEXT_BLOCKS"].find((b)=>b.type === selectedType);
+    const requiresHeading = [
+        'Heading'
+    ].includes(selectedType);
+    const requiresSubHeading = [
+        'Sub heading'
+    ].includes(selectedType);
+    console.log(requiresHeading);
+    const requiresParagraph = [
+        'Paragraph'
+    ].includes(selectedType);
+    const requiresParagraphWithHeading = [
+        'Paragraph with heading'
+    ].includes(selectedType);
+    const requiresParagraphWithSubHeading = [
+        'Paragraph with subheading'
+    ].includes(selectedType);
+    const standaloneTextTypes = [
+        'Statement A',
+        'Statement B',
+        'Statement C',
+        'Statement D',
+        'Note'
+    ];
+    const handleAddBlock = ()=>{
+        if (!selectedBlock) {
+            console.warn('Selected block not found for type:', selectedType);
+            return;
+        }
+        console.log(selectedBlock, 'ejdj');
+        onAddBlock(selectedBlock);
+        onClose();
+    };
+    // Handle Enter key press
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AddTextBlockModal.useEffect": ()=>{
+            const handleKeyDown = {
+                "AddTextBlockModal.useEffect.handleKeyDown": (e)=>{
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        handleAddBlock();
+                    }
+                }
+            }["AddTextBlockModal.useEffect.handleKeyDown"];
+            window.addEventListener('keydown', handleKeyDown);
+            return ({
+                "AddTextBlockModal.useEffect": ()=>window.removeEventListener('keydown', handleKeyDown)
+            })["AddTextBlockModal.useEffect"];
+        }
+    }["AddTextBlockModal.useEffect"], [
+        selectedBlock
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "flex w-[495px] h-[395px] text-white p-2",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "w-[30%] h-full bg-[#222222] rounded-l-lg p-2 space-y-2 overflow-y-auto no-scrollbar",
+                children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TEXT_BLOCKS"].map((block)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        onClick: ()=>setSelectedType(block.type),
+                        className: `cursor-pointer p-2 rounded text-xs ${selectedType === block.type ? 'bg-tertiary text-white font-bold' : 'hover:bg-neutral-700'}`,
+                        children: block.type
+                    }, block.type, false, {
+                        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                        lineNumber: 58,
+                        columnNumber: 11
+                    }, this))
+            }, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                lineNumber: 56,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "w-[70%] h-full bg-tertiary rounded-r-lg flex flex-col justify-center items-start text-center px-4 space-y-2",
+                children: [
+                    requiresParagraphWithHeading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col justify-center items-start ",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "text-3xl font-semibold",
+                                children: "Heading"
+                            }, void 0, false, {
+                                fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                                lineNumber: 76,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-sm text-left",
+                                children: selectedBlock?.content
+                            }, void 0, false, {
+                                fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                                lineNumber: 77,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                        lineNumber: 75,
+                        columnNumber: 11
+                    }, this),
+                    requiresParagraphWithSubHeading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col justify-center items-start bg-[#444444]",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-lg ",
+                                children: "Sub Heading"
+                            }, void 0, false, {
+                                fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                                lineNumber: 82,
+                                columnNumber: 13
+                            }, this),
+                            ' ',
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-sm text-left",
+                                children: selectedBlock?.content
+                            }, void 0, false, {
+                                fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                                lineNumber: 83,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                        lineNumber: 81,
+                        columnNumber: 11
+                    }, this),
+                    requiresParagraph && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-sm text-left p-1",
+                        children: selectedBlock?.content
+                    }, void 0, false, {
+                        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                        lineNumber: 86,
+                        columnNumber: 31
+                    }, this),
+                    requiresHeading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-3xl p-2",
+                        children: selectedBlock?.content
+                    }, void 0, false, {
+                        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                        lineNumber: 87,
+                        columnNumber: 29
+                    }, this),
+                    requiresSubHeading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-lg ",
+                        children: selectedBlock?.content
+                    }, void 0, false, {
+                        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                        lineNumber: 89,
+                        columnNumber: 32
+                    }, this),
+                    standaloneTextTypes.includes(selectedType) && selectedBlock && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        children: selectedBlock?.content
+                    }, void 0, false, {
+                        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                        lineNumber: 91,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+                lineNumber: 73,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/features/courses/course_creation/add-text-block-modal.tsx",
+        lineNumber: 54,
+        columnNumber: 5
+    }, this);
+}
+_s(AddTextBlockModal, "R+yWXTua2wGYtzrucE2d36R85tU=");
+_c = AddTextBlockModal;
+const __TURBOPACK__default__export__ = AddTextBlockModal;
+var _c;
+__turbopack_context__.k.register(_c, "AddTextBlockModal");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-block.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>ParagraphBlock)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@tiptap/react/dist/index.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$starter$2d$kit$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@tiptap/starter-kit/dist/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+function ParagraphBlock({ content, onChange }) {
+    _s();
+    const editor = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["useEditor"])({
+        extensions: [
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$starter$2d$kit$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
+        ],
+        content: `<p>${content}</p>`,
+        onUpdate ({ editor }) {
+            onChange(editor.getText());
+        }
+    });
+    return editor ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-full",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["EditorContent"], {
+            editor: editor
+        }, void 0, false, {
+            fileName: "[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-block.tsx",
+            lineNumber: 23,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-block.tsx",
+        lineNumber: 22,
+        columnNumber: 5
+    }, this) : null;
+}
+_s(ParagraphBlock, "t0rsU/t1p+LiVrRpHUSgNnV9Lz4=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["useEditor"]
+    ];
+});
+_c = ParagraphBlock;
+var _c;
+__turbopack_context__.k.register(_c, "ParagraphBlock");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-with-headting.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>HeadingWithParagraphBlock)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@tiptap/react/dist/index.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$starter$2d$kit$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@tiptap/starter-kit/dist/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$extension$2d$heading$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@tiptap/extension-heading/dist/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+function HeadingWithParagraphBlock({ headingContent, paragraphContent, onChange }) {
+    _s();
+    const editor = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["useEditor"])({
+        extensions: [
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$starter$2d$kit$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].configure({
+                heading: {
+                    levels: [
+                        2
+                    ]
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$extension$2d$heading$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].configure({
+                levels: [
+                    2
+                ]
+            })
+        ],
+        content: `
+      <h2>${headingContent}</h2>
+      <p>${paragraphContent}</p>
+    `,
+        onUpdate ({ editor }) {
+            const json = editor.getJSON();
+            const heading = json.content?.find({
+                "HeadingWithParagraphBlock.useEditor[editor]": (n)=>n.type === 'heading'
+            }["HeadingWithParagraphBlock.useEditor[editor]"])?.content?.[0]?.text || '';
+            const paragraph = json.content?.find({
+                "HeadingWithParagraphBlock.useEditor[editor]": (n)=>n.type === 'paragraph'
+            }["HeadingWithParagraphBlock.useEditor[editor]"])?.content?.[0]?.text || '';
+            onChange({
+                heading,
+                paragraph
+            });
+        }
+    });
+    return editor ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-full space-y-2",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["EditorContent"], {
+            editor: editor
+        }, void 0, false, {
+            fileName: "[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-with-headting.tsx",
+            lineNumber: 37,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-with-headting.tsx",
+        lineNumber: 36,
+        columnNumber: 5
+    }, this) : null;
+}
+_s(HeadingWithParagraphBlock, "t0rsU/t1p+LiVrRpHUSgNnV9Lz4=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tiptap$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["useEditor"]
+    ];
+});
+_c = HeadingWithParagraphBlock;
+var _c;
+__turbopack_context__.k.register(_c, "HeadingWithParagraphBlock");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/features/courses/course_creation/editor/editor.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>Editor)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$uuid$2f$dist$2f$esm$2d$browser$2f$v4$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__v4$3e$__ = __turbopack_context__.i("[project]/node_modules/uuid/dist/esm-browser/v4.js [app-client] (ecmascript) <export default as v4>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$tool$2d$bar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/features/courses/course_creation/tool-bar.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$add$2d$text$2d$block$2d$modal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/features/courses/course_creation/add-text-block-modal.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$blocks$2f$text_blocks$2f$paragraph$2d$block$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-block.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$blocks$2f$text_blocks$2f$paragraph$2d$with$2d$headting$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/features/courses/course_creation/blocks/text_blocks/paragraph-with-headting.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/types/index.ts [app-client] (ecmascript) <module evaluation>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/types/course-creation.ts [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+;
+;
+;
+;
+function Editor() {
+    _s();
+    const [blocks, setBlocks] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [isModalOpen, setIsModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [modalBlock, setModalBlock] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const handleOpenModal = (block)=>{
+        setModalBlock(block);
+        setIsModalOpen(true);
+    };
+    const handleAddBlockInline = (block)=>{
+        const prefilled = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TEXT_BLOCKS"].find((b)=>b.type === block.type);
+        if (!prefilled) return;
+        setBlocks((prev)=>[
+                ...prev,
+                {
+                    ...prefilled,
+                    id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$uuid$2f$dist$2f$esm$2d$browser$2f$v4$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__v4$3e$__["v4"])()
+                }
+            ]);
+    };
+    const handleAddBlockFromModal = (block)=>{
+        const prefilled = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$types$2f$course$2d$creation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TEXT_BLOCKS"].find((b)=>b.type === block.type);
+        console.log(prefilled, 'eke');
+        if (!prefilled) return;
+        setBlocks((prev)=>[
+                ...prev,
+                {
+                    ...prefilled,
+                    id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$uuid$2f$dist$2f$esm$2d$browser$2f$v4$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__v4$3e$__["v4"])()
+                }
+            ]);
+        setIsModalOpen(false);
+    };
+    const renderBlock = (block)=>{
+        switch(block.type){
+            case 'Paragraph':
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$blocks$2f$text_blocks$2f$paragraph$2d$block$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    content: block.content,
+                    onChange: ()=>{}
+                }, block.id, false, {
+                    fileName: "[project]/src/features/courses/course_creation/editor/editor.tsx",
+                    lineNumber: 41,
+                    columnNumber: 16
+                }, this);
+            case 'Paragraph with heading':
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$blocks$2f$text_blocks$2f$paragraph$2d$with$2d$headting$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    headingContent: block.content,
+                    paragraphContent: block.content,
+                    onChange: ()=>{}
+                }, block.id, false, {
+                    fileName: "[project]/src/features/courses/course_creation/editor/editor.tsx",
+                    lineNumber: 44,
+                    columnNumber: 11
+                }, this);
+            default:
+                return null;
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "flex flex-col items-center space-y-4",
+        children: [
+            blocks.map(renderBlock),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$tool$2d$bar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                onAddBlock: handleAddBlockInline,
+                onOpenModal: handleOpenModal
+            }, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/editor/editor.tsx",
+                lineNumber: 60,
+                columnNumber: 7
+            }, this),
+            isModalOpen && modalBlock && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$add$2d$text$2d$block$2d$modal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                type: modalBlock.type,
+                onClose: ()=>setIsModalOpen(false),
+                onAddBlock: handleAddBlockFromModal
+            }, void 0, false, {
+                fileName: "[project]/src/features/courses/course_creation/editor/editor.tsx",
+                lineNumber: 63,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/features/courses/course_creation/editor/editor.tsx",
+        lineNumber: 57,
+        columnNumber: 5
+    }, this);
+}
+_s(Editor, "IwIdm0ddoYWOteea4fhDy/Dv314=");
+_c = Editor;
+var _c;
+__turbopack_context__.k.register(_c, "Editor");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+"[project]/src/app/create/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>Page)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$editor$2f$editor$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/features/courses/course_creation/editor/editor.tsx [app-client] (ecmascript)");
+'use client';
+;
+;
+function Page() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$courses$2f$course_creation$2f$editor$2f$editor$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+        fileName: "[project]/src/app/create/page.tsx",
+        lineNumber: 6,
+        columnNumber: 10
+    }, this);
+}
+_c = Page;
+var _c;
+__turbopack_context__.k.register(_c, "Page");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
+}]);
+
+//# sourceMappingURL=src_ef8b0e36._.js.map
