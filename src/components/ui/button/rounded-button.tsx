@@ -52,7 +52,8 @@ const RoundedButton = ({
     <Button
       width={"500px"}
       height={["40px"]}
-      fontSize={["sm"]} 
+      fontSize={["xs"]} 
+      fontWeight={"semibold"}
       bg={variantStyles.bg}
       color={variantStyles.color}
       _hover={variantStyles._hover}

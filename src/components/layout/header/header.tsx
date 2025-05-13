@@ -11,11 +11,11 @@ export default function Header() {
   const isDashboardPage = pathname === '/dashboard'
 
   return (
-    <div className="hidden md:flex w-full flex-col h-[8vh] justify-center">
-      <div className="flex items-center w-full justify-between">
+    <div className="hidden md:flex w-full flex-col justify-center pb-3">
+      <div className="flex items-center w-full justify-between mt-12">
         {/* Search Bar */}
         <div className="flex items-center h-full w-[20%]">
-          <SearchInputField leftIcon={<BiSearch color="#A0AEC0" size="20px" />} />
+          <SearchInputField leftIcon={<BiSearch color="#A0AEC0" size="18px" />} />
         </div>
         {!isDashboardPage && (
           <div className="flex items-center h-full w-[30%]">
