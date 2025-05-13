@@ -96,7 +96,7 @@ export default function CoursesPage() {
         !currentFolder.courses?.length &&
         currentPath.length > 0 && (
           <EmptyState
-            title="You don’t have any content"
+            title="You don't have any content"
             subtitle="Created courses will show up here"
             buttonText="Create Course"
             route="/courses/create"
@@ -147,7 +147,7 @@ export default function CoursesPage() {
 
       {currentPath.length === 0 && rootCourses.length === 0 && (
         <EmptyState
-          title="You don’t have any content"
+          title="You don't have any content"
           subtitle="Created courses will show up here"
           buttonText="Create Course"
           route="/courses/create"
