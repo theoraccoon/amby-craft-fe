@@ -1,7 +1,7 @@
 import { GoArrowRight } from 'react-icons/go'
 import { DashboardData } from '../types/type'
-import { BottomCurves } from './BottomCurves'
-import { TopCurves } from './TopCurves'
+import { BottomCurves } from './bottom-curves'
+import { TopCurves } from './top-curves'
 
 export const HeaderCards = (item: DashboardData) => (
   <div

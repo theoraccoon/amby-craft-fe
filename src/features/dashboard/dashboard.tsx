@@ -8,8 +8,6 @@ import Image from 'next/image'
 import CourseCard from '@/components/ui/card/course-card'
 import AuthorToggle from '@/components/ui/card/author-toggle'
 
-
-
 const dashboardItems = [
   {
     id: 'dashboard',
@@ -97,9 +95,6 @@ const courseItems = [
   },
 ]
 
-
-
-
 export default function Dashboard() {
   return (
     <div className="w-full   ">
@@ -176,7 +171,6 @@ export default function Dashboard() {
       </div>
 
       <p className="text-white !mt-12">Continue</p>
-
       <div className="bg-[#222222] flex justify-between items-center !p-3 sm:!p-5 !mt-8 rounded-[1.2rem]">
         <div className="flex items-center gap-x-4">
           <Image
@@ -231,8 +225,7 @@ export default function Dashboard() {
           })}
         </div>
       </div>
-      <div>
-      </div>
+      <div></div>
       <AuthorToggle />
     </div>
   )
