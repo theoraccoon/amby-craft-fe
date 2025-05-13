@@ -2,8 +2,9 @@
 import RoundedButton from '@/components/ui/button/rounded-button'
 import { FiChevronDown } from 'react-icons/fi'
 import { useState } from 'react'
+import { Lesson } from '@/types'
 
-export default function LessonBlock() {
+export default function AddLessonBlock() {
   const [lessons, setLessons] = useState<Lesson[]>([
     { title: '', showContent: false, sections: [] },
   ])

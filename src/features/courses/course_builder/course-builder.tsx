@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { IoArrowBack } from 'react-icons/io5'
 import { FiChevronDown } from 'react-icons/fi'
 import { useRouter } from 'next/navigation'
-import LessonBlock from './course-lesson-input'
+import AddLessonBlock from './course-lesson-input'
 
 export default function CourseBuilder() {
   const router = useRouter()
@@ -49,7 +49,7 @@ export default function CourseBuilder() {
           onChange={(e) => setDescription(e.target.value)}
           className="w-full text-[16px] font-['comfortaa'] bg-transparent text-gray-300 placeholder-gray-500 outline-none resize-none h-24 mb-14"
         />
-        <LessonBlock />
+        <AddLessonBlock />
       </div>
     </main>
   )

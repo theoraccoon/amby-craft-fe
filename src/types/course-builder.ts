@@ -1,4 +1,4 @@
-interface Lesson {
+export interface Lesson {
   title: string
   showContent: boolean
   sections: string[]
