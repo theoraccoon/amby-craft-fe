@@ -7,7 +7,6 @@ const AuthorToggle = () => {
   const [isAuthorVisible, setIsAuthorVisible] = useState(false)
 
   const handleToggle = () => {
-    console.log('Toggle clicked')
     setIsAuthorVisible(!isAuthorVisible)
   }
 
@@ -47,7 +46,7 @@ const AuthorToggle = () => {
           className="absolute flex-col gap-x-4  mt-2 bg-[#222222] rounded-[0.8rem] p-3 inline-flex"
           style={{ display: isAuthorVisible ? 'flex' : 'none' }}
         >
-          <div className="flex gap-x-4 items-center justify-center  ">
+          <div className="flex gap-x-4 items-center justify-center cursor-pointer ">
             <div className="h-[30px] w-[30px] rounded-full aspect-square bg-white relative ">
               <Image
                 src="/images/rounded-image.png"
@@ -61,7 +60,7 @@ const AuthorToggle = () => {
             </div>
             <p className="text-white text-xs">Henrikson Cavilion</p>
           </div>
-          <div className="h-7 mt-2">
+          <div className="h-7 mt-2 cursor-pointer">
             <FaRegEyeSlash
               color="gray"
               width={20}
