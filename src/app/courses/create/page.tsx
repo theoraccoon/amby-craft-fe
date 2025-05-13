@@ -2,7 +2,5 @@
 import CoursesBuilder from '@/features/courses/course-builder'
 
 export default function CoursesPage() {
-  return (
-    <CoursesBuilder />
-  )
+  return <CoursesBuilder />
 }
