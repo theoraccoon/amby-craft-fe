@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState,useRef, useEffect} from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import CourseInfoCard from '@/components/ui/card/course-info-card'
 import CourseCard from '@/components/ui/card/course-card'
 import FolderCard from '@/components/ui/card/course-folder-card'
@@ -12,14 +12,12 @@ import { rootCourses as initialRootCourses } from '@/data/root-courses-data'
 import type { Course, Folder } from '@/types/index'
 import EmptyState from '@/components/layout/shared/EmptyState'
 
-
 export default function CoursesPage() {
   const { viewMode } = useViewMode()
   const [isOpen, setIsOpen] = useState(false)
   const [folderName, setFolderName] = useState('')
   const [currentPath, setCurrentPath] = useState<string[]>([])
   const [showDropdown, setShowDropdown] = useState(false)
-
 
   const [rootCourses] = useState<Course[]>(initialRootCourses)
 
@@ -98,10 +96,10 @@ export default function CoursesPage() {
         !currentFolder.courses?.length &&
         currentPath.length > 0 && (
           <EmptyState
-            title="You don’t have any content"
+            title="You don't have any content"
             subtitle="Created courses will show up here"
             buttonText="Create Course"
-            onClick={() => console.log('Create Course')}
+            route="/courses/create"
           />
         )}
 
@@ -149,10 +147,10 @@ export default function CoursesPage() {
 
       {currentPath.length === 0 && rootCourses.length === 0 && (
         <EmptyState
-          title="You don’t have any content"
+          title="You don't have any content"
           subtitle="Created courses will show up here"
           buttonText="Create Course"
-          onClick={() => console.log('Create Course')}
+          route="/courses/create"
         />
       )}
 

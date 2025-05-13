@@ -1,7 +1,6 @@
 'use client'
+import CoursesBuilder from '@/features/courses/course-builder'
 
-import Editor from '@/features/courses/course_creation/editor/editor'
-
-export default function Page() {
-  return <Editor />
+export default function CoursesPage() {
+  return <CoursesBuilder />
 }
