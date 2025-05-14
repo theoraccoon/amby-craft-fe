@@ -1,12 +1,12 @@
 import React from 'react'
 import { FiChevronRight } from 'react-icons/fi'
 import { HiDotsHorizontal } from 'react-icons/hi'
-import DropdownMenu from './drop-down-menu'
+import FolderActionDropDown from './folder-action-drop-down'
 
 type FolderBreadcrumbProps = {
   currentPath: string[]
   onNavigate: (path: string[]) => void
-  dropdownRef: React.RefObject<HTMLDivElement | null> 
+  dropdownRef: React.RefObject<HTMLDivElement | null>
   showDropdown: boolean
   toggleDropdown: () => void
 }
@@ -53,7 +53,7 @@ export default function FolderBreadcrumb({
                   <HiDotsHorizontal className="text-[#a1a0a0] hover:text-text-secondary w-[16px] h-[16px]" />
                 </button>
 
-                {showDropdown && <DropdownMenu />}
+                {showDropdown && <FolderActionDropDown />}
               </div>
             )}
           </span>
