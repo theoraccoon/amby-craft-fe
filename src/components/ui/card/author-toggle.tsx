@@ -20,7 +20,6 @@ import { useState ,useEffect, useRef } from 'react'
         setIsAuthorVisible(false)
       }
     }
-
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
