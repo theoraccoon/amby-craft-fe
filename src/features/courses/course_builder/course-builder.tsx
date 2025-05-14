@@ -35,7 +35,6 @@ export default function CourseBuilder() {
           className="bg-transparent text-6xl font-semibold font-['comfortaa'] text-gray-200 placeholder-gray-500 outline-none mb-6 w-full"
         />
 
-        
         <div className="flex items-center mb-14 relative z-0">
           <AuthorToggle />
         </div>
