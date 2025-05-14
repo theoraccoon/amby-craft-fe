@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { IoArrowBack } from "react-icons/io5";
 import { FiChevronDown } from "react-icons/fi";
 import { useRouter } from 'next/navigation';
+import AuthorToggle from "@components/ui/card/author-toggle"
 
 export default function CourseBuilder() {
     const router = useRouter();
@@ -45,18 +46,10 @@ export default function CourseBuilder() {
           className="bg-transparent text-6xl font-semibold font-['comfortaa']  text-gray-200 placeholder-gray-500 outline-none mb-6 w-full"
         />
 
-        <div className="flex items-center mb-14 cursor-pointer">
-          <img
-            src="https://i.pravatar.cc/40"
-            alt="Author"
-            className="rounded-full w-8 h-8 mr-2"
-          />
-        <div className="flex items-center font-['open_sans'] text-xs text-[#FFFFFF]">
-            <span>Henrikson Cavilon</span>
-            <FiChevronDown className="ml-2 w-5 h-5 " />
-       </div>
-    </div>
-
+        
+        <div className="flex items-center mb-28 relative z-0">
+          <AuthorToggle />
+        </div>
         <textarea
           placeholder="Describe your course..."
           value={description}
