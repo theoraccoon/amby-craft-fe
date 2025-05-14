@@ -6,6 +6,7 @@ import { GoArrowRight } from 'react-icons/go'
 import { FiChevronRight } from 'react-icons/fi'
 import Image from 'next/image'
 import CourseCard from '@/components/ui/card/course-card'
+import AuthorToggle from '@/components/ui/card/author-toggle'
 
 const dashboardItems = [
   {
@@ -24,7 +25,7 @@ const dashboardItems = [
     count: 11,
     IconComponent: BiBook,
     borderStyle: '#9747FF',
-    backgrounndStyle: '#9747FF26',
+    backgroundStyle: '#9747FF26',
     curvesColor: '#9747FF',
     borderColor: '#9747FF26',
   },
@@ -34,7 +35,7 @@ const dashboardItems = [
     count: 11,
     IconComponent: BiBox,
     borderStyle: '#00BA7F',
-    backgrounndStyle: '#00BA7F26',
+    backgroundStyle: '#00BA7F26',
     curvesColor: '#00BA7F',
     borderColor: '#00BA7F26',
   },
@@ -44,7 +45,7 @@ const dashboardItems = [
     count: 11,
     IconComponent: BiBox,
     borderStyle: '#00BA7F',
-    backgrounndStyle: '#00BA7F26',
+    backgroundStyle: '#00BA7F26',
     curvesColor: '#00BA7F',
     borderColor: '#00BA7F26',
   },
@@ -53,7 +54,7 @@ const dashboardItems = [
     text: 'Total Question Bank',
     IconComponent: BiBox,
     borderStyle: '#00BA7F',
-    backgrounndStyle: '#00BA7F26',
+    backgroundStyle: '#00BA7F26',
     curvesColor: '#00BA7F',
     borderColor: '#00BA7F26',
   },
@@ -98,7 +99,7 @@ export default function Dashboard() {
   return (
     <div className="w-full   ">
       <div className=" w-full ">
-        <div className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 w-[100rem] scroll-smooth relative  sm:min-w-[70rem]">
+        <div className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 scroll-smooth relative  sm:min-w-[70rem]">
           {dashboardItems.map((item) => {
             const Icon = item.IconComponent
             const topCurves = (
@@ -170,7 +171,6 @@ export default function Dashboard() {
       </div>
 
       <p className="text-white !mt-12">Continue</p>
-
       <div className="bg-[#222222] flex justify-between items-center !p-3 sm:!p-5 !mt-8 rounded-[1.2rem]">
         <div className="flex items-center gap-x-4">
           <Image
@@ -225,6 +225,8 @@ export default function Dashboard() {
           })}
         </div>
       </div>
+      <div></div>
+      <AuthorToggle />
     </div>
   )
 }

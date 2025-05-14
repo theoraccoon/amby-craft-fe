@@ -29,9 +29,10 @@ function SidebarMenu() {
   return (
     <div className="flex flex-col w-full h-screen">
       {/* Logo Section */}
-      <div className="w-full relative h-[15%] my-7">
+      <div className="w-full relative !mt-[3.438rem] !mb-8">
         <Image
-          className="!relative"
+          className="!relative !w-[80%] ml-4"
+          fill={true}
           src={imageUrlAmbylon}
           alt="Login Background"
           layout="fill"
@@ -42,7 +43,7 @@ function SidebarMenu() {
       </div>
 
       {/* Menu Items */}
-      <div className="h-[85%]">
+      <div className="mt-[3.438rem]">
         <ul>
           {menuItems.map(({ id, text, IconComponent }) => {
             const isActive = activeItemId === id
