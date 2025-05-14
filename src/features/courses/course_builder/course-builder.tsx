@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { IoArrowBack } from 'react-icons/io5'
-import { FiChevronDown } from 'react-icons/fi'
 import { useRouter } from 'next/navigation'
 import AddLessonBlock from './course-lesson-input'
 import AuthorToggle from '@/components/ui/card/author-toggle'
