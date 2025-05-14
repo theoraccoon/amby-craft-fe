@@ -3,12 +3,14 @@ import RoundedButton from '@/components/ui/button/rounded-button'
 import { FiChevronDown } from 'react-icons/fi'
 import { useState } from 'react'
 import { Lesson } from '@/types'
+import ContentCreateDropdown from '../content-create-options-dropdown'
 
 export default function AddLessonBlock() {
   const [lessons, setLessons] = useState<Lesson[]>([
     { title: '', showContent: false, sections: [] },
   ])
   const [showSectionContent, setShowSectionContent] = useState<Record<string, boolean>>({})
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   const handleLessonTitleChange = (index: number, value: string) => {
     const updated = [...lessons]
@@ -50,23 +52,33 @@ export default function AddLessonBlock() {
       }))
     }
   }
+
   return (
     <>
+      {isOpenModal && (
+        <div className="w-[736px] flex justify-end bg-white absolute z-10">
+          <ContentCreateDropdown onClose={() => setIsOpenModal(false)} />
+        </div>
+      )}
       {lessons.map((lesson, lessonIdx) => (
         <div key={lessonIdx} className="">
           {/* Lesson Title Input */}
-          <div className="w-full flex justify-between items-center border-b border-gray-700 mb-2">
+          <div className="w-full flex justify-center items-center border-b border-gray-700 ">
             <input
               type="text"
               value={lesson.title}
               onChange={(e) => handleLessonTitleChange(lessonIdx, e.target.value)}
               onKeyDown={(e) => handleKeyDown(e, lessonIdx)}
               placeholder="Add a Lesson title..."
-              className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full"
+              className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full h-[75px]"
             />
+
             {lesson.showContent ? (
-              <div className="flex w-[150px] m-3">
+              <div className="flex w-[160px] ">
                 <RoundedButton
+                  onClick={() => {
+                    setIsOpenModal(!isOpenModal)
+                  }}
                   rightIcon={<FiChevronDown className="ml-2 w-5 h-5" color="#000000" />}
                 >
                   Add Content
@@ -82,12 +94,12 @@ export default function AddLessonBlock() {
           {/* Section Inputs */}
           {lesson.sections.map((section, secIdx) => (
             <div
-              className="w-full flex flex-col items-end justify-between mb-2"
+              className="w-full flex flex-col items-end justify-between "
               key={`${lessonIdx}-${secIdx}`}
             >
               <div
                 key={secIdx}
-                className=" w-[95%] flex justify-between items-center border-b border-gray-700 mb-2"
+                className=" w-[95%] flex justify-between items-center border-b border-gray-700 "
               >
                 <input
                   type="text"
@@ -95,11 +107,14 @@ export default function AddLessonBlock() {
                   onChange={(e) => handleSectionChange(lessonIdx, secIdx, e.target.value)}
                   onKeyDown={(e) => sectionHandleKeyDown(e, lessonIdx, secIdx)}
                   placeholder="Add a section..."
-                  className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full"
+                  className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full h-[75px]"
                 />
                 {showSectionContent[`${lessonIdx}-${secIdx}`] && (
-                  <div className="flex w-[160px] m-3">
+                  <div className="flex w-[160px] ">
                     <RoundedButton
+                      onClick={() => {
+                        setIsOpenModal(!isOpenModal)
+                      }}
                       rightIcon={<FiChevronDown className="ml-2 w-5 h-5" color="#000000" />}
                     >
                       Add Content
