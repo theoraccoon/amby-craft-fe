@@ -10,8 +10,8 @@ export default function AddLessonBlock() {
     { title: '', showContent: false, sections: [] },
   ])
   const [showSectionContent, setShowSectionContent] = useState<Record<string, boolean>>({})
-  const [isOpenModal, setIsOpenModal] = useState(false)
-
+  const [isOpenModal, setIsOpenModal] = useState<number | null>(null)
+  const [isOpenModalSection, setIsOpenModalSection] = useState<number | null>(null)
   const handleLessonTitleChange = (index: number, value: string) => {
     const updated = [...lessons]
     updated[index].title = value
@@ -55,11 +55,11 @@ export default function AddLessonBlock() {
 
   return (
     <>
-      {isOpenModal && (
+      {/* {isOpenModal && (
         <div className="w-[736px] flex justify-end bg-white absolute z-10">
           <ContentCreateDropdown onClose={() => setIsOpenModal(false)} />
         </div>
-      )}
+      )} */}
       {lessons.map((lesson, lessonIdx) => (
         <div key={lessonIdx} className="">
           {/* Lesson Title Input */}
@@ -72,12 +72,17 @@ export default function AddLessonBlock() {
               placeholder="Add a Lesson title..."
               className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full h-[75px]"
             />
+            {isOpenModal === lessonIdx && (
+              <div className="absolute z-[50] w-[736px] flex justify-end  rounded-xl shadow-lg">
+                <ContentCreateDropdown onClose={() => setIsOpenModal(null)} />
+              </div>
+            )}
 
             {lesson.showContent ? (
               <div className="flex w-[160px] ">
                 <RoundedButton
                   onClick={() => {
-                    setIsOpenModal(!isOpenModal)
+                    setIsOpenModal(lessonIdx)
                   }}
                   rightIcon={<FiChevronDown className="ml-2 w-5 h-5" color="#000000" />}
                 >
@@ -92,6 +97,7 @@ export default function AddLessonBlock() {
           </div>
 
           {/* Section Inputs */}
+
           {lesson.sections.map((section, secIdx) => (
             <div
               className="w-full flex flex-col items-end justify-between "
@@ -109,11 +115,16 @@ export default function AddLessonBlock() {
                   placeholder="Add a section..."
                   className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full h-[75px]"
                 />
+                {isOpenModalSection === secIdx && (
+                  <div className="absolute z-[50] w-[736px] flex justify-end  rounded-xl shadow-lg">
+                    <ContentCreateDropdown onClose={() => setIsOpenModal(null)} />
+                  </div>
+                )}
                 {showSectionContent[`${lessonIdx}-${secIdx}`] && (
                   <div className="flex w-[160px] ">
                     <RoundedButton
                       onClick={() => {
-                        setIsOpenModal(!isOpenModal)
+                        setIsOpenModalSection(secIdx)
                       }}
                       rightIcon={<FiChevronDown className="ml-2 w-5 h-5" color="#000000" />}
                     >
