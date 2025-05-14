@@ -1,9 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { IoArrowBack } from "react-icons/io5";
-import { FiChevronDown } from "react-icons/fi";
+import { IoArrowBack } from 'react-icons/io5';
 import { useRouter } from 'next/navigation';
-import AuthorToggle from "@components/ui/card/author-toggle"
+import AuthorToggle from '@components/ui/card/author-toggle'
 
 export default function CourseBuilder() {
     const router = useRouter();
