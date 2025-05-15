@@ -2,7 +2,6 @@
 
 import Editor from '@/features/courses/_components/course_creation/editor/editor'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState } from 'react'
 import { IoArrowBack } from 'react-icons/io5'
 
 const LessonBuilder = () => {
@@ -12,7 +11,7 @@ const LessonBuilder = () => {
   const handleBack = () => {
     router.back()
   }
-  //   const index = searchParams.get('index')
+
   const title = searchParams.get('title')
 
   return (
