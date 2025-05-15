@@ -44,7 +44,7 @@ export default function Editor() {
         return (
           <HeadingWithParagraphBlock
             key={block.id}
-            headingContent={block.content}
+            headingContent={'Heading'}
             paragraphContent={block.content}
             onChange={() => {}}
           />
