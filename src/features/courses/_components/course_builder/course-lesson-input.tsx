@@ -1,9 +1,10 @@
 'use client'
 import RoundedButton from '@/components/ui/button/rounded-button'
 import { FiChevronDown } from 'react-icons/fi'
-import { useState,useEffect, useRef  } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Lesson } from '@/types'
 import ContentCreateDropdown from '../content-create-options-dropdown'
+
 
 export default function AddLessonBlock() {
   const [lessons, setLessons] = useState<Lesson[]>([
@@ -55,22 +56,21 @@ export default function AddLessonBlock() {
 
   const modalRef = useRef<HTMLDivElement | null>(null)
 
-useEffect(() => {
-  function handleClickOutside(event: MouseEvent) {
-    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-      setIsOpenModal(null)
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setIsOpenModal(null)
+      }
     }
-  }
 
-  if (isOpenModal !== null) {
-    document.addEventListener('mousedown', handleClickOutside)
-  }
+    if (isOpenModal !== null) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
 
-  return () => {
-    document.removeEventListener('mousedown', handleClickOutside)
-  }
-}, [isOpenModal])
-
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpenModal])
 
   return (
     <>
@@ -92,10 +92,15 @@ useEffect(() => {
               className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full h-[75px]"
             />
             {isOpenModal === lessonIdx && (
-              <div 
-              ref={modalRef}
-              className="absolute z-[50] w-[736px] flex justify-end  rounded-xl shadow-lg ">
-                <ContentCreateDropdown onClose={() => setIsOpenModal(null)} />
+              <div
+                ref={modalRef}
+                className="absolute z-[50] w-[736px] flex justify-end  rounded-xl shadow-lg "
+              >
+                <ContentCreateDropdown
+                  onClose={() => setIsOpenModal(null)}
+                  lessonIdx={lessonIdx}
+                  lesson={lessons[lessonIdx]}
+                />
               </div>
             )}
 
@@ -138,7 +143,11 @@ useEffect(() => {
                 />
                 {isOpenModalSection === secIdx && (
                   <div className="absolute z-[50] w-[736px] flex justify-end  rounded-xl shadow-lg">
-                    <ContentCreateDropdown onClose={() => setIsOpenModal(null)} />
+                    <ContentCreateDropdown
+                      onClose={() => setIsOpenModal(null)}
+                      lessonIdx={lessonIdx}
+                      lesson={lessons[lessonIdx]}
+                    />
                   </div>
                 )}
                 {showSectionContent[`${lessonIdx}-${secIdx}`] && (
