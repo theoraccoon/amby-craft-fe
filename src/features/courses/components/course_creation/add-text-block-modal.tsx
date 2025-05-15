@@ -3,15 +3,16 @@ import { TextBlock } from '@/types'
 import React, { useEffect, useState } from 'react'
 import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
 
-
 function AddTextBlockModal({
   type,
   onClose,
   onAddBlock,
+  onTypeChange,
 }: {
   type: TextBlock['type']
   onClose: () => void
   onAddBlock: (block: TextBlock) => void
+  onTypeChange: (block: TextBlock) => void
 }) {
   const [selectedType, setSelectedType] = useState<TextBlock['type']>(type)
 
@@ -59,13 +60,15 @@ function AddTextBlockModal({
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [selectedBlock])
   return (
-    <div className="flex w-[495px] h-[395px] text-white">
+    <div className="flex w-[495px] h-[395px] text-white ">
       {/* Block list */}
       <div className="w-[30%] h-full bg-[#222222] rounded-l-[15px] space-y-2 overflow-y-auto no-scrollbar p-5">
         {TEXT_BLOCKS.map((block) => (
           <div
             key={block.type}
-            onClick={() => setSelectedType(block.type)}
+            onClick={() => {
+              setSelectedType(block.type), onTypeChange(block)
+            }}
             className={`cursor-pointer p-2 rounded text-xs ${
               selectedType === block.type
                 ? 'bg-tertiary text-white font-bold'

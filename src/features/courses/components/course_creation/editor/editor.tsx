@@ -9,6 +9,7 @@ import HeadingWithParagraphBlock from '@/features/courses/components/course_crea
 import { TextBlock } from '@/types'
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import Image from 'next/image'
+import { RiArrowDropDownLine } from 'react-icons/ri'
 
 export type StoredBlock = TextBlock & { id: string }
 
@@ -16,6 +17,8 @@ export default function Editor() {
   const [blocks, setBlocks] = useState<StoredBlock[]>([])
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalBlock, setModalBlock] = useState<TextBlock | null>(null)
+
+  
 
   const handleOpenModal = (block: TextBlock) => {
     setModalBlock(block)
@@ -56,31 +59,47 @@ export default function Editor() {
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      {blocks.map(renderBlock)}
+      <div className="w-[70%] flex flex-col justify-center border-y border-dashed   border-[#FFFFFF1A] p-10">
+        <div className=" flex flex-row w-full ">
+          <div className="w-[25%] z-10">
+            {isModalOpen && modalBlock && (
+              <>
+                <div
+                  className="flex justify-around items-center bg-[#222222] h-10 w-[255px] rounded-[50px] cursor-pointer"
+                  onClick={() => handleOpenModal(modalBlock)}
+                >
+                  <p className="text-xs">{modalBlock.type}</p>
+                  <RiArrowDropDownLine className="text-lg" />
+                </div>
 
-      <BlockToolbar onAddBlock={handleAddBlockInline} onOpenModal={handleOpenModal} />
+                <AddTextBlockModal
+                  type={modalBlock.type}
+                  onClose={() => setIsModalOpen(false)}
+                  onAddBlock={handleAddBlockFromModal}
+                  onTypeChange={setModalBlock}
+                />
+              </>
+            )}
+          </div>
+          <div className="flex flex-col w-[75%] relative">
+            <div className="absolute top-[-50px] left-1/3 transform -translate-x-1/2">
+              <Image
+                src="/images/hover-icon.svg"
+                className="w-5 h-5 object-contain rounded-[1.2rem]"
+                alt="Login Background"
+                width={20}
+                height={20}
+                quality={100}
+                priority
+              />
+            </div>
 
-      <div className="w-full flex justify-center !border !border-dashed border-[#FFFFFF1A] h-[8rem]  relative">
-        <div className="w-5 h-5 absolute -top-2">
-          <Image
-            src="/images/hover-icon.svg"
-            className="block max-w-[20px]  object-contain rounded-[1.2rem] !relative h-full w-full"
-            alt="Login Background"
-            fill={true}
-            objectFit="cover"
-            quality={100}
-            priority
-          />
+            <div className="flex flex-col items-center p-10 w-full">{blocks.map(renderBlock)}</div>
+          </div>
         </div>
       </div>
 
-      {isModalOpen && modalBlock && (
-        <AddTextBlockModal
-          type={modalBlock.type}
-          onClose={() => setIsModalOpen(false)}
-          onAddBlock={handleAddBlockFromModal}
-        />
-      )}
+      <BlockToolbar onAddBlock={handleAddBlockInline} onOpenModal={handleOpenModal} />
     </div>
   )
 }
