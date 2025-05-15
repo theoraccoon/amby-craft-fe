@@ -1,6 +1,6 @@
 'use client'
 import { TextBlock } from '@/types'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
 
 function AddTextBlockModal({
@@ -38,14 +38,14 @@ function AddTextBlockModal({
     'Note',
     'Columns',
   ]
-  const handleAddBlock = () => {
+  const handleAddBlock = useCallback(() => {
     if (!selectedBlock) {
       console.warn('Selected block not found for type:', selectedType)
       return
     }
     onAddBlock(selectedBlock)
     onClose()
-  }
+  }, [selectedBlock, onAddBlock, onClose])
 
   // Handle Enter key press
   useEffect(() => {
@@ -59,6 +59,12 @@ function AddTextBlockModal({
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [selectedBlock])
+
+  const handleBlockClick = (block: TextBlock) => {
+    setSelectedType(block.type)
+    onTypeChange(block)
+  }
+
   return (
     <div className="flex w-[495px] h-[395px] text-white ">
       {/* Block list */}
@@ -66,9 +72,7 @@ function AddTextBlockModal({
         {TEXT_BLOCKS.map((block) => (
           <div
             key={block.type}
-            onClick={() => {
-              setSelectedType(block.type), onTypeChange(block)
-            }}
+            onClick={() => handleBlockClick(block)}
             className={`cursor-pointer p-2 rounded text-xs ${
               selectedType === block.type
                 ? 'bg-tertiary text-white font-bold'
