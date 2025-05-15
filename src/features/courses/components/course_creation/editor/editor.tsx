@@ -8,6 +8,7 @@ import ParagraphBlock from '@/features/courses/components/course_creation/blocks
 import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-headting'
 import { TextBlock } from '@/types'
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
+import Image from 'next/image'
 
 export type StoredBlock = TextBlock & { id: string }
 
@@ -30,7 +31,6 @@ export default function Editor() {
   const handleAddBlockFromModal = (block: TextBlock) => {
     const prefilled = TEXT_BLOCKS.find((b) => b.type === block.type)
 
-    console.log(prefilled, 'eke')
     if (!prefilled) return
     setBlocks((prev) => [...prev, { ...prefilled, id: uuid() }])
     setIsModalOpen(false)
@@ -59,6 +59,20 @@ export default function Editor() {
       {blocks.map(renderBlock)}
 
       <BlockToolbar onAddBlock={handleAddBlockInline} onOpenModal={handleOpenModal} />
+
+      <div className="w-full flex justify-center !border !border-dashed border-[#FFFFFF1A] h-[8rem]  relative">
+        <div className="w-5 h-5 absolute -top-2">
+          <Image
+            src="/images/hover-icon.svg"
+            className="block max-w-[20px]  object-contain rounded-[1.2rem] !relative h-full w-full"
+            alt="Login Background"
+            fill={true}
+            objectFit="cover"
+            quality={100}
+            priority
+          />
+        </div>
+      </div>
 
       {isModalOpen && modalBlock && (
         <AddTextBlockModal
