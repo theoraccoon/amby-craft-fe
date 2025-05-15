@@ -2,6 +2,7 @@ import React from 'react'
 import { FiChevronRight } from 'react-icons/fi'
 import { HiDotsHorizontal } from 'react-icons/hi'
 import FolderActionDropDown from './folder-action-drop-down'
+// import FolderActionDropDown from './_components/course_creation/folder-action-drop-down'
 
 type FolderBreadcrumbProps = {
   currentPath: string[]

@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import BlockToolbar from '@/features/courses/course_creation/tool-bar'
-import AddTextBlockModal from '@/features/courses/course_creation/add-text-block-modal'
-import ParagraphBlock from '@/features/courses/course_creation/blocks/text_blocks/paragraph-block'
-import HeadingWithParagraphBlock from '@/features/courses/course_creation/blocks/text_blocks/paragraph-with-headting'
+import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
+import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
+import ParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-block'
+import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-headting'
 import { TextBlock } from '@/types'
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 
@@ -44,7 +44,7 @@ export default function Editor() {
         return (
           <HeadingWithParagraphBlock
             key={block.id}
-            headingContent={block.content}
+            headingContent={'Heading'}
             paragraphContent={block.content}
             onChange={() => {}}
           />
