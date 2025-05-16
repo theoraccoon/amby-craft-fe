@@ -37,11 +37,11 @@ export default function BlockToolbar({
   ]
 
   return (
-    <div className="flex ">
-      <div className=" flex justify-center items-center h-[93px] bg-white w-[80px] rounded-md mr-3 ">
+    <div className="flex p-3">
+      <div className=" flex justify-center items-center  bg-white w-[80px] rounded-[10px] mr-3 ">
         <BsFillGrid1X2Fill color="#222222" />
       </div>
-      <div className="flex gap-2 flex-wrap bg-[#222222] p-2 rounded h-[93px] w-[1023px] items-center justify-around">
+      <div className="flex flex-wrap bg-[#222222]  rounded-[10px] items-center justify-around">
         {blockIcons.map(({ type, icon, label, modal }) => (
           <button
             key={type}
@@ -52,7 +52,7 @@ export default function BlockToolbar({
                 if (block) onOpenModal(block)
               }
             }}
-            className="flex flex-col items-center px-3 py-2 rounded text-white hover:bg-gray-700"
+            className="flex flex-col items-center px-2 py-4 rounded text-white hover:bg-gray-700 w-[90px] cursor-pointer"
           >
             {icon}
             <span className="text-xs mt-1">{label}</span>
