@@ -6,7 +6,7 @@ import { TopCurves } from './top-curves'
 export const HeaderCards = (item: DashboardData) => (
   <div
     key={item.id}
-    className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 min-w-[21rem] sm:!min-w-[32rem] mt-12`}
+    className={`cursor-pointer rounded-[1.2rem] !border inline-block z-10 min-w-[21rem] sm:!min-w-[24rem] mt-12`}
     style={{
       backgroundColor: item.backgroundStyle,
       borderColor: item.borderStyle,
