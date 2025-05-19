@@ -1,17 +1,19 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
-import CourseInfoCard from '@/components/ui/card/course-info-card'
+import React, { useEffect, useRef, useState } from 'react'
+
+import FolderBreadcrumb from './folder-bread-crumb'
+
+import EmptyState from '@/components/layout/shared/EmptyState'
+import TextInputModal from '@/components/modals/input-modal'
 import CourseCard from '@/components/ui/card/course-card'
 import FolderCard from '@/components/ui/card/course-folder-card'
-import TextInputModal from '@/components/modals/input-modal'
+import CourseInfoCard from '@/components/ui/card/course-info-card'
 import { useViewMode } from '@/context/view-mode-context'
 // import FolderBreadcrumb from '../../folder-bread-crumb'
 import folders from '@/data/folders-card-data'
 import { rootCourses as initialRootCourses } from '@/data/root-courses-data'
 import type { Course, Folder } from '@/types/index'
-import EmptyState from '@/components/layout/shared/EmptyState'
-import FolderBreadcrumb from './folder-bread-crumb'
 
 export default function CoursesPage() {
   const { viewMode } = useViewMode()
@@ -30,7 +32,7 @@ export default function CoursesPage() {
   const getCurrentFolder = (): Folder => {
     let current: Folder = { children: folders }
     for (const part of currentPath) {
-      const next = current.children?.find((f) => f.title === part)
+      const next = current.children?.find(f => f.title === part)
       if (!next) break
       current = next
     }
@@ -75,7 +77,7 @@ export default function CoursesPage() {
         onNavigate={setCurrentPath}
         dropdownRef={dropdownRef}
         showDropdown={showDropdown}
-        toggleDropdown={() => setShowDropdown((prev) => !prev)}
+        toggleDropdown={() => setShowDropdown(prev => !prev)}
       />
       <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] mb-6">
         {currentFolder.children?.map((folder: Folder, idx: number) => (

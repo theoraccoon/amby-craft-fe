@@ -1,3 +1,3 @@
 export interface HeaderActionsPanelProps {
-    isDashboardPage: boolean;
-  }
+  isDashboardPage: boolean
+}

@@ -1,8 +1,10 @@
 'use client'
 
-import Editor from '@/features/courses/components/course_creation/editor/editor'
 import { useRouter, useSearchParams } from 'next/navigation'
+
 import { IoArrowBack } from 'react-icons/io5'
+
+import Editor from '@/features/courses/components/course_creation/editor/editor'
 
 const LessonBuilder = () => {
   const searchParams = useSearchParams()

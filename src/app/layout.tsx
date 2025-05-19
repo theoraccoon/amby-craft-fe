@@ -1,14 +1,16 @@
 'use client'
 
-import React from 'react'
 import { Comfortaa, Open_Sans } from 'next/font/google'
+import React from 'react'
+
 import '../styles/globals.css'
 import { Providers } from './provider'
-import { ViewModeProvider } from '@/context/view-mode-context'
+
 import { MobileDrawerProvider } from '@/context/mobile-drawer-context'
 import { TabletDrawerProvider } from '@/context/tablet-drawer-context'
 import { Provider as ReduxProvider } from 'react-redux'
 import { store } from '@/store'
+import { ViewModeProvider } from '@/context/view-mode-context'
 
 const comfortaa = Comfortaa({
   subsets: ['latin'],

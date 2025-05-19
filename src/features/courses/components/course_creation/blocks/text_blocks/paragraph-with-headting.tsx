@@ -1,8 +1,10 @@
 'use client'
-import { useEditor, EditorContent } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
-import Heading from '@tiptap/extension-heading'
+
 import React from 'react'
+
+import Heading from '@tiptap/extension-heading'
+import { EditorContent, useEditor } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 
 export default function HeadingWithParagraphBlock({
   headingContent,
@@ -26,8 +28,8 @@ export default function HeadingWithParagraphBlock({
     `,
     onUpdate({ editor }) {
       const json = editor.getJSON()
-      const heading = json.content?.find((n) => n.type === 'heading')?.content?.[0]?.text || ''
-      const paragraph = json.content?.find((n) => n.type === 'paragraph')?.content?.[0]?.text || ''
+      const heading = json.content?.find(n => n.type === 'heading')?.content?.[0]?.text || ''
+      const paragraph = json.content?.find(n => n.type === 'paragraph')?.content?.[0]?.text || ''
       onChange({ heading, paragraph })
     },
   })
@@ -38,4 +40,3 @@ export default function HeadingWithParagraphBlock({
     </div>
   ) : null
 }
-
