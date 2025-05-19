@@ -14,12 +14,14 @@ import ParagraphBlock from '@/features/courses/components/course_creation/blocks
 import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-heading'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { TextBlock } from '@/types'
-import ParagraphWithSubheadinghBlock from '../blocks/text_blocks/paragraph-with-subheading'
+import ParagraphWithSubheadinghBlock from '../blocks/text_blocks/paragraph-with-subheading-block'
 import HeadingBlock from '../blocks/text_blocks/heading-block'
-import StatementABlock from '../blocks/text_blocks/statement-a'
-import StatementBblock from '../blocks/text_blocks/statement-b'
-import StatementCblock from '../blocks/text_blocks/statement-c'
+import StatementABlock from '../blocks/text_blocks/statement-a-block'
+import StatementBblock from '../blocks/text_blocks/statement-b-block'
+import StatementCblock from '../blocks/text_blocks/statement-c-block'
 import NoteBlock from '../blocks/text_blocks/note-block'
+import Columnblock from '../blocks/text_blocks/column-block'
+import StatementDblock from '../blocks/text_blocks/statement-d-block'
 
 
 export type StoredBlock = TextBlock & { id: string }
@@ -88,7 +90,13 @@ export default function Editor() {
          case 'Statement B':
         return <StatementBblock key={block.id}   content={block.content}  onChange={() => {}}/>
           case 'Statement C':
+            
         return <StatementCblock key={block.id}   content={block.content}  onChange={() => {}}/>
+          case 'Statement C':
+            
+        return <StatementDblock key={block.id}   content={block.content}  onChange={() => {}}/>
+          case 'Columns':
+        return <Columnblock key={block.id}   content={block.content}  onChange={() => {}}/>
          case 'Note':
         return <NoteBlock key={block.id}   content={block.content}  onChange={() => {}}/>
       default:
