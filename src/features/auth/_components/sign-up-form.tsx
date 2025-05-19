@@ -1,12 +1,14 @@
 'use client'
 
-import InputField from '@/components/ui/input/input'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+
 import '../../../styles/globals.css'
-import CustomButton from '@/components/ui/button/custom-button'
 import { CiLogin } from 'react-icons/ci'
 import { IoLogoGoogle } from 'react-icons/io'
-import { useRouter } from 'next/navigation'
+
+import CustomButton from '@/components/ui/button/custom-button'
+import InputField from '@/components/ui/input/input'
 import imageUrlAmbylon from '@/images/amby-svg.svg'
 
 export default function SignUpForm() {

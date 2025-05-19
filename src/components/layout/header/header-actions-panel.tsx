@@ -1,15 +1,17 @@
 'use client'
 
-import { FiUserPlus, FiPlus } from 'react-icons/fi'
-import { TfiLayoutGrid2Alt } from 'react-icons/tfi'
-import ToggleTextWithIcon from '@/components/ui/button/text-icon-button'
 import Image from 'next/image'
-import RoundedButton from '@/components/ui/button/rounded-button'
 import { useState } from 'react'
+
+import { FiPlus, FiUserPlus } from 'react-icons/fi'
+import { TbMenu2 } from 'react-icons/tb'
+import { TfiLayoutGrid2Alt } from 'react-icons/tfi'
+
 import TextInputModal from '@/components/modals/input-modal'
+import RoundedButton from '@/components/ui/button/rounded-button'
+import ToggleTextWithIcon from '@/components/ui/button/text-icon-button'
 import { useViewMode } from '@/context/view-mode-context'
 import { HeaderActionsPanelProps } from '@/types'
-import { TbMenu2 } from 'react-icons/tb'
 
 export default function HeaderActionsPanel({ isDashboardPage }: HeaderActionsPanelProps) {
   const [isOpen, setIsOpen] = useState(false)

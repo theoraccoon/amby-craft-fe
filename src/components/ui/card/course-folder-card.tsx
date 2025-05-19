@@ -1,5 +1,6 @@
-import { FolderIcon, PlusIcon } from 'lucide-react'
 import React from 'react'
+
+import { FolderIcon, PlusIcon } from 'lucide-react'
 
 interface FolderCardProps {
   title: string

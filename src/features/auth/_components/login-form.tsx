@@ -1,12 +1,14 @@
 'use client'
 
-import InputField from '@/components/ui/input/input'
 import Image from 'next/image'
-import '../../../styles/globals.css'
-import CustomButton from '@/components/ui/button/custom-button'
-import { IoLogoGoogle } from 'react-icons/io'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+
+import '../../../styles/globals.css'
+import { IoLogoGoogle } from 'react-icons/io'
+
+import CustomButton from '@/components/ui/button/custom-button'
+import InputField from '@/components/ui/input/input'
 
 export default function LoginForm() {
   const router = useRouter()

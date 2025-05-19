@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { BiBookOpen, BiBookAlt } from 'react-icons/bi'
+
+import { BiBookAlt, BiBookOpen } from 'react-icons/bi'
 import { FiPlus } from 'react-icons/fi'
-import { MdGridView } from 'react-icons/md'
 import { FiArchive } from 'react-icons/fi'
+import { MdGridView } from 'react-icons/md'
 
 const menuItems = [
   { id: 'dashboard', text: 'Dashboard', IconComponent: MdGridView },

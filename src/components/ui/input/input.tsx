@@ -1,18 +1,19 @@
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
-  InputProps,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Button,
-} from '@chakra-ui/react'
 import React from 'react'
 import { ReactNode } from 'react'
-import { IoEyeOutline } from 'react-icons/io5'
+
+import {
+  Button,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputProps,
+  InputRightElement,
+} from '@chakra-ui/react'
 import { FaRegEyeSlash } from 'react-icons/fa6'
+import { IoEyeOutline } from 'react-icons/io5'
 
 interface InputFieldProps extends InputProps {
   label?: string

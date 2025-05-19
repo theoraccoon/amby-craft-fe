@@ -1,11 +1,13 @@
 'use client'
 
-import React from 'react'
-import { FiChevronRight } from 'react-icons/fi'
 import Image from 'next/image'
+import React from 'react'
+
+import { HeaderCards } from './components/header-curves'
+import { FiChevronRight } from 'react-icons/fi'
+
 import CourseCard from '@/components/ui/card/course-card'
 import { courseItems, dashboardData } from '@/features/dashboard/data/dashboardData'
-import { HeaderCards } from './components/header-curves'
 
 export default function DashboardPage() {
   return (

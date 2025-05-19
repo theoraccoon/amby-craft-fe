@@ -1,8 +1,10 @@
 'use client'
 
-import { FiUser, FiBriefcase, FiFolder } from 'react-icons/fi'
-import ToggleTextWithIcon from '@/components/ui/button/text-icon-button'
 import { useState } from 'react'
+
+import { FiBriefcase, FiFolder, FiUser } from 'react-icons/fi'
+
+import ToggleTextWithIcon from '@/components/ui/button/text-icon-button'
 
 const navItems = [
   { label: 'Private', icon: <FiUser /> },

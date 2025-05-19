@@ -1,16 +1,17 @@
+import React from 'react'
+
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
   Button,
-  Input,
   FormControl,
   FormLabel,
+  Input,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
 } from '@chakra-ui/react'
-import React from 'react'
 
 interface TextInputModalProps {
   isOpen: boolean

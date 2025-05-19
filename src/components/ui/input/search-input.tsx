@@ -1,5 +1,6 @@
-import { Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react'
 import { ReactNode } from 'react'
+
+import { Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react'
 
 type SearchInputFieldProps = {
   placeholder?: string

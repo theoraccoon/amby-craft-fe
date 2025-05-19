@@ -1,5 +1,6 @@
+import { ReactElement, ReactNode } from 'react'
+
 import { Button, ButtonProps } from '@chakra-ui/react'
-import { ReactNode, ReactElement } from 'react'
 
 const buttonVariants = {
   primary: {

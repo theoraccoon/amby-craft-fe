@@ -1,6 +1,5 @@
 // src/context/ViewModeContext.tsx
-
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import React, { ReactNode, createContext, useContext, useState } from 'react'
 
 type ViewMode = 'grid' | 'list'
 

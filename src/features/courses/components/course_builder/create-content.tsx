@@ -1,8 +1,10 @@
 'use client'
 
-import Editor from '@/features/courses/components/course_creation/editor/editor'
 import { useRouter, useSearchParams } from 'next/navigation'
+
 import { IoArrowBack } from 'react-icons/io5'
+
+import Editor from '@/features/courses/components/course_creation/editor/editor'
 
 const LessonBuilder = () => {
   const searchParams = useSearchParams()
@@ -15,7 +17,7 @@ const LessonBuilder = () => {
   const title = searchParams.get('title')
 
   return (
-    <main className="min-h-screen bg-[#181818] text-white relative px-4">
+    <main className="  min-h-screen bg-[#181818] text-white relative px-4">
       {/* Back Button */}
       <div
         className="absolute top-14 left-7 text-sm font-['open_sans'] text-[#FFFFFF] hover:underline cursor-pointer flex items-center space-x-5"

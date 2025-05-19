@@ -1,14 +1,16 @@
 'use client'
 
 import React from 'react'
-import { IoSparklesSharp, IoImage } from 'react-icons/io5'
-import { MdOutlineTextFields } from 'react-icons/md'
-import { GoListUnordered } from 'react-icons/go'
-import { FiVideo, FiLayers } from 'react-icons/fi'
-import { BsBack } from 'react-icons/bs'
-import { TextBlock } from '@/types'
+
 import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
+import { BsBack } from 'react-icons/bs'
 import { BsFillGrid1X2Fill } from 'react-icons/bs'
+import { FiLayers, FiVideo } from 'react-icons/fi'
+import { GoListUnordered } from 'react-icons/go'
+import { IoImage, IoSparklesSharp } from 'react-icons/io5'
+import { MdOutlineTextFields } from 'react-icons/md'
+
+import { TextBlock } from '@/types'
 
 interface BlockToolbarProps {
   onAddBlock: (block: TextBlock) => void

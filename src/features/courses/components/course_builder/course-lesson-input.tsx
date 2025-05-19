@@ -1,8 +1,10 @@
 'use client'
-import RoundedButton from '@/components/ui/button/rounded-button'
-import { FiChevronDown } from 'react-icons/fi'
+
 import ContentCreateDropdown from '../content-create-options-dropdown'
 import { useLessonBlock } from './hooks/useLessonBlock'
+import { FiChevronDown } from 'react-icons/fi'
+
+import RoundedButton from '@/components/ui/button/rounded-button'
 
 export default function AddLessonBlock() {
   const {

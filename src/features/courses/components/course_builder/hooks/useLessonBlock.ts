@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from 'react'
+
 import { Lesson } from '@/types'
-import { useState, useRef, useEffect } from 'react'
 
 export const useLessonBlock = () => {
   const [lessons, setLessons] = useState<Lesson[]>([

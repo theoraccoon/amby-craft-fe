@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+
 import { ToggleTextWithIconProps } from '@/types'
 
 export default function ToggleTextWithIcon({

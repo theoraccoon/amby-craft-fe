@@ -1,7 +1,10 @@
 'use client'
-import { TextBlock } from '@/types'
+
 import React, { useCallback, useEffect, useState } from 'react'
+
 import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
+
+import { TextBlock } from '@/types'
 
 function AddTextBlockModal({
   type,

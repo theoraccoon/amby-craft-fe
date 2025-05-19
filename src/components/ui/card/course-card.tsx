@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { User, Layers, Calendar } from 'lucide-react'
+
+import { Calendar, Layers, User } from 'lucide-react'
 
 interface CourseCardProps {
   image: string

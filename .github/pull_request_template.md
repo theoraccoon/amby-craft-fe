@@ -9,7 +9,7 @@ Select or describe the type of change:
 - [ ] Bugfix
 - [ ] Refactor
 - [ ] Documentation
-- [ ] Other: ****\_\_****
+- [ ] Other: \***\*\_\_\*\***
 
 ✅ **What's Changed**  
 List the main changes. Bullet points are fine. Mention components, new logic, or tech decisions.

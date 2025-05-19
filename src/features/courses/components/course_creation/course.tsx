@@ -1,17 +1,19 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
-import CourseInfoCard from '@/components/ui/card/course-info-card'
+import React, { useEffect, useRef, useState } from 'react'
+
+import FolderBreadcrumb from './folder-bread-crumb'
+
+import EmptyState from '@/components/layout/shared/EmptyState'
+import TextInputModal from '@/components/modals/input-modal'
 import CourseCard from '@/components/ui/card/course-card'
 import FolderCard from '@/components/ui/card/course-folder-card'
-import TextInputModal from '@/components/modals/input-modal'
+import CourseInfoCard from '@/components/ui/card/course-info-card'
 import { useViewMode } from '@/context/view-mode-context'
 // import FolderBreadcrumb from '../../folder-bread-crumb'
 import folders from '@/data/folders-card-data'
 import { rootCourses as initialRootCourses } from '@/data/root-courses-data'
 import type { Course, Folder } from '@/types/index'
-import EmptyState from '@/components/layout/shared/EmptyState'
-import FolderBreadcrumb from './folder-bread-crumb'
 
 export default function CoursesPage() {
   const { viewMode } = useViewMode()
