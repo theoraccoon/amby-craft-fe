@@ -1,5 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import scrollbar from 'tailwind-scrollbar'
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   mode: 'jit',
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}', // Pages
@@ -68,5 +70,7 @@ module.exports = {
       '6xl': '4rem',
     },
   },
-  plugins: [require('tailwind-scrollbar')],
+  plugins: [scrollbar],
 }
+
+export default config

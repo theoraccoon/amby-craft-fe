@@ -1,9 +1,9 @@
 import { ToolbarItem } from '../types/type'
-import { IoSparklesSharp, IoImage } from 'react-icons/io5'
-import { MdOutlineTextFields } from 'react-icons/md'
-import { GoListUnordered } from 'react-icons/go'
-import { FiVideo, FiLayers } from 'react-icons/fi'
 import { BsBack } from 'react-icons/bs'
+import { FiLayers, FiVideo } from 'react-icons/fi'
+import { GoListUnordered } from 'react-icons/go'
+import { IoImage, IoSparklesSharp } from 'react-icons/io5'
+import { MdOutlineTextFields } from 'react-icons/md'
 
 export const toolBarIcons: ToolbarItem[] = [
   { type: 'ai', icon: <IoSparklesSharp color="#F8AF43" />, label: 'Ai' },

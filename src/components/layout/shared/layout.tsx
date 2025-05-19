@@ -15,6 +15,12 @@ import { useMobileDrawer } from '@/context/mobile-drawer-context'
 
 // app/shared/layout.tsx
 
+// app/shared/layout.tsx
+
+// app/shared/layout.tsx
+
+// app/shared/layout.tsx
+
 export default function SharedLayout({ children }: { children: ReactNode }) {
   const { isOpen } = useMobileDrawer()
   return (
