@@ -21,7 +21,7 @@ export default function SideToolBar({
 
   return (
     showToolbar && (
-      <div className="absolute inset-y-0 left-0 bg-[#222222] w-[15%] ">
+      <div className="fixed inset-y-0 left-0 bg-[#222222] w-[15%] ">
         <div className="flex justify-between items-center px-6 mt-12 mb-10">
           <h3 className="text-xl   ">Block Library</h3>
           <FiX onClick={() => setShowToolbar(!showToolbar)} />

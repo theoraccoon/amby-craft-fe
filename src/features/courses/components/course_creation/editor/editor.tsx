@@ -10,7 +10,7 @@ import { TextBlock } from '@/types'
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import Image from 'next/image'
 import { RiArrowDropDownLine } from 'react-icons/ri'
-import SideToolBar from '../side-tool-bar'
+import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
 
 export type StoredBlock = TextBlock & { id: string }
@@ -43,6 +43,7 @@ export default function Editor() {
 
   const handleSideToolBar = () => {
     setShowToolbar(!showToolbar)
+    setShowTextFormat(false)
   }
 
   const renderBlock = (block: StoredBlock) => {
