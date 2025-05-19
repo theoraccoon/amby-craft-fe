@@ -1,6 +1,7 @@
-import { Course } from '@/types'
 import Image from 'next/image'
 import { FC } from 'react'
+
+import { Course } from '@/types'
 
 const CourseInfoCard: FC<Course> = ({
   title,

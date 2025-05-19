@@ -22,4 +22,3 @@ export interface TextBlock {
     | 'Note'
   content: string
 }
-

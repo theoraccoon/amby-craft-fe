@@ -2,47 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --primary: #F8AF43;
-  --secondary: #FFFFFF;
+  --primary: #f8af43;
+  --secondary: #ffffff;
   --background: #282828;
   --foreground: #ededed;
   --tertiary: #333333;
   --primary-foreground: #181818;
-  --secondary-foreground: #ffffff; 
-   --text-secondary: #ffffff;
-
+  --secondary-foreground: #ffffff;
+  --text-secondary: #ffffff;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --primary: #F8AF43;
-    --secondary:  #ffffff;
+    --primary: #f8af43;
+    --secondary: #ffffff;
     --background: #0a0a0a;
-    --foreground: #F8AF43;
+    --foreground: #f8af43;
     --primary-foreground: #171717;
     --secondary-foreground: #ffffff;
     --text-secondary: #ffffff;
   }
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #642929;
-    --primary: #F8AF43;
-    --secondary: #F8AF43;
+    --primary: #f8af43;
+    --secondary: #f8af43;
     --primary-foreground: #171717;
     --secondary-foreground: #ffffff;
     --text-secondary: #ffffff;
   }
 }
 
-/*  Heading styles */ 
-h1, h2, h3, h4 , h5{
-  font-family: "Comfortaa", sans-serif;
+/*  Heading styles */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Comfortaa', sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   letter-spacing: 0;
@@ -55,12 +56,11 @@ h1 {
 }
 
 /* Body & paragraph styles */
-body, p {
-  font-family: "Open Sans", sans-serif;
+body,
+p {
+  font-family: 'Open Sans', sans-serif;
   font-optical-sizing: auto;
 }
-
-
 
 /* For WebKit browsers (Chrome, Edge, Safari) */
 .scroll-container::-webkit-scrollbar {
@@ -91,7 +91,6 @@ body, p {
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-
 .no-scrollbar {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
@@ -101,13 +100,8 @@ body, p {
   display: none; /* Chrome, Safari, Edge */
 }
 
-
-
 @layer utilities {
   .glow-shadow {
-    box-shadow: 0 0 24px #F8AF4340;
+    box-shadow: 0 0 24px #f8af4340;
   }
 }
-
-
-

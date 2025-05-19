@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import '@/styles/globals.css'
-import imageUrl from '@/images/login-background.png'
 import { ReactNode } from 'react'
+
 import { Providers } from '@/app/provider'
+import imageUrl from '@/images/login-background.png'
+import '@/styles/globals.css'
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (

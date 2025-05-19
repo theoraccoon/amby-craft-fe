@@ -1,9 +1,11 @@
 'use client'
-import { BiSearch } from 'react-icons/bi'
+
+import { usePathname } from 'next/navigation'
+
 import SearchInputField from '../../ui/input/search-input'
 import HeaderActionsPanel from './header-actions-panel'
 import Nav from './nav-header'
-import { usePathname } from 'next/navigation'
+import { BiSearch } from 'react-icons/bi'
 
 export default function Header() {
   const pathname = usePathname()

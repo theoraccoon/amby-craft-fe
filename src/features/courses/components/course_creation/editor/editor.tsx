@@ -1,15 +1,17 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useState } from 'react'
+
+import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
+import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
-import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
+
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import ParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-block'
 import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-headting'
+import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { TextBlock } from '@/types'
-import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
-import Image from 'next/image'
-import { RiArrowDropDownLine } from 'react-icons/ri'
 
 export type StoredBlock = TextBlock & { id: string }
 
@@ -18,24 +20,22 @@ export default function Editor() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalBlock, setModalBlock] = useState<TextBlock | null>(null)
 
-  
-
   const handleOpenModal = (block: TextBlock) => {
     setModalBlock(block)
     setIsModalOpen(true)
   }
 
   const handleAddBlockInline = (block: TextBlock) => {
-    const prefilled = TEXT_BLOCKS.find((b) => b.type === block.type)
+    const prefilled = TEXT_BLOCKS.find(b => b.type === block.type)
     if (!prefilled) return
-    setBlocks((prev) => [...prev, { ...prefilled, id: uuid() }])
+    setBlocks(prev => [...prev, { ...prefilled, id: uuid() }])
   }
 
   const handleAddBlockFromModal = (block: TextBlock) => {
-    const prefilled = TEXT_BLOCKS.find((b) => b.type === block.type)
+    const prefilled = TEXT_BLOCKS.find(b => b.type === block.type)
 
     if (!prefilled) return
-    setBlocks((prev) => [...prev, { ...prefilled, id: uuid() }])
+    setBlocks(prev => [...prev, { ...prefilled, id: uuid() }])
     setIsModalOpen(false)
   }
 

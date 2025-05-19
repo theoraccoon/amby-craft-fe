@@ -1,17 +1,17 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   experimental: {
     optimizePackageImports: [
-      "@chakra-ui/react",
-      "@/@chakra-ui",
-      "@/components",
-      "@/features",
-      "@/styles",
+      '@chakra-ui/react',
+      '@/@chakra-ui',
+      '@/components',
+      '@/features',
+      '@/styles',
     ],
   },
-  basePath: "",
-};
+  basePath: '',
+}
 
-export default nextConfig;
+export default nextConfig

@@ -1,11 +1,13 @@
 'use client'
 
-import SearchInputField from '@/components/ui/input/search-input'
-import React from 'react'
-import { GiHamburgerMenu } from 'react-icons/gi'
 import Image from 'next/image'
-import profileImage from '@/images/profile-picture.png'
+import React from 'react'
+
+import { GiHamburgerMenu } from 'react-icons/gi'
+
+import SearchInputField from '@/components/ui/input/search-input'
 import { useMobileDrawer } from '@/context/mobile-drawer-context'
+import profileImage from '@/images/profile-picture.png'
 
 export default function MobileViewHeader() {
   const { isOpen, setIsOpen } = useMobileDrawer()
