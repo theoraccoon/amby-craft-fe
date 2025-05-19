@@ -1,15 +1,7 @@
-// context/mobile-drawer-context.tsx
 'use client'
 
+// context/mobile-drawer-context.tsx
 import { createContext, useContext, useState } from 'react'
-
-// context/mobile-drawer-context.tsx
-
-// context/mobile-drawer-context.tsx
-
-// context/mobile-drawer-context.tsx
-
-// context/mobile-drawer-context.tsx
 
 const MobileDrawerContext = createContext<{
   isOpen: boolean

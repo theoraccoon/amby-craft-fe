@@ -1,6 +1,6 @@
-// app/shared/layout.tsx
 'use client'
 
+// app/shared/layout.tsx
 import { ReactNode } from 'react'
 
 import '../../../styles/globals.css'
@@ -12,14 +12,6 @@ import MobileDrawerMenu from '@/components/layout/mobile_drawer/mobile-drawer'
 import SidebarMenu from '@/components/layout/sidebar'
 import TabNavigator from '@/components/layout/tab-navigation'
 import { useMobileDrawer } from '@/context/mobile-drawer-context'
-
-// app/shared/layout.tsx
-
-// app/shared/layout.tsx
-
-// app/shared/layout.tsx
-
-// app/shared/layout.tsx
 
 export default function SharedLayout({ children }: { children: ReactNode }) {
   const { isOpen } = useMobileDrawer()

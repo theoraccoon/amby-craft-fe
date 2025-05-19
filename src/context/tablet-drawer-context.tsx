@@ -1,15 +1,7 @@
-// context/Tablet-drawer-context.tsx
 'use client'
 
+// context/Tablet-drawer-context.tsx
 import { createContext, useContext, useState } from 'react'
-
-// context/Tablet-drawer-context.tsx
-
-// context/Tablet-drawer-context.tsx
-
-// context/Tablet-drawer-context.tsx
-
-// context/Tablet-drawer-context.tsx
 
 const TabletDrawerContext = createContext<{
   isOpen: boolean
