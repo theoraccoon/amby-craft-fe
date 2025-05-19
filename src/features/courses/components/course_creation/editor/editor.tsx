@@ -43,8 +43,8 @@ export default function Editor() {
 
   const handleSideToolBar = () => {
     setShowToolbar(!showToolbar)
+    setShowTextFormat(false)
   }
-
 
   const renderBlock = (block: StoredBlock) => {
     console.log(block)
