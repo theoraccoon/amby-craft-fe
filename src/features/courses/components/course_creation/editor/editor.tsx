@@ -19,6 +19,7 @@ import HeadingBlock from '../blocks/text_blocks/heading-block'
 import StatementABlock from '../blocks/text_blocks/statement-a'
 import StatementBblock from '../blocks/text_blocks/statement-b'
 import StatementCblock from '../blocks/text_blocks/statement-c'
+import NoteBlock from '../blocks/text_blocks/note-block'
 
 
 export type StoredBlock = TextBlock & { id: string }
@@ -88,6 +89,8 @@ export default function Editor() {
         return <StatementBblock key={block.id}   content={block.content}  onChange={() => {}}/>
           case 'Statement C':
         return <StatementCblock key={block.id}   content={block.content}  onChange={() => {}}/>
+         case 'Note':
+        return <NoteBlock key={block.id}   content={block.content}  onChange={() => {}}/>
       default:
         
         return null
