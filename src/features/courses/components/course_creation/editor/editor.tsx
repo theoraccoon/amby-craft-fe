@@ -4,19 +4,16 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
+import SideToolBar from '../side-toolbar'
+import TextFormats from '../text-format'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
 
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import ParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-block'
-import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-headting'
+import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-heading'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { TextBlock } from '@/types'
-import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
-import Image from 'next/image'
-import { RiArrowDropDownLine } from 'react-icons/ri'
-import SideToolBar from '../side-toolbar'
-import TextFormats from '../text-format'
 
 export type StoredBlock = TextBlock & { id: string }
 
