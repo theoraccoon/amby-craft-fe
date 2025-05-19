@@ -1,7 +1,8 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import { ToggleTextWithIconProps } from '@/types';
+import { useEffect, useState } from 'react'
+
+import { ToggleTextWithIconProps } from '@/types'
 
 export default function ToggleTextWithIcon({
   icon,
@@ -11,15 +12,15 @@ export default function ToggleTextWithIcon({
   defaultActive = false,
   onToggle,
 }: ToggleTextWithIconProps) {
-  const [active, setActive] = useState(defaultActive);
+  const [active, setActive] = useState(defaultActive)
 
   useEffect(() => {
-    setActive(defaultActive);
-  }, [defaultActive]);
+    setActive(defaultActive)
+  }, [defaultActive])
 
   const handleClick = () => {
-    onToggle?.(!active); 
-  };
+    onToggle?.(!active)
+  }
 
   return (
     <div
@@ -28,9 +29,8 @@ export default function ToggleTextWithIcon({
         active ? activeColor : inactiveColor
       }`}
     >
-      <div className='!ml-10 !p-3   '>{icon}</div>
+      <div className="!ml-10 !p-3   ">{icon}</div>
       <span className="text-xs font-medium">{label}</span>
     </div>
-  );
+  )
 }
-

@@ -1,5 +1,6 @@
 import React from 'react'
-import { FiPlus, FiEdit2, FiUserPlus, FiTrash } from 'react-icons/fi'
+
+import { FiEdit2, FiPlus, FiTrash, FiUserPlus } from 'react-icons/fi'
 import { RiFolderTransferLine } from 'react-icons/ri'
 
 const menuItems = [

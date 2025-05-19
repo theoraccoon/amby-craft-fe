@@ -1,4 +1,4 @@
-import { TextBlock } from "@/types";
+import { TextBlock } from '@/types'
 
 export const TEXT_BLOCKS: TextBlock[] = [
   {

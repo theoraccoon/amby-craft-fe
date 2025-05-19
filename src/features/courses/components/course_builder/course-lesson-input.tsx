@@ -1,8 +1,10 @@
 'use client'
-import RoundedButton from '@/components/ui/button/rounded-button'
-import { FiChevronDown } from 'react-icons/fi'
+
 import ContentCreateDropdown from '../content-create-options-dropdown'
 import { useLessonBlock } from './hooks/useLessonBlock'
+import { FiChevronDown } from 'react-icons/fi'
+
+import RoundedButton from '@/components/ui/button/rounded-button'
 
 export default function AddLessonBlock() {
   const {
@@ -33,8 +35,8 @@ export default function AddLessonBlock() {
             <input
               type="text"
               value={lesson.title}
-              onChange={(e) => handleLessonTitleChange(lessonIdx, e.target.value)}
-              onKeyDown={(e) => handleKeyDown(e, lessonIdx)}
+              onChange={e => handleLessonTitleChange(lessonIdx, e.target.value)}
+              onKeyDown={e => handleKeyDown(e, lessonIdx)}
               placeholder="Add a Lesson title..."
               className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full h-[75px]"
             />
@@ -83,8 +85,8 @@ export default function AddLessonBlock() {
                 <input
                   type="text"
                   value={section}
-                  onChange={(e) => handleSectionChange(lessonIdx, secIdx, e.target.value)}
-                  onKeyDown={(e) => sectionHandleKeyDown(e, lessonIdx, secIdx)}
+                  onChange={e => handleSectionChange(lessonIdx, secIdx, e.target.value)}
+                  onKeyDown={e => sectionHandleKeyDown(e, lessonIdx, secIdx)}
                   placeholder="Add a section..."
                   className="bg-transparent text-[15px] font-['open_sans'] text-gray-100 placeholder-gray-500 outline-none w-full h-[75px]"
                 />

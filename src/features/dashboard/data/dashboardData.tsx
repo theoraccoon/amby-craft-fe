@@ -1,6 +1,7 @@
-import { Icon } from '@chakra-ui/react'
-import { BiBookOpen, BiBook, BiBox } from 'react-icons/bi'
 import { DashboardData } from '../types/type'
+import { Icon } from '@chakra-ui/react'
+import { BiBook, BiBookOpen, BiBox } from 'react-icons/bi'
+
 import { Course } from '@/types'
 
 export const dashboardData: DashboardData[] = [
