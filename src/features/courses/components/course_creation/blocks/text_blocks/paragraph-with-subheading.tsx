@@ -6,7 +6,7 @@ import Heading from '@tiptap/extension-heading'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 
-export default function HeadingWithParagraphBlock({
+export default function ParagraphWithSubheadinghBlock({
   headingContent,
   paragraphContent,
   onChange,
@@ -23,7 +23,7 @@ export default function HeadingWithParagraphBlock({
       Heading.configure({ levels: [2] }),
     ],
     content: `
-      <h1>${headingContent}</h1>
+      <h2>${headingContent}</h2>
       <p>${paragraphContent}</p>
     `,
     onUpdate({ editor }) {

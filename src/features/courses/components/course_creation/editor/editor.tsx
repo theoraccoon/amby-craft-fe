@@ -14,6 +14,8 @@ import ParagraphBlock from '@/features/courses/components/course_creation/blocks
 import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-heading'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { TextBlock } from '@/types'
+import ParagraphWithSubheadinghBlock from '../blocks/text_blocks/paragraph-with-subheading'
+import HeadingBlock from '../blocks/text_blocks/heading-block'
 
 export type StoredBlock = TextBlock & { id: string }
 
@@ -53,6 +55,16 @@ export default function Editor() {
     switch (block.type) {
       case 'Paragraph':
         return <ParagraphBlock key={block.id} content={block.content} onChange={() => {}} />
+        case 'Heading':
+        return (
+          <HeadingBlock
+            key={block.id}
+            content={block.content}
+            onChange={() => {}}
+          />
+          
+          
+        )
       case 'Paragraph with heading':
         return (
           <HeadingWithParagraphBlock
@@ -61,7 +73,11 @@ export default function Editor() {
             paragraphContent={block.content}
             onChange={() => {}}
           />
+          
+          
         )
+        case 'Paragraph with subheading':
+        return <ParagraphWithSubheadinghBlock key={block.id}  headingContent={'Subheading'} paragraphContent={block.content}  onChange={() => {}}/>
       default:
         return null
     }
