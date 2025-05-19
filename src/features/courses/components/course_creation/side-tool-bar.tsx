@@ -1,4 +1,3 @@
-import { use, useEffect, useState } from 'react'
 import { FiX } from 'react-icons/fi'
 import { toolBarIcons } from '@/features/dashboard/data/toolbarData'
 import { ToolbarItem } from '@/features/dashboard/types/type'
