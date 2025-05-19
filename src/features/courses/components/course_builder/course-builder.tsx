@@ -30,7 +30,7 @@ export default function CourseBuilder() {
         <input
           type="text"
           value={courseTitle}
-          onChange={(e) => setCourseTitle(e.target.value)}
+          onChange={e => setCourseTitle(e.target.value)}
           placeholder="Course Title"
           className="bg-transparent text-6xl font-semibold font-['comfortaa'] text-gray-200 placeholder-gray-500 outline-none mb-6 w-full"
         />
@@ -41,7 +41,7 @@ export default function CourseBuilder() {
         <textarea
           placeholder="Describe your course..."
           value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={e => setDescription(e.target.value)}
           className="w-full text-[16px] font-['comfortaa'] bg-transparent text-gray-300 placeholder-gray-500 outline-none resize-none h-24 mb-14"
         />
         <AddLessonBlock />

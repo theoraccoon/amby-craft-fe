@@ -14,4 +14,3 @@ export type Folder = {
   children?: Folder[]
   courses?: Course[]
 }
-

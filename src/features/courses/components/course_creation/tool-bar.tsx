@@ -48,7 +48,7 @@ export default function BlockToolbar({
             onClick={() => {
               if (modal && modalTypeMap[type]) {
                 const targetType = modalTypeMap[type]
-                const block = TEXT_BLOCKS.find((b) => b.type === targetType)
+                const block = TEXT_BLOCKS.find(b => b.type === targetType)
                 if (block) onOpenModal(block)
               }
             }}

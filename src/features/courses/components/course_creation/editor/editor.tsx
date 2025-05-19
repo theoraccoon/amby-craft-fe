@@ -18,24 +18,22 @@ export default function Editor() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalBlock, setModalBlock] = useState<TextBlock | null>(null)
 
-  
-
   const handleOpenModal = (block: TextBlock) => {
     setModalBlock(block)
     setIsModalOpen(true)
   }
 
   const handleAddBlockInline = (block: TextBlock) => {
-    const prefilled = TEXT_BLOCKS.find((b) => b.type === block.type)
+    const prefilled = TEXT_BLOCKS.find(b => b.type === block.type)
     if (!prefilled) return
-    setBlocks((prev) => [...prev, { ...prefilled, id: uuid() }])
+    setBlocks(prev => [...prev, { ...prefilled, id: uuid() }])
   }
 
   const handleAddBlockFromModal = (block: TextBlock) => {
-    const prefilled = TEXT_BLOCKS.find((b) => b.type === block.type)
+    const prefilled = TEXT_BLOCKS.find(b => b.type === block.type)
 
     if (!prefilled) return
-    setBlocks((prev) => [...prev, { ...prefilled, id: uuid() }])
+    setBlocks(prev => [...prev, { ...prefilled, id: uuid() }])
     setIsModalOpen(false)
   }
 

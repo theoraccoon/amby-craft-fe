@@ -44,7 +44,7 @@ export const useLessonBlock = () => {
     if (e.key === 'Enter') {
       e.preventDefault()
       const key = `${lessonIndex}-${sectionIndex}`
-      setShowSectionContent((prev) => ({
+      setShowSectionContent(prev => ({
         ...prev,
         [key]: true,
       }))

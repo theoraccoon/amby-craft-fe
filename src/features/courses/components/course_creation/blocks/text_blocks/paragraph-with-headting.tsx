@@ -26,8 +26,8 @@ export default function HeadingWithParagraphBlock({
     `,
     onUpdate({ editor }) {
       const json = editor.getJSON()
-      const heading = json.content?.find((n) => n.type === 'heading')?.content?.[0]?.text || ''
-      const paragraph = json.content?.find((n) => n.type === 'paragraph')?.content?.[0]?.text || ''
+      const heading = json.content?.find(n => n.type === 'heading')?.content?.[0]?.text || ''
+      const paragraph = json.content?.find(n => n.type === 'paragraph')?.content?.[0]?.text || ''
       onChange({ heading, paragraph })
     },
   })
@@ -38,4 +38,3 @@ export default function HeadingWithParagraphBlock({
     </div>
   ) : null
 }
-

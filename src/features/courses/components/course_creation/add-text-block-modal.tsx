@@ -16,7 +16,7 @@ function AddTextBlockModal({
 }) {
   const [selectedType, setSelectedType] = useState<TextBlock['type']>(type)
 
-  const selectedBlock = TEXT_BLOCKS.find((b) => b.type === selectedType)
+  const selectedBlock = TEXT_BLOCKS.find(b => b.type === selectedType)
 
   const requiresHeading = ['Heading'].includes(selectedType)
 
@@ -69,7 +69,7 @@ function AddTextBlockModal({
     <div className="flex w-[495px] h-[395px] text-white ">
       {/* Block list */}
       <div className="w-[30%] h-full bg-[#222222] rounded-l-[15px] space-y-2 overflow-y-auto no-scrollbar p-5">
-        {TEXT_BLOCKS.map((block) => (
+        {TEXT_BLOCKS.map(block => (
           <div
             key={block.type}
             onClick={() => handleBlockClick(block)}

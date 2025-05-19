@@ -1,13 +1,13 @@
-import Image from "next/image";
-import { User, Layers, Calendar } from "lucide-react";
+import Image from 'next/image'
+import { User, Layers, Calendar } from 'lucide-react'
 
 interface CourseCardProps {
-  image: string;
-  title: string;
-  description: string;
-  author: string;
-  lessonsCount: number;
-  date: string;
+  image: string
+  title: string
+  description: string
+  author: string
+  lessonsCount: number
+  date: string
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
@@ -50,7 +50,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CourseCard;
+export default CourseCard

@@ -12,7 +12,7 @@ export default function DashboardPage() {
     <div className="w-full">
       <div className=" w-full">
         <div className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818] flex gap-x-8 scroll-smooth relative  sm:min-w-[70rem]">
-          {dashboardData.map((item) => (
+          {dashboardData.map(item => (
             <HeaderCards key={item.id} {...item} />
           ))}
         </div>
@@ -55,7 +55,7 @@ export default function DashboardPage() {
         </div>
         <FiChevronRight className="hidden sm:block text-white" />
       </div>
- 
+
       <p className="text-white !mt-10">Recently published</p>
       <div className="overflow-hidden overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#181818]">
         <div className="grid grid-cols-4 gap-x-6 gap-y-3 !mt-8 items-center place-content-center min-w-[70rem]">

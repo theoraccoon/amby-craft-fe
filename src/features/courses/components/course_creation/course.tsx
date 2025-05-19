@@ -30,7 +30,7 @@ export default function CoursesPage() {
   const getCurrentFolder = (): Folder => {
     let current: Folder = { children: folders }
     for (const part of currentPath) {
-      const next = current.children?.find((f) => f.title === part)
+      const next = current.children?.find(f => f.title === part)
       if (!next) break
       current = next
     }
@@ -75,7 +75,7 @@ export default function CoursesPage() {
         onNavigate={setCurrentPath}
         dropdownRef={dropdownRef}
         showDropdown={showDropdown}
-        toggleDropdown={() => setShowDropdown((prev) => !prev)}
+        toggleDropdown={() => setShowDropdown(prev => !prev)}
       />
       <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] mb-6">
         {currentFolder.children?.map((folder: Folder, idx: number) => (

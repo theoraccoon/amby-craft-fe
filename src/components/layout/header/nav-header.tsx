@@ -1,24 +1,21 @@
-'use client';
+'use client'
 
-import { FiUser, FiBriefcase, FiFolder} from 'react-icons/fi';
-import ToggleTextWithIcon from '@/components/ui/button/text-icon-button';
-import { useState } from 'react';
+import { FiUser, FiBriefcase, FiFolder } from 'react-icons/fi'
+import ToggleTextWithIcon from '@/components/ui/button/text-icon-button'
+import { useState } from 'react'
 
 const navItems = [
-    { label: 'Private', icon: <FiUser/>} ,
-    { label: 'Team', icon: <FiBriefcase /> },
-    { label: 'Settings', icon: <FiFolder /> },
-  ];
-  
-
+  { label: 'Private', icon: <FiUser /> },
+  { label: 'Team', icon: <FiBriefcase /> },
+  { label: 'Settings', icon: <FiFolder /> },
+]
 
 export default function Nav() {
-    const [activeLabel, setActiveLabel] = useState('Home');
+  const [activeLabel, setActiveLabel] = useState('Home')
   return (
     <div className="flex w-[70%] h-full  ">
-    {navItems.map((item) => (
+      {navItems.map(item => (
         <ToggleTextWithIcon
-          
           key={item.label}
           icon={item.icon}
           label={item.label}
@@ -29,5 +26,5 @@ export default function Nav() {
         />
       ))}
     </div>
-  );
+  )
 }
