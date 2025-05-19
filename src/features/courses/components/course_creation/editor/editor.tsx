@@ -11,6 +11,7 @@ import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import Image from 'next/image'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import SideToolBar from '../side-tool-bar'
+import TextFormats from '../text-format'
 
 export type StoredBlock = TextBlock & { id: string }
 
@@ -19,6 +20,7 @@ export default function Editor() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [modalBlock, setModalBlock] = useState<TextBlock | null>(null)
   const [showToolbar, setShowToolbar] = useState<boolean>(false)
+  const [showTextFormat, setShowTextFormat] = useState<boolean>(false)
 
   const handleOpenModal = (block: TextBlock) => {
     setModalBlock(block)
@@ -40,10 +42,12 @@ export default function Editor() {
   }
 
   const handleSideToolBar = () => {
-    setShowToolbar(true)
+    setShowToolbar(!showToolbar)
   }
 
+
   const renderBlock = (block: StoredBlock) => {
+    console.log(block)
     switch (block.type) {
       case 'Paragraph':
         return <ParagraphBlock key={block.id} content={block.content} onChange={() => {}} />
@@ -86,10 +90,19 @@ export default function Editor() {
             )}
           </div>
 
-            <SideToolBar showToolbar={showToolbar} setShowToolbar={setShowToolbar}/>
+          <SideToolBar
+            showToolbar={showToolbar}
+            setShowToolbar={setShowToolbar}
+            showTextFormat={showTextFormat}
+            setShowTextFormat={setShowTextFormat}
+          />
+          {showTextFormat && <TextFormats />}
 
           <div className="flex flex-col w-[75%] relative">
-            <div className="absolute top-[-50px] left-1/3 transform -translate-x-1/2" onClick={() => handleSideToolBar()}>
+            <div
+              className="absolute top-[-50px] left-1/3 transform -translate-x-1/2"
+              onClick={() => handleSideToolBar()}
+            >
               <Image
                 src="/images/hover-icon.svg"
                 className="w-5 h-5 object-contain rounded-[1.2rem]"
