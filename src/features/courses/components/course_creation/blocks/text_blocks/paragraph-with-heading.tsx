@@ -18,9 +18,9 @@ export default function HeadingWithParagraphBlock({
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        heading: { levels: [2] },
+        heading: { levels: [1] },
       }),
-      Heading.configure({ levels: [2] }),
+      Heading.configure({ levels: [1] }),
     ],
     content: `
       <h1>${headingContent}</h1>
