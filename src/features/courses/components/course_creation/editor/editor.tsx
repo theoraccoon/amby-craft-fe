@@ -116,9 +116,7 @@ export default function Editor() {
               />
             </div>
 
-            <div className="flex flex-col items-center p-10 w-full">
-              {blocks.map(() => renderBlock(blocks[0]))}
-            </div>
+          <div className="flex flex-col items-center p-10 w-full">{blocks.map(renderBlock)}</div>
           </div>
         </div>
       </div>
