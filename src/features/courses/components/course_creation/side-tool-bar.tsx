@@ -14,11 +14,10 @@ export default function SideToolBar({
   setShowToolbar,
   setShowTextFormat,
 }: SideToolBarProps) {
-
-const handleTextFormat = (tool: ToolbarItem) => {
-  if (!setShowTextFormat) return;
-  setShowTextFormat(showTextFormat => tool.type === 'Text' ? !showTextFormat : false);
-}
+  const handleTextFormat = (tool: ToolbarItem) => {
+    const value = tool?.type === 'Text' ? true : false
+    setShowTextFormat?.(value)
+  }
 
   return (
     showToolbar && (

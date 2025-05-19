@@ -45,7 +45,6 @@ export default function Editor() {
     setShowToolbar(!showToolbar)
   }
 
-
   const renderBlock = (block: StoredBlock) => {
     console.log(block)
     switch (block.type) {
@@ -114,7 +113,9 @@ export default function Editor() {
               />
             </div>
 
-            <div className="flex flex-col items-center p-10 w-full">{blocks.map(renderBlock)}</div>
+            <div className="flex flex-col items-center p-10 w-full">
+              {blocks.map(() => renderBlock(blocks[0]))}
+            </div>
           </div>
         </div>
       </div>
