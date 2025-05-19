@@ -1,4 +1,3 @@
-import { use, useEffect, useState } from 'react'
 import { FiX } from 'react-icons/fi'
 import { toolBarIcons } from '@/features/dashboard/data/toolbarData'
 import { ToolbarItem } from '@/features/dashboard/types/type'
@@ -19,7 +18,7 @@ export default function SideToolBar({
 
 const handleTextFormat = (tool: ToolbarItem) => {
   if (!setShowTextFormat) return;
-  setShowTextFormat(prev => tool.type === 'Text' ? !prev : false);
+  setShowTextFormat(showTextFormat => tool.type === 'Text' ? !showTextFormat : false);
 }
 
   return (
