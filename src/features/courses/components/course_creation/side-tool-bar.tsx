@@ -11,7 +11,6 @@ interface SideToolBarProps {
 
 export default function SideToolBar({
   showToolbar = false,
-  showTextFormat = false,
   setShowToolbar,
   setShowTextFormat,
 }: SideToolBarProps) {
