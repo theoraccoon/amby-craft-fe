@@ -2,18 +2,16 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
-
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
-
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import ParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-block'
 import HeadingWithParagraphBlock from '@/features/courses/components/course_creation/blocks/text_blocks/paragraph-with-heading'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
-import { TextBlock } from '@/types'
+import {TextBlock } from '@/types'
 import ParagraphWithSubheadinghBlock from '../blocks/text_blocks/paragraph-with-subheading-block'
 import HeadingBlock from '../blocks/text_blocks/heading-block'
 import StatementABlock from '../blocks/text_blocks/statement-a-block'
@@ -90,17 +88,14 @@ export default function Editor() {
          case 'Statement B':
         return <StatementBblock key={block.id}   content={block.content}  onChange={() => {}}/>
           case 'Statement C':
-            
         return <StatementCblock key={block.id}   content={block.content}  onChange={() => {}}/>
           case 'Statement C':
-            
         return <StatementDblock key={block.id}   content={block.content}  onChange={() => {}}/>
           case 'Columns':
         return <Columnblock key={block.id}   content={block.content}  onChange={() => {}}/>
          case 'Note':
         return <NoteBlock key={block.id}   content={block.content}  onChange={() => {}}/>
       default:
-        
         return null
     }
   }
@@ -129,7 +124,6 @@ export default function Editor() {
               </>
             )}
           </div>
-
           <SideToolBar
             showToolbar={showToolbar}
             setShowToolbar={setShowToolbar}
@@ -154,7 +148,9 @@ export default function Editor() {
               />
             </div>
 
-          <div className="flex flex-col items-center p-10 w-full">{blocks.map(renderBlock)}</div>
+          <div className="flex flex-col items-center p-10 w-full">{blocks.map(renderBlock)}
+            
+          </div>
           </div>
         </div>
       </div>

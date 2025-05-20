@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-
 import Heading from '@tiptap/extension-heading'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
@@ -9,7 +8,6 @@ import StarterKit from '@tiptap/starter-kit'
 export default function HeadingWithParagraphBlock({
   headingContent,
   paragraphContent,
-  onChange,
 }: {
   headingContent: string
   paragraphContent: string
@@ -40,12 +38,10 @@ export default function HeadingWithParagraphBlock({
     `,
     
   })
-
   return editor ? (
     <div className="w-full space-y-2">
       <EditorContent editor={editor} />
       <EditorContent editor={paragraghEditor} />
-    </div>
-    
+    </div>   
   ) : null
 }
