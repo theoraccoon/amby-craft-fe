@@ -67,7 +67,6 @@ export default function Editor() {
 
   const renderBlock = (block: StoredBlock, index: number) => {
     const commonProps = {
-     
       content: block.content,
       onChange: (val: string) => handleBlockChange(index, val),
       onEnterPress: () => handleAddNewBlockAfter(index),
@@ -133,7 +132,7 @@ export default function Editor() {
                   className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
                 >
                   <div className="flex flex-row first-letter:w-full ">
-                    <div className='w-[25%]'>
+                    <div className="w-[25%] ">
                       <div
                         className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
                         onClick={() => {
@@ -145,8 +144,18 @@ export default function Editor() {
                         <RiArrowDropDownLine className="text-lg" />
                       </div>
                     </div>
-                    
-                    <div className='w-[75%] '>
+                    <div className="absolute z-10">
+                      {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
+                        <AddTextBlockModal
+                          type={block.type}
+                          onClose={() => setOpenModalForBlockId(null)}
+                          onAddBlock={b => handleReplaceBlockType(block.id, b.type)}
+                          onTypeChange={() => {}}
+                        />
+                      )}
+                    </div>
+
+                    <div className="w-[75%] ">
                       <div className="cursor-pointer bg-yellow-50 absolute top-[-10px] left-1/2 transform -translate-x-1/2 rounded-[20px]">
                         <Image
                           src="/images/hover-icon.svg"
@@ -159,21 +168,9 @@ export default function Editor() {
                           onClick={() => setShowToolbar(!showToolbar)}
                         />
                       </div>
-                      <div className='p-10'>
-                        {renderBlock(block, index)}
-                      </div>
+                      <div className="p-10">{renderBlock(block, index)}</div>
                     </div>
-                    
                   </div>
- {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
-                    <AddTextBlockModal
-                      type={block.type}
-                      onClose={() => setOpenModalForBlockId(null)}
-                      onAddBlock={b => handleReplaceBlockType(block.id, b.type)}
-                      onTypeChange={() => {}}
-                    />
-                  )}
-                 
                 </div>
               ))}
             </div>
