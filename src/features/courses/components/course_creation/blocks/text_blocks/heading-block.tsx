@@ -20,5 +20,9 @@ export default function HeadingBlock({
     },
   })
 
-  return editor ? <EditorContent editor={editor} /> : null
+  return editor ? (
+    <div className="w-full">
+      <EditorContent editor={editor} />
+    </div>
+  ) : null
 }

@@ -5,7 +5,8 @@ import Heading from '@tiptap/extension-heading'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 
-export default function HeadingWithParagraphBlock({
+
+export default function ParagraphWithSubheadinghBlock({
   headingContent,
   paragraphContent,
 }: {
@@ -16,32 +17,31 @@ export default function HeadingWithParagraphBlock({
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        heading: { levels: [1] },
+        heading: { levels: [2] },
       }),
-      Heading.configure({ levels: [1] }),
+      Heading.configure({ levels: [2] }),
     ],
     content: `
-      <h1>${headingContent}</h1>
-    
+      <h2>${headingContent}</h2> 
     `,
   })
 
-    const paragraghEditor = useEditor({
+  console.log(editor?.getJSON(),"djhdbs")
+  const paragraphEditor = useEditor({
     extensions: [
       StarterKit.configure({
-        heading: { levels: [1] },
+        heading: { levels: [2] },
       }),
-      Heading.configure({ levels: [1] }),
+      Heading.configure({ levels: [2] }),
     ],
     content: `
       <p>${paragraphContent}</p>
     `,
-    
   })
   return editor ? (
-    <div className="w-full space-y-2">
+    <section className="w-full space-y-2">
       <EditorContent editor={editor} />
-      <EditorContent editor={paragraghEditor} />
-    </div>   
+      <EditorContent editor={paragraphEditor} />
+    </section>
   ) : null
 }
