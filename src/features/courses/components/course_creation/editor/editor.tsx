@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
+import { TEXT_BLOCKS } from '../courseCreationData'
 import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
 import { RiArrowDropDownLine } from 'react-icons/ri'

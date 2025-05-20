@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
+import { TEXT_BLOCKS } from './courseCreationData'
 import { BsBack } from 'react-icons/bs'
 import { BsFillGrid1X2Fill } from 'react-icons/bs'
 import { FiLayers, FiVideo } from 'react-icons/fi'
