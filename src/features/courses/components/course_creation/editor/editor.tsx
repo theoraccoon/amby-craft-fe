@@ -145,7 +145,8 @@ export default function Editor() {
                         <RiArrowDropDownLine className="text-lg" />
                       </div>
                     </div>
-                    <div className='w-[75%]'>
+                    
+                    <div className='w-[75%] '>
                       <div className="cursor-pointer bg-yellow-50 absolute top-[-10px] left-1/2 transform -translate-x-1/2 rounded-[20px]">
                         <Image
                           src="/images/hover-icon.svg"
@@ -162,9 +163,9 @@ export default function Editor() {
                         {renderBlock(block, index)}
                       </div>
                     </div>
+                    
                   </div>
-
-                  {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
+ {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
                     <AddTextBlockModal
                       type={block.type}
                       onClose={() => setOpenModalForBlockId(null)}
@@ -172,6 +173,7 @@ export default function Editor() {
                       onTypeChange={() => {}}
                     />
                   )}
+                 
                 </div>
               ))}
             </div>
