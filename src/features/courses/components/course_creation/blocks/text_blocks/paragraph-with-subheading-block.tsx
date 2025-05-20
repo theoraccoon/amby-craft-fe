@@ -9,7 +9,6 @@ import StarterKit from '@tiptap/starter-kit'
 export default function ParagraphWithSubheadinghBlock({
   headingContent,
   paragraphContent,
-  onChange,
 }: {
   headingContent: string
   paragraphContent: string
@@ -24,19 +23,27 @@ export default function ParagraphWithSubheadinghBlock({
     ],
     content: `
       <h2>${headingContent}</h2>
-      <p>${paragraphContent}</p>
+    
     `,
-    onUpdate({ editor }) {
-      const json = editor.getJSON()
-      const heading = json.content?.find(n => n.type === 'heading')?.content?.[0]?.text || ''
-      const paragraph = json.content?.find(n => n.type === 'paragraph')?.content?.[0]?.text || ''
-      onChange({ heading, paragraph })
-    },
   })
 
+  const paragraphEditor = useEditor({
+    extensions: [
+      StarterKit.configure({
+        heading: { levels: [2] },
+      }),
+      Heading.configure({ levels: [2] }),
+    ],
+    content: `
+      <p>${paragraphContent}</p>
+    `,
+  })
+
+
   return editor ? (
-    <div className="w-full space-y-2">
+    <section className="w-full space-y-2">
       <EditorContent editor={editor} />
-    </div>
+       <EditorContent editor={paragraphEditor} />
+    </section>
   ) : null
 }

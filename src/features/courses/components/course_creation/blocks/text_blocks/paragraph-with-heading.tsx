@@ -24,19 +24,28 @@ export default function HeadingWithParagraphBlock({
     ],
     content: `
       <h1>${headingContent}</h1>
+    
+    `,
+  })
+
+    const paragraghEditor = useEditor({
+    extensions: [
+      StarterKit.configure({
+        heading: { levels: [1] },
+      }),
+      Heading.configure({ levels: [1] }),
+    ],
+    content: `
       <p>${paragraphContent}</p>
     `,
-    onUpdate({ editor }) {
-      const json = editor.getJSON()
-      const heading = json.content?.find(n => n.type === 'heading')?.content?.[0]?.text || ''
-      const paragraph = json.content?.find(n => n.type === 'paragraph')?.content?.[0]?.text || ''
-      onChange({ heading, paragraph })
-    },
+    
   })
 
   return editor ? (
     <div className="w-full space-y-2">
       <EditorContent editor={editor} />
+      <EditorContent editor={paragraghEditor} />
     </div>
+    
   ) : null
 }

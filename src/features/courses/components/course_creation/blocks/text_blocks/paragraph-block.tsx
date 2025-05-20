@@ -21,8 +21,8 @@ export default function ParagraphBlock({
   })
 
   return editor ? (
-    <div className="w-full">
-      <EditorContent editor={editor} />
+    <div className="w-full ">
+       <EditorContent editor={editor} /> 
     </div>
   ) : null
 }
