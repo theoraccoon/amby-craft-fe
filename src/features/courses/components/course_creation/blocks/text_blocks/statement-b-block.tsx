@@ -5,7 +5,7 @@ import React from 'react'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 
-export default function ParagraphBlock({
+export default function StatementBblock({
   content,
   onChange,
 }: {
@@ -21,8 +21,8 @@ export default function ParagraphBlock({
   })
 
   return editor ? (
-    <div className="w-full ">
-       <EditorContent editor={editor} /> 
+    <div className="w-full">
+      <EditorContent editor={editor} />
     </div>
   ) : null
 }
