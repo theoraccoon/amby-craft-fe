@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
+
 import Columnblock from '../blocks/text_blocks/column-block'
 import HeadingBlock from '../blocks/text_blocks/heading-block'
 import NoteBlock from '../blocks/text_blocks/note-block'
@@ -26,29 +27,17 @@ export type StoredBlock = TextBlock & { id: string }
 
 export default function Editor() {
   const [blocks, setBlocks] = useState<StoredBlock[]>([])
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modalBlock, setModalBlock] = useState<TextBlock | null>(null)
+  const [activeDropdownBlockId, setActiveDropdownBlockId] = useState<string | null>(null)
+  const [openModalForBlockId, setOpenModalForBlockId] = useState<string | null>(null)
   const [showToolbar, setShowToolbar] = useState(false)
   const [showTextFormat, setShowTextFormat] = useState(false)
-  const [showDropdown, setShowDropDown] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(false)
 
   const handleInsertBlock = () => {
     const defaultBlock = TEXT_BLOCKS.find(b => b.type === 'Paragraph with heading')
     if (defaultBlock) {
       setBlocks(prev => [...prev, { ...defaultBlock, id: uuid() }])
     }
-  }
-
-  const handleOpenModal = (block: TextBlock) => {
-    handleInsertBlock()
-    setModalBlock(block)
-  }
-
-  const handleAddBlockFromModal = (block: TextBlock) => {
-    const prefilled = TEXT_BLOCKS.find(b => b.type === block.type)
-    if (!prefilled) return
-    setBlocks(prev => [...prev, { ...prefilled, id: uuid() }])
-    setIsModalOpen(false)
   }
 
   const handleAddNewBlockAfter = (index: number) => {
@@ -66,9 +55,19 @@ export default function Editor() {
     setBlocks(updated)
   }
 
+  // Replace block type & content for a block with given id
+  const handleReplaceBlockType = (blockId: string, newType: string) => {
+    const newTemplate = TEXT_BLOCKS.find(b => b.type === newType)
+    if (!newTemplate) return
+
+    setBlocks(prev => prev.map(b => (b.id === blockId ? { ...newTemplate, id: blockId } : b)))
+    setOpenModalForBlockId(null)
+    setActiveDropdownBlockId(null)
+  }
+
   const renderBlock = (block: StoredBlock, index: number) => {
     const commonProps = {
-      key: block.id,
+     
       content: block.content,
       onChange: (val: string) => handleBlockChange(index, val),
       onEnterPress: () => handleAddNewBlockAfter(index),
@@ -115,32 +114,9 @@ export default function Editor() {
   }
 
   return (
-    <div className="flex flex-col items-center space-y-4">
-      <div className="w-[70%] flex flex-col justify-center p-10">
+    <div className="flex flex-col items-center justify-center space-y-4">
+      <div className="w-[70%] flex flex-col justify-center items-center p-10">
         <div className="flex flex-row w-full">
-          <div className="w-[25%] z-10">
-            {showDropdown && modalBlock && (
-              <>
-                <div
-                  className="flex justify-around items-center bg-[#222222] h-10 w-[255px] rounded-[50px] cursor-pointer"
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  <p className="text-xs">{modalBlock.type}</p>
-                  <RiArrowDropDownLine className="text-lg" />
-                </div>
-
-                {isModalOpen && (
-                  <AddTextBlockModal
-                    type={modalBlock.type}
-                    onClose={() => setIsModalOpen(false)}
-                    onAddBlock={handleAddBlockFromModal}
-                    onTypeChange={setModalBlock}
-                  />
-                )}
-              </>
-            )}
-          </div>
-
           <SideToolBar
             showToolbar={showToolbar}
             setShowToolbar={setShowToolbar}
@@ -149,26 +125,53 @@ export default function Editor() {
           />
           {showTextFormat && <TextFormats />}
 
-          <div className="flex flex-col w-[75%] relative">
-            <div className="flex flex-col items-center w-full">
+          <div className="flex flex-col w-[100%] relative">
+            <div className="flex flex-col items-center w-full ">
               {blocks.map((block, index) => (
                 <div
                   key={block.id}
-                  className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed"
+                  className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
                 >
-                  {renderBlock(block, index)}
-                  <div className="absolute top-[-10px] left-1/2 transform -translate-x-1/2 cursor-pointer">
-                    <Image
-                      src="/images/hover-icon.svg"
-                      className="w-5 h-5 object-contain rounded-[1.2rem]"
-                      alt="Hover Icon"
-                      width={20}
-                      height={20}
-                      quality={100}
-                      priority
-                      onClick={() => setShowToolbar(!showToolbar)}
-                    />
+                  <div className="flex flex-row first-letter:w-full ">
+                    <div className='w-[25%]'>
+                      <div
+                        className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
+                        onClick={() => {
+                          setOpenModalForBlockId(block.id)
+                          setActiveDropdownBlockId(block.id)
+                        }}
+                      >
+                        <p className="text-xs">{block.type}</p>
+                        <RiArrowDropDownLine className="text-lg" />
+                      </div>
+                    </div>
+                    <div className='w-[75%]'>
+                      <div className="cursor-pointer bg-yellow-50 absolute top-[-10px] left-1/2 transform -translate-x-1/2 rounded-[20px]">
+                        <Image
+                          src="/images/hover-icon.svg"
+                          className="w-5 h-5 object-contain rounded-[1.2rem]"
+                          alt="Hover Icon"
+                          width={20}
+                          height={20}
+                          quality={100}
+                          priority
+                          onClick={() => setShowToolbar(!showToolbar)}
+                        />
+                      </div>
+                      <div className='p-10'>
+                        {renderBlock(block, index)}
+                      </div>
+                    </div>
                   </div>
+
+                  {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
+                    <AddTextBlockModal
+                      type={block.type}
+                      onClose={() => setOpenModalForBlockId(null)}
+                      onAddBlock={b => handleReplaceBlockType(block.id, b.type)}
+                      onTypeChange={() => {}}
+                    />
+                  )}
                 </div>
               ))}
             </div>
@@ -177,9 +180,9 @@ export default function Editor() {
       </div>
 
       <BlockToolbar
+        onOpenModal={handleInsertBlock}
         showDropdown={showDropdown}
-        setShowDropdown={setShowDropDown}
-        onOpenModal={handleOpenModal}
+        setShowDropdown={setShowDropdown}
       />
     </div>
   )
