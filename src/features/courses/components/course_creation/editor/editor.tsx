@@ -29,9 +29,10 @@ export default function Editor() {
   const [blocks, setBlocks] = useState<StoredBlock[]>([])
   const [activeDropdownBlockId, setActiveDropdownBlockId] = useState<string | null>(null)
   const [openModalForBlockId, setOpenModalForBlockId] = useState<string | null>(null)
-  const [showToolbar, setShowToolbar] = useState(false)
-  const [showTextFormat, setShowTextFormat] = useState(false)
-  const [showDropdown, setShowDropdown] = useState(false)
+  const [showToolbar, setShowToolbar] = useState<boolean>(false)
+  const [showTextFormat, setShowTextFormat] = useState<boolean>(false)
+  const [showDropdown, setShowDropdown] = useState<boolean>(false)
+  const [isHover, setIsHover] = useState<boolean>(false)
 
   const handleInsertBlock = () => {
     const defaultBlock = TEXT_BLOCKS.find(b => b.type === 'Paragraph with heading')
@@ -133,16 +134,19 @@ export default function Editor() {
                 >
                   <div className="flex flex-row first-letter:w-full ">
                     <div className="w-[25%] ">
-                      <div
-                        className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
-                        onClick={() => {
-                          setOpenModalForBlockId(block.id)
-                          setActiveDropdownBlockId(block.id)
-                        }}
-                      >
-                        <p className="text-xs">{block.type}</p>
-                        <RiArrowDropDownLine className="text-lg" />
-                      </div>
+                      {isHover === true && block.id && (
+                        <div
+                          key={block.id}
+                          className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer"
+                          onClick={() => {
+                            setOpenModalForBlockId(block.id)
+                            setActiveDropdownBlockId(block.id)
+                          }}
+                        >
+                          <p className="text-xs">{block.type}</p>
+                          <RiArrowDropDownLine className="text-lg" />
+                        </div>
+                      )}
                     </div>
                     <div className="absolute z-10">
                       {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
@@ -156,19 +160,30 @@ export default function Editor() {
                     </div>
 
                     <div className="w-[75%] ">
-                      <div className="cursor-pointer bg-yellow-50 absolute top-[-10px] left-1/2 transform -translate-x-1/2 rounded-[20px]">
-                        <Image
-                          src="/images/hover-icon.svg"
-                          className="w-5 h-5 object-contain rounded-[1.2rem]"
-                          alt="Hover Icon"
-                          width={20}
-                          height={20}
-                          quality={100}
-                          priority
-                          onClick={() => setShowToolbar(!showToolbar)}
-                        />
+                      {isHover ? (
+                        <>
+                          <div className="cursor-pointer bg-yellow-50 absolute top-[-10px] left-1/2 transform -translate-x-1/2 rounded-[20px]">
+                            <Image
+                              src="/images/hover-icon.svg"
+                              className="w-5 h-5 object-contain rounded-[1.2rem]"
+                              alt="Hover Icon"
+                              width={20}
+                              height={20}
+                              quality={100}
+                              priority
+                              onClick={() => setShowToolbar(!showToolbar)}
+                            />
+                          </div>
+                        </>
+                      ) : null}
+                      <div
+                        className="p-10 bg-red-500 "
+                        onMouseEnter={() => {
+                          setIsHover(!isHover)
+                        }}
+                      >
+                        {renderBlock(block, index)}
                       </div>
-                      <div className="p-10">{renderBlock(block, index)}</div>
                     </div>
                   </div>
                 </div>
