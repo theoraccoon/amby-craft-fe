@@ -22,3 +22,9 @@ export interface TextBlock {
     | 'Note'
   content: string
 }
+
+export interface FlashCardBlock {
+  type: string //TODO: Use an enum
+  front: string | React.ReactNode
+  back: string | React.ReactNode
+}
