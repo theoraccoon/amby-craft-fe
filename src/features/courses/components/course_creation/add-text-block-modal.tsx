@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
 
-import { TextBlock } from '@/types'
+import { TextBlock, VideoBlock } from '@/types'
 
 function AddTextBlockModal({
   type,
@@ -12,12 +12,12 @@ function AddTextBlockModal({
   onAddBlock,
   onTypeChange,
 }: {
-  type: TextBlock['type']
+  type: TextBlock['type']  | VideoBlock['type']
   onClose: () => void
   onAddBlock: (block: TextBlock) => void
   onTypeChange: (block: TextBlock) => void
 }) {
-  const [selectedType, setSelectedType] = useState<TextBlock['type']>(type)
+ const [selectedType, setSelectedType] = useState<TextBlock['type'] | VideoBlock['type']>(type)
 
   const selectedBlock = TEXT_BLOCKS.find(b => b.type === selectedType)
 

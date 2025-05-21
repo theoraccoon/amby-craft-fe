@@ -22,8 +22,9 @@ import { v4 as uuid } from 'uuid'
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { TextBlock } from '@/types'
+import { VideoBlock } from '@/types'
 
-export type StoredBlock = TextBlock & { id: string }
+export type StoredBlock = (TextBlock & { id: string }) | (VideoBlock & { id: string })
 
 export default function Editor() {
   const [blocks, setBlocks] = useState<StoredBlock[]>([])
@@ -113,6 +114,10 @@ export default function Editor() {
     }
   }
 
+  function isTextBlockType(type: string) {
+    throw new Error('Function not implemented.')
+  }
+
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
       <div className="flex flex-col justify-center items-center p-10 w-full">
@@ -130,10 +135,13 @@ export default function Editor() {
               {blocks.map((block, index) => (
                 <div
                   key={block.id}
-                  className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
+                  className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px] flex flex-col"
+                  onMouseEnter={() => setHoveredBlockId(block.id)}
+                  onMouseLeave={() => setHoveredBlockId(null)}
                 >
-                  <div className="flex flex-row first-letter:w-full ">
-                    <div className="w-[225px]  h-10 bg-whit">
+                  <div className="flex flex-row w-full">
+                    {/* Hover toolbar button */}
+                    <div className="w-[225px] h-10">
                       {hoveredBlockId === block.id && (
                         <div
                           className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer"
@@ -147,20 +155,11 @@ export default function Editor() {
                         </div>
                       )}
                     </div>
-                    <div className="absolute z-10">
-                      {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
-                        <AddTextBlockModal
-                          type={block.type}
-                          onClose={() => setOpenModalForBlockId(null)}
-                          onAddBlock={b => handleReplaceBlockType(block.id, b.type)}
-                          onTypeChange={() => {}}
-                        />
-                      )}
-                    </div>
 
-                    <div className="w-4/6">
+                    {/* Main block content */}
+                    <div className="w-4/6 relative">
                       {hoveredBlockId === block.id && (
-                        <div className="absolute left-[50%] -top-2.5">
+                        <div className="absolute left-[50%] -top-2.5 z-20">
                           <Image
                             src="/images/hover-icon.svg"
                             className="w-5 h-5 object-contain rounded-[1.2rem]"
@@ -174,14 +173,21 @@ export default function Editor() {
                         </div>
                       )}
 
-                      <div
-                        className="p-10 transition"
-                        onMouseEnter={() => setHoveredBlockId(block.id)}
-                      >
-                        {renderBlock(block, index)}
-                      </div>
+                      <div className="p-10 transition">{renderBlock(block, index)}</div>
                     </div>
                   </div>
+
+                  {/* Add dropdown modal inside this parent too */}
+                  {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
+                    <div className="absolute z-30">
+                      <AddTextBlockModal
+                        type={block.type}
+                        onClose={() => setOpenModalForBlockId(null)}
+                        onAddBlock={b => handleReplaceBlockType(block.id, b.type)}
+                        onTypeChange={() => {}}
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
