@@ -1,6 +1,5 @@
 import { JSX } from 'react'
 
-
 export interface DashboardData {
   id: string
   text: string
@@ -22,9 +21,8 @@ export interface Course {
 }
 
 export interface ToolbarItem {
-   type: string,
-    icon: JSX.Element 
-    label: string 
-    modal?: boolean
-
+  type: string
+  icon: JSX.Element
+  label: string
+  modal?: boolean
 }

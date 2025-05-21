@@ -1,28 +1,29 @@
+import React from 'react'
+
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
   Button,
-  Input,
   FormControl,
   FormLabel,
-} from "@chakra-ui/react";
-import React from "react";
+  Input,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+} from '@chakra-ui/react'
 
 interface TextInputModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  value: string;
-  onChange: (value: string) => void;
-  onDone: () => void;
-  title?: string;
-  label?: string;
-  placeholder?: string;
-  confirmText?: string;
-  cancelText?: string;
+  isOpen: boolean
+  onClose: () => void
+  value: string
+  onChange: (value: string) => void
+  onDone: () => void
+  title?: string
+  label?: string
+  placeholder?: string
+  confirmText?: string
+  cancelText?: string
 }
 
 const TextInputModal: React.FC<TextInputModalProps> = ({
@@ -31,11 +32,11 @@ const TextInputModal: React.FC<TextInputModalProps> = ({
   value,
   onChange,
   onDone,
-  title = "",
-  label = "",
-  placeholder = "Type here...",
-  confirmText = "Done",
-  cancelText = "Cancel",
+  title = '',
+  label = '',
+  placeholder = 'Type here...',
+  confirmText = 'Done',
+  cancelText = 'Cancel',
 }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
@@ -56,12 +57,12 @@ const TextInputModal: React.FC<TextInputModalProps> = ({
             <FormLabel>{label}</FormLabel>
             <Input
               _placeholder={{
-                color: "#A0AEC0",
-                fontsize: "14px",
+                color: '#A0AEC0',
+                fontsize: '14px',
               }}
               placeholder={placeholder}
               value={value}
-              onChange={(e) => onChange(e.target.value)}
+              onChange={e => onChange(e.target.value)}
             />
           </FormControl>
         </ModalBody>
@@ -72,8 +73,8 @@ const TextInputModal: React.FC<TextInputModalProps> = ({
             mr={3}
             color="white"
             bg="transparent"
-            _hover={{ bg: "#2D2D2D" }}
-            _active={{ bg: "#444444" }}
+            _hover={{ bg: '#2D2D2D' }}
+            _active={{ bg: '#444444' }}
             fontSize="14px"
             fontFamily="Open sans"
             fontWeight="600"
@@ -97,7 +98,7 @@ const TextInputModal: React.FC<TextInputModalProps> = ({
         </ModalFooter>
       </ModalContent>
     </Modal>
-  );
-};
+  )
+}
 
-export default TextInputModal;
+export default TextInputModal

@@ -1,15 +1,17 @@
-// app/shared/layout.tsx
 'use client'
 
+// app/shared/layout.tsx
 import { ReactNode } from 'react'
-import SidebarMenu from '@/components/layout/sidebar'
+
 import '../../../styles/globals.css'
-import MobileViewHeader from '@/components/layout/header/mobile-view-header'
-import TabNavigator from '@/components/layout/tab-navigation'
-import Header from '@/components/layout/header/header'
-import MobileDrawerMenu from '@/components/layout/mobile_drawer/mobile-drawer'
-import { useMobileDrawer } from '@/context/mobile-drawer-context'
+
 import { Providers } from '@/app/provider'
+import Header from '@/components/layout/header/header'
+import MobileViewHeader from '@/components/layout/header/mobile-view-header'
+import MobileDrawerMenu from '@/components/layout/mobile_drawer/mobile-drawer'
+import SidebarMenu from '@/components/layout/sidebar'
+import TabNavigator from '@/components/layout/tab-navigation'
+import { useMobileDrawer } from '@/context/mobile-drawer-context'
 
 export default function SharedLayout({ children }: { children: ReactNode }) {
   const { isOpen } = useMobileDrawer()

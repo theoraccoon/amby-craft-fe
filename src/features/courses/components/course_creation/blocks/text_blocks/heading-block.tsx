@@ -1,7 +1,9 @@
 'use client'
-import { useEditor, EditorContent } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
+
 import React from 'react'
+
+import { EditorContent, useEditor } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 
 export default function HeadingBlock({
   content,
@@ -18,5 +20,9 @@ export default function HeadingBlock({
     },
   })
 
-  return editor ? <EditorContent editor={editor} /> : null
+  return editor ? (
+    <div className="w-full">
+      <EditorContent editor={editor} />
+    </div>
+  ) : null
 }

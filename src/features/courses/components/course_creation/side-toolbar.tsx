@@ -1,4 +1,5 @@
 import { FiX } from 'react-icons/fi'
+
 import { toolBarIcons } from '@/features/dashboard/data/toolbarData'
 import { ToolbarItem } from '@/features/dashboard/types/type'
 
@@ -26,7 +27,7 @@ export default function SideToolBar({
 
   return (
     showToolbar && (
-      <div className="fixed inset-y-0 left-0 bg-[#222222] w-[15%] ">
+      <div className="fixed inset-y-0 left-0 bg-[#222222] w-[15%] !z-[12]">
         <div className="flex justify-between items-center px-6 mt-12 mb-10">
           <h3 className="text-xl   ">Block Library</h3>
           <FiX onClick={() => handleSideBarClose()} />
