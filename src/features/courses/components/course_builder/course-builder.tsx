@@ -7,8 +7,7 @@ import AddLessonBlock from './course-lesson-input'
 import { IoArrowBack } from 'react-icons/io5'
 
 import AuthorToggle from '@/components/ui/card/author-toggle'
-
-export default function CourseBuilder() {
+export const CourseBuilder = ()=> {
   const router = useRouter()
   const [courseTitle, setCourseTitle] = useState('')
   const [description, setDescription] = useState('')
