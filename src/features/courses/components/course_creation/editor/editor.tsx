@@ -32,7 +32,7 @@ export default function Editor() {
   const [showToolbar, setShowToolbar] = useState<boolean>(false)
   const [showTextFormat, setShowTextFormat] = useState<boolean>(false)
   const [showDropdown, setShowDropdown] = useState<boolean>(false)
-  const [isHover, setIsHover] = useState<boolean>(false)
+  const [hoveredBlockId, setHoveredBlockId] = useState<string | null>(null)
 
   const handleInsertBlock = () => {
     const defaultBlock = TEXT_BLOCKS.find(b => b.type === 'Paragraph with heading')
@@ -134,9 +134,9 @@ export default function Editor() {
                 >
                   <div className="flex flex-row first-letter:w-full ">
                     <div className="w-[225px]  h-10 bg-whit">
-                      {isHover && (
+                      {hoveredBlockId === block.id && (
                         <div
-                          className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
+                          className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer"
                           onClick={() => {
                             setOpenModalForBlockId(block.id)
                             setActiveDropdownBlockId(block.id)
@@ -159,7 +159,7 @@ export default function Editor() {
                     </div>
 
                     <div className="w-4/6">
-                      {isHover && (
+                      {hoveredBlockId === block.id && (
                         <div className="absolute left-[50%] -top-2.5">
                           <Image
                             src="/images/hover-icon.svg"
@@ -176,10 +176,7 @@ export default function Editor() {
 
                       <div
                         className="p-10 transition"
-                        onMouseEnter={() => {
-                          console.log('ccdjdkd')
-                          setIsHover(!isHover)
-                        }}
+                        onMouseEnter={() => setHoveredBlockId(block.id)}
                       >
                         {renderBlock(block, index)}
                       </div>
