@@ -9,7 +9,6 @@ import StarterKit from '@tiptap/starter-kit'
 export default function HeadingWithParagraphBlock({
   headingContent,
   paragraphContent,
-  onChange,
 }: {
   headingContent: string
   paragraphContent: string
@@ -28,7 +27,7 @@ export default function HeadingWithParagraphBlock({
     `,
   })
 
-    const paragraghEditor = useEditor({
+  const paragraghEditor = useEditor({
     extensions: [
       StarterKit.configure({
         heading: { levels: [1] },
@@ -38,14 +37,11 @@ export default function HeadingWithParagraphBlock({
     content: `
       <p>${paragraphContent}</p>
     `,
-    
   })
-
   return editor ? (
     <div className="w-full space-y-2">
       <EditorContent editor={editor} />
       <EditorContent editor={paragraghEditor} />
     </div>
-    
   ) : null
 }
