@@ -117,10 +117,20 @@ function AddTextBlockModal({
             {selectedBlock?.content}
           </h2>
         )}
-        {standaloneTextTypes.includes(selectedType) && selectedBlock && (
-          <h1 className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px]">
-            {selectedBlock?.content}
-          </h1>
+     
+        {standaloneTextTypes.includes(selectedType) && selectedBlock?.type == 'Statement A' && (
+          <div className="p-5">
+            <div className="h-[2px] bg-white w-full"></div>
+            <p className="text-[10px] my-4">{selectedBlock?.content}</p>
+            <div className="h-[2px] bg-white w-full"></div>
+          </div>
+        )}
+         {standaloneTextTypes.includes(selectedType) && selectedBlock?.type == 'Statement B' && (
+          <div className="p-5 flex flex-col justify-center items-center">
+            <div className="h-[2px] bg-[#F8AF43] w-[15%]"></div>
+            <p className="text-[10px] my-4">{selectedBlock?.content}</p>
+            
+          </div>
         )}
       </div>
     </div>

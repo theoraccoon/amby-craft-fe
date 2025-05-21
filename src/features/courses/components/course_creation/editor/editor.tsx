@@ -115,7 +115,7 @@ export default function Editor() {
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
-      <div className="w-[70%] flex flex-col justify-center items-center p-10">
+      <div className="flex flex-col justify-center items-center p-10 w-full">
         <div className="flex flex-row w-full">
           <SideToolBar
             showToolbar={showToolbar}
@@ -133,20 +133,17 @@ export default function Editor() {
                   className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
                 >
                   <div className="flex flex-row first-letter:w-full ">
-                    <div className="w-[25%] ">
-                      {isHover === true && block.id && (
-                        <div
-                          key={block.id}
-                          className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer"
-                          onClick={() => {
-                            setOpenModalForBlockId(block.id)
-                            setActiveDropdownBlockId(block.id)
-                          }}
-                        >
-                          <p className="text-xs">{block.type}</p>
-                          <RiArrowDropDownLine className="text-lg" />
-                        </div>
-                      )}
+                    <div className="">
+                      <div
+                        className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
+                        onClick={() => {
+                          setOpenModalForBlockId(block.id)
+                          setActiveDropdownBlockId(block.id)
+                        }}
+                      >
+                        <p className="text-xs">{block.type}</p>
+                        <RiArrowDropDownLine className="text-lg" />
+                      </div>
                     </div>
                     <div className="absolute z-10">
                       {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
@@ -159,31 +156,20 @@ export default function Editor() {
                       )}
                     </div>
 
-                    <div className="w-[75%] ">
-                      {isHover ? (
-                        <>
-                          <div className="cursor-pointer bg-yellow-50 absolute top-[-10px] left-1/2 transform -translate-x-1/2 rounded-[20px]">
-                            <Image
-                              src="/images/hover-icon.svg"
-                              className="w-5 h-5 object-contain rounded-[1.2rem]"
-                              alt="Hover Icon"
-                              width={20}
-                              height={20}
-                              quality={100}
-                              priority
-                              onClick={() => setShowToolbar(!showToolbar)}
-                            />
-                          </div>
-                        </>
-                      ) : null}
-                      <div
-                        className="p-10 bg-red-500 "
-                        onMouseEnter={() => {
-                          setIsHover(!isHover)
-                        }}
-                      >
-                        {renderBlock(block, index)}
+                    <div className="w-4/6">
+                      <div className="absolute left-[50%] -top-2.5">
+                        <Image
+                          src="/images/hover-icon.svg"
+                          className="w-5 h-5 object-contain rounded-[1.2rem]"
+                          alt="Hover Icon"
+                          width={20}
+                          height={20}
+                          quality={100}
+                          priority
+                          onClick={() => setShowToolbar(!showToolbar)}
+                        />
                       </div>
+                      <div className="p-10 transition">{renderBlock(block, index)}</div>
                     </div>
                   </div>
                 </div>
