@@ -20,9 +20,11 @@ export default function ParagraphBlock({
     },
   })
 
+  console.log(content, 'jdj')
+
   return editor ? (
-    <div className="w-full ">
-       <EditorContent editor={editor} /> 
+    <div className="w-full  ">
+      <EditorContent editor={editor} />
     </div>
   ) : null
 }

@@ -22,11 +22,11 @@ export default function ParagraphWithSubheadinghBlock({
       Heading.configure({ levels: [2] }),
     ],
     content: `
-      <h2>${headingContent}</h2>
-    
+      <h2>${headingContent}</h2> 
     `,
   })
 
+  console.log(editor?.getJSON(), 'djhdbs')
   const paragraphEditor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -38,12 +38,10 @@ export default function ParagraphWithSubheadinghBlock({
       <p>${paragraphContent}</p>
     `,
   })
-
-
   return editor ? (
     <section className="w-full space-y-2">
       <EditorContent editor={editor} />
-       <EditorContent editor={paragraphEditor} />
+      <EditorContent editor={paragraphEditor} />
     </section>
   ) : null
 }
