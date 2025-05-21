@@ -114,10 +114,6 @@ export default function Editor() {
     }
   }
 
-  function isTextBlockType(type: string) {
-    throw new Error('Function not implemented.')
-  }
-
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
       <div className="flex flex-col justify-center items-center p-10 w-full">
