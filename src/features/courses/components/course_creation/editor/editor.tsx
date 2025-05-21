@@ -67,9 +67,9 @@ export default function Editor() {
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      <div className="w-[70%] flex flex-col justify-center border-y border-dashed   border-[#FFFFFF1A] p-10">
-        <div className=" flex flex-row w-full ">
-          <div className="w-[25%] z-10">
+      <div className="flex flex-col justify-center border-y border-dashed   border-[#FFFFFF1A] w-full relative">
+        <div className=" flex flex-row justify-center">
+          <div className="z-10">
             {isModalOpen && modalBlock && (
               <>
                 <div
@@ -98,11 +98,8 @@ export default function Editor() {
           />
           {showTextFormat && <TextFormats />}
 
-          <div className="flex flex-col w-[75%] relative">
-            <div
-              className="absolute top-[-50px] left-1/3 transform -translate-x-1/2"
-              onClick={() => handleSideToolBar()}
-            >
+          <div className="flex flex-col w-3/5">
+            <div className="absolute left-[50%] -top-2.5" onClick={() => handleSideToolBar()}>
               <Image
                 src="/images/hover-icon.svg"
                 className="w-5 h-5 object-contain rounded-[1.2rem]"
