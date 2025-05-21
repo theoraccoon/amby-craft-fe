@@ -133,17 +133,19 @@ export default function Editor() {
                   className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
                 >
                   <div className="flex flex-row first-letter:w-full ">
-                    <div className="">
-                      <div
-                        className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
-                        onClick={() => {
-                          setOpenModalForBlockId(block.id)
-                          setActiveDropdownBlockId(block.id)
-                        }}
-                      >
-                        <p className="text-xs">{block.type}</p>
-                        <RiArrowDropDownLine className="text-lg" />
-                      </div>
+                    <div className="w-[225px]  h-10 bg-whit">
+                      {isHover && (
+                        <div
+                          className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
+                          onClick={() => {
+                            setOpenModalForBlockId(block.id)
+                            setActiveDropdownBlockId(block.id)
+                          }}
+                        >
+                          <p className="text-xs">{block.type}</p>
+                          <RiArrowDropDownLine className="text-lg" />
+                        </div>
+                      )}
                     </div>
                     <div className="absolute z-10">
                       {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
@@ -157,19 +159,30 @@ export default function Editor() {
                     </div>
 
                     <div className="w-4/6">
-                      <div className="absolute left-[50%] -top-2.5">
-                        <Image
-                          src="/images/hover-icon.svg"
-                          className="w-5 h-5 object-contain rounded-[1.2rem]"
-                          alt="Hover Icon"
-                          width={20}
-                          height={20}
-                          quality={100}
-                          priority
-                          onClick={() => setShowToolbar(!showToolbar)}
-                        />
+                      {isHover && (
+                        <div className="absolute left-[50%] -top-2.5">
+                          <Image
+                            src="/images/hover-icon.svg"
+                            className="w-5 h-5 object-contain rounded-[1.2rem]"
+                            alt="Hover Icon"
+                            width={20}
+                            height={20}
+                            quality={100}
+                            priority
+                            onClick={() => setShowToolbar(!showToolbar)}
+                          />
+                        </div>
+                      )}
+
+                      <div
+                        className="p-10 transition"
+                        onMouseEnter={() => {
+                          console.log('ccdjdkd')
+                          setIsHover(!isHover)
+                        }}
+                      >
+                        {renderBlock(block, index)}
                       </div>
-                      <div className="p-10 transition">{renderBlock(block, index)}</div>
                     </div>
                   </div>
                 </div>
