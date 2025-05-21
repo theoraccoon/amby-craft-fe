@@ -5,12 +5,12 @@ import React from 'react'
 
 import '../styles/globals.css'
 import { Providers } from './provider'
+import { Provider as ReduxProvider } from 'react-redux'
 
 import { MobileDrawerProvider } from '@/context/mobile-drawer-context'
 import { TabletDrawerProvider } from '@/context/tablet-drawer-context'
-import { Provider as ReduxProvider } from 'react-redux'
-import { store } from '@/store'
 import { ViewModeProvider } from '@/context/view-mode-context'
+import { store } from '@/store'
 
 const comfortaa = Comfortaa({
   subsets: ['latin'],

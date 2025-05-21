@@ -1,10 +1,10 @@
 'use client'
 
 import React from 'react'
+
 import Heading from '@tiptap/extension-heading'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-
 
 export default function ParagraphWithSubheadinghBlock({
   headingContent,
@@ -26,7 +26,7 @@ export default function ParagraphWithSubheadinghBlock({
     `,
   })
 
-  console.log(editor?.getJSON(),"djhdbs")
+  console.log(editor?.getJSON(), 'djhdbs')
   const paragraphEditor = useEditor({
     extensions: [
       StarterKit.configure({
