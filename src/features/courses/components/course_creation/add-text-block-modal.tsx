@@ -48,7 +48,7 @@ function AddTextBlockModal({
     }
     onAddBlock(selectedBlock)
     onClose()
-  }, [selectedBlock, onAddBlock, onClose])
+  }, [selectedBlock, onAddBlock, onClose, selectedType])
 
   // Handle Enter key press
   useEffect(() => {
@@ -61,7 +61,7 @@ function AddTextBlockModal({
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [selectedBlock])
+  }, [handleAddBlock, selectedBlock])
 
   const handleBlockClick = (block: TextBlock) => {
     setSelectedType(block.type)
@@ -69,17 +69,17 @@ function AddTextBlockModal({
   }
 
   return (
-    <div className="flex w-[495px] h-[395px] text-white ">
+    <div className="sticky flex min-h-[395px] w-[550px] overflow-hidden rounded-[15px] bg-[#1e1e1e] text-white">
       {/* Block list */}
-      <div className="w-[30%] h-full bg-[#222222] rounded-l-[15px] space-y-2 overflow-y-auto no-scrollbar p-5">
+      <div className="h-full w-[40%] space-y-2 bg-[#222222] px-4 py-5">
         {TEXT_BLOCKS.map(block => (
           <div
             key={block.type}
             onClick={() => handleBlockClick(block)}
-            className={`cursor-pointer p-2 rounded text-xs ${
+            className={`cursor-pointer font-[Open_Sans] place-content-start items-stretch whitespace-nowrap rounded py-2 px-1 text-left text-xs  ${
               selectedType === block.type
-                ? 'bg-tertiary text-white font-bold'
-                : 'hover:bg-neutral-700'
+                ? 'bg-tertiary font-bold text-white '
+                : 'font-normal hover:bg-neutral-700'
             }`}
           >
             {block.type}
@@ -88,39 +88,38 @@ function AddTextBlockModal({
       </div>
 
       {/* Preview */}
-      <div className="w-[70%] h-full bg-tertiary rounded-r-[15px] flex flex-col justify-center items-start text-center px-3 space-y-2">
+      <div className="flex min-h-full w-[60%] flex-col items-center justify-center space-y-2 bg-[#333333] text-left">
         {requiresParagraphWithHeading && (
-          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px">
-            <h1 className="text-3xl font-semibold">Heading</h1>
-            <p className="text-xs  text-left">{selectedBlock?.content}</p>
+          <div className="flex w-[300px] flex-col items-start justify-start rounded-md bg-[#444444] p-4">
+            <h1 className="font-[open-san] text-lg font-semibold">Heading</h1>
+            <p className="text-xs leading-relaxed text-gray-300">{selectedBlock?.content}</p>
           </div>
         )}
         {requiresParagraphWithSubHeading && (
-          <div className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px">
-            <h2 className="text-lg ">Sub Heading</h2>{' '}
-            <p className="text-xs text-left">{selectedBlock?.content}</p>
+          <div className="flex w-[300px] flex-col items-start justify-start rounded-md bg-[#444444] p-4">
+            <h2 className="text-base font-medium">Sub Heading</h2>
+            <p className="text-xs leading-relaxed text-gray-300">{selectedBlock?.content}</p>
           </div>
         )}
         {requiresParagraph && (
-          <p className="flex flex-col justify-center items-start text-xs  bg-[#444444] p-3 rounded-md text-left w-[300px] h-[170px]">
-            {selectedBlock?.content}
-          </p>
+          <div className="flex w-[300px] flex-col items-start justify-start rounded-md bg-[#444444] p-4">
+            <p className="text-xs leading-relaxed text-gray-300">{selectedBlock?.content}</p>
+          </div>
         )}
         {requiresHeading && (
-          <h1 className="text-3xl flex flex-col justify-center items-start bg-[#444444]  p-3 rounded-md  w-[300px] h-[170px]">
-            {selectedBlock?.content}
-          </h1>
+          <div className="flex w-[300px] flex-col items-start justify-start rounded-md bg-[#444444] p-4">
+            <h1 className="text-lg font-semibold">{selectedBlock?.content}</h1>
+          </div>
         )}
-
         {requiresSubHeading && (
-          <h2 className="text-lg flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px]">
-            {selectedBlock?.content}
-          </h2>
+          <div className="flex w-[300px] flex-col items-start justify-start rounded-md bg-[#444444] p-4">
+            <h2 className="text-base font-medium">{selectedBlock?.content}</h2>
+          </div>
         )}
         {standaloneTextTypes.includes(selectedType) && selectedBlock && (
-          <h1 className="flex flex-col justify-center items-start bg-[#444444] p-3 rounded-md w-[300px] h-[170px]">
-            {selectedBlock?.content}
-          </h1>
+          <div className="flex w-[300px] flex-col items-start justify-start rounded-md bg-[#444444] p-4">
+            <p className="text-xs leading-relaxed text-gray-300">{selectedBlock?.content}</p>
+          </div>
         )}
       </div>
     </div>
