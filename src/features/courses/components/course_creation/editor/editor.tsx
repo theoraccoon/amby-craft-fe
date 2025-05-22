@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
+
 import Columnblock from '../blocks/text_blocks/column-block'
 import HeadingBlock from '../blocks/text_blocks/heading-block'
 import NoteBlock from '../blocks/text_blocks/note-block'
@@ -15,6 +16,8 @@ import StatementDblock from '../blocks/text_blocks/statement-d-block'
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
+import blockRender from './block-render'
+import BlockRenderer from './block-render'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
 
@@ -63,52 +66,7 @@ export default function Editor() {
     setActiveDropdownBlockId(null)
   }
 
-  const renderBlock = (block: StoredBlock, index: number) => {
-    const commonProps = {
-      content: block.content,
-      onChange: (val: string) => handleBlockChange(index, val),
-      onEnterPress: () => handleAddNewBlockAfter(index),
-    }
-
-    switch (block.type) {
-      case 'Paragraph':
-        return <ParagraphBlock {...commonProps} />
-      case 'Heading':
-        return <HeadingBlock {...commonProps} />
-      case 'Paragraph with heading':
-        return (
-          <HeadingWithParagraphBlock
-            key={block.id}
-            headingContent={'Heading'}
-            paragraphContent={block.content}
-            onChange={() => {}}
-          />
-        )
-      case 'Paragraph with subheading':
-        return (
-          <ParagraphWithSubheadinghBlock
-            key={block.id}
-            headingContent={'Subheading'}
-            paragraphContent={block.content}
-            onChange={() => {}}
-          />
-        )
-      case 'Statement A':
-        return <StatementABlock {...commonProps} />
-      case 'Statement B':
-        return <StatementBblock {...commonProps} />
-      case 'Statement C':
-        return <StatementCblock {...commonProps} />
-      case 'Statement D':
-        return <StatementDblock {...commonProps} />
-      case 'Columns':
-        return <Columnblock {...commonProps} />
-      case 'Note':
-        return <NoteBlock {...commonProps} />
-      default:
-        return <ParagraphBlock {...commonProps} />
-    }
-  }
+  
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
@@ -165,11 +123,19 @@ export default function Editor() {
                         </div>
                       )}
 
-                      <div className="p-10 transition">{renderBlock(block, index)}</div>
+                      <div className="p-10 transition">
+                        <BlockRenderer
+                          key={block.id}
+                          block={block}
+                          index={index}
+                          onChange={handleBlockChange}
+                          onAddAfter={handleAddNewBlockAfter}
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  {/* Add dropdown modal inside this parent too */}
+                  
                   {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
                     <div className="absolute z-30">
                       <AddTextBlockModal
