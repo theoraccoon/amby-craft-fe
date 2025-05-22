@@ -131,7 +131,7 @@ export default function Editor() {
                   key={block.id}
                   className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
                 >
-                  <div className="flex flex-row first-letter:w-full ">
+                  <div className="flex flex-row justify-center first-letter:w-full ">
                     <div className="">
                       <div
                         className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
@@ -155,7 +155,7 @@ export default function Editor() {
                       )}
                     </div>
 
-                    <div className="w-4/6">
+                    <div className="w-4/6 ">
                       <div className="absolute left-[50%] -top-2.5">
                         <Image
                           src="/images/hover-icon.svg"
@@ -168,7 +168,7 @@ export default function Editor() {
                           onClick={() => setShowToolbar(!showToolbar)}
                         />
                       </div>
-                      <div className="p-10 transition">{renderBlock(block, index)}</div>
+                      <div className="p-10 animate__animated animate__zoomIn">{renderBlock(block, index)}</div>
                     </div>
                   </div>
                 </div>
