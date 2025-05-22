@@ -2,12 +2,14 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
+
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
 import BlockRenderer from './block-render'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
+
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { StoredBlock } from '@/types'
@@ -70,7 +72,7 @@ export default function Editor() {
               {blocks.map((block, index) => (
                 <div
                   key={block.id}
-                  className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px] flex flex-col"
+                  className={`relative mb-6 border-[#FFFFFF1A] w-full h-[200px] flex flex-col ${hoveredBlockId === block.id && 'border-t border-dashed '}`}
                   onMouseEnter={() => setHoveredBlockId(block.id)}
                   onMouseLeave={() => setHoveredBlockId(null)}
                 >
