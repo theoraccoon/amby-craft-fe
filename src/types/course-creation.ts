@@ -1,5 +1,5 @@
 export interface BlockType {
-  type: 'Image' | 'Text' | 'List' | 'process' | 'flash cards' | 'sorting'
+  type: 'Image' | 'Text' | 'List' | 'process' | 'flash cards' | 'sorting' | 'Video'
 }
 
 export interface BlockToolbarProps {
@@ -20,5 +20,12 @@ export interface TextBlock {
     | 'Statement C'
     | 'Statement D'
     | 'Note'
+
   content: string
 }
+export type VideoBlock = {
+  type: 'Video'
+  content: string
+}
+
+export type StoredBlock = (TextBlock & { id: string }) | (VideoBlock & { id: string })
