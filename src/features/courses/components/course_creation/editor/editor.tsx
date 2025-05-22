@@ -22,6 +22,8 @@ import { v4 as uuid } from 'uuid'
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { TextBlock } from '@/types'
+import { Text } from '@chakra-ui/react'
+import { FlashCardGrid } from '../blocks/flash_card_blocks/flash-card-grid'
 
 export type StoredBlock = TextBlock & { id: string }
 
@@ -32,6 +34,12 @@ export default function Editor() {
   const [showToolbar, setShowToolbar] = useState(false)
   const [showTextFormat, setShowTextFormat] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
+
+const [cards, setCards] = useState([
+    { front: 'What is the capital of France?', back: 'Paris' },
+    { front: '2 + 2', back: '4' },
+    { front: 'React is a...', back: 'JavaScript library for UI' },
+  ]);
 
   const handleInsertBlock = () => {
     const defaultBlock = TEXT_BLOCKS.find(b => b.type === 'Paragraph with heading')
@@ -107,11 +115,12 @@ export default function Editor() {
         return <Columnblock {...commonProps} />
       case 'Note':
         return <NoteBlock {...commonProps} />
-      default:
+       default:
         return <ParagraphBlock {...commonProps} />
     }
   }
 
+  
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
       <div className="w-[70%] flex flex-col justify-center items-center p-10">

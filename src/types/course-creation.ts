@@ -23,8 +23,14 @@ export interface TextBlock {
   content: string
 }
 
+ enum FlashCardType {
+   TEXT_WITH_IMAGE = 'TextWithImage',
+   IMAGE_WITH_IMAGE = 'ImageWithImage',
+   TEXT_WITH_TEXT = 'TextWithText',
+ }
+
 export interface FlashCardBlock {
-  type: string //TODO: Use an enum
+  type: FlashCardType
   front: string | React.ReactNode
   back: string | React.ReactNode
 }
