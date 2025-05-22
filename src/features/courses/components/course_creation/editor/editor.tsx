@@ -13,6 +13,7 @@ import { v4 as uuid } from 'uuid'
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { StoredBlock } from '@/types'
+import './editor.css'
 
 export default function Editor() {
   const [blocks, setBlocks] = useState<StoredBlock[]>([])
@@ -53,6 +54,11 @@ export default function Editor() {
     setBlocks(prev => prev.map(b => (b.id === blockId ? { ...newTemplate, id: blockId } : b)))
     setOpenModalForBlockId(null)
     setActiveDropdownBlockId(null)
+  }
+
+    const handleBlockToggle = () => {
+    setShowToolbar(!showToolbar)
+    setShowTextFormat(false)
   }
 
   return (
@@ -105,7 +111,7 @@ export default function Editor() {
                             height={20}
                             quality={100}
                             priority
-                            onClick={() => setShowToolbar(!showToolbar)}
+                            onClick={() => handleBlockToggle()}
                           />
                         </div>
                       )}
