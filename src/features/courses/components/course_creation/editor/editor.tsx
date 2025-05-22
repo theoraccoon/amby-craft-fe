@@ -65,6 +65,11 @@ export default function Editor() {
     setActiveDropdownBlockId(null)
   }
 
+  const handleBlockToggle = () => {
+    setShowToolbar(!showToolbar)
+    setShowTextFormat(false)
+  }
+
   const renderBlock = (block: StoredBlock, index: number) => {
     const commonProps = {
       content: block.content,
@@ -156,16 +161,16 @@ export default function Editor() {
                     </div>
 
                     <div className="w-4/6 ">
-                      <div className="absolute left-[50%] -top-2.5">
+                      <div className="absolute left-[50%] -top-2.5 cursor-pointer">
                         <Image
                           src="/images/hover-icon.svg"
-                          className="w-5 h-5 object-contain rounded-[1.2rem]"
+                          className="w-5 h-5 object-contain rounded-[1.2rem] cursor-pointer"
                           alt="Hover Icon"
                           width={20}
                           height={20}
                           quality={100}
                           priority
-                          onClick={() => setShowToolbar(!showToolbar)}
+                          onClick={() => handleBlockToggle()  }
                         />
                       </div>
                       <div className="p-10 animate__animated animate__zoomIn">{renderBlock(block, index)}</div>
