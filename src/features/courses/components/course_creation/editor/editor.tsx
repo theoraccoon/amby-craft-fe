@@ -132,7 +132,7 @@ export default function Editor() {
                   className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
                 >
                   <div className="flex flex-row justify-center first-letter:w-full ">
-                    <div className="">
+                    <div className="absolute left-0 top-2">
                       <div
                         className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
                         onClick={() => {
@@ -144,7 +144,7 @@ export default function Editor() {
                         <RiArrowDropDownLine className="text-lg" />
                       </div>
                     </div>
-                    <div className="absolute z-10">
+                    <div className="absolute left-0 top-14  z-10">
                       {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
                         <AddTextBlockModal
                           type={block.type}
