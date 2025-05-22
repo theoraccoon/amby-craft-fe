@@ -69,14 +69,14 @@ function AddTextBlockModal({
   }
 
   return (
-    <div className="sticky flex min-h-[395px] w-[550px] overflow-hidden rounded-[15px] bg-[#1e1e1e] text-white">
+    <div className="sticky flex max-h-[412px] w-[550px] overflow-hidden rounded-[15px] bg-[#1e1e1e] text-white">
       {/* Block list */}
       <div className="h-full w-[40%] space-y-2 bg-[#222222] px-4 py-5">
         {TEXT_BLOCKS.map(block => (
           <div
             key={block.type}
             onClick={() => handleBlockClick(block)}
-            className={`cursor-pointer font-[Open_Sans] place-content-start items-stretch whitespace-nowrap rounded py-2 px-1 text-left text-xs  ${
+            className={`cursor-pointer font-[Open_Sans] place-content-start items-stretch whitespace-nowrap rounded py-2 px-2 text-left text-xs !m-0  ${
               selectedType === block.type
                 ? 'bg-tertiary font-bold text-white '
                 : 'font-normal hover:bg-neutral-700'
@@ -116,9 +116,19 @@ function AddTextBlockModal({
             <h2 className="text-base font-medium">{selectedBlock?.content}</h2>
           </div>
         )}
-        {standaloneTextTypes.includes(selectedType) && selectedBlock && (
-          <div className="flex w-[300px] flex-col items-start justify-start rounded-md bg-[#444444] p-4">
-            <p className="text-xs leading-relaxed text-gray-300">{selectedBlock?.content}</p>
+     
+        {standaloneTextTypes.includes(selectedType) && selectedBlock?.type == 'Statement A' && (
+          <div className="p-5">
+            <div className="h-[2px] bg-white w-full"></div>
+            <p className="text-[10px] my-4">{selectedBlock?.content}</p>
+            <div className="h-[2px] bg-white w-full"></div>
+          </div>
+        )}
+         {standaloneTextTypes.includes(selectedType) && selectedBlock?.type == 'Statement B' && (
+          <div className="p-5 flex flex-col justify-center items-center">
+            <div className="h-[2px] bg-[#F8AF43] w-[15%]"></div>
+            <p className="text-[10px] my-4">{selectedBlock?.content}</p>
+            
           </div>
         )}
       </div>

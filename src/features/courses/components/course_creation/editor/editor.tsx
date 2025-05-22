@@ -114,7 +114,7 @@ export default function Editor() {
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
-      <div className="w-[70%] flex flex-col justify-center items-center p-10">
+      <div className="flex flex-col justify-center items-center p-10 w-full">
         <div className="flex flex-row w-full">
           <SideToolBar
             showToolbar={showToolbar}
@@ -131,8 +131,8 @@ export default function Editor() {
                   key={block.id}
                   className="relative mb-6 border-[#FFFFFF1A] border-t border-dashed w-full h-[200px]  flex flex-col"
                 >
-                  <div className="flex flex-row first-letter:w-full ">
-                    <div className="w-[25%] ">
+                  <div className="flex flex-row justify-center first-letter:w-full ">
+                    <div className="absolute left-0 top-2">
                       <div
                         className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
                         onClick={() => {
@@ -144,7 +144,7 @@ export default function Editor() {
                         <RiArrowDropDownLine className="text-lg" />
                       </div>
                     </div>
-                    <div className="absolute z-10">
+                    <div className="absolute left-0 top-14  z-10">
                       {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
                         <AddTextBlockModal
                           type={block.type}
@@ -155,8 +155,8 @@ export default function Editor() {
                       )}
                     </div>
 
-                    <div className="w-[75%] ">
-                      <div className="cursor-pointer bg-yellow-50 absolute top-[-10px] left-1/2 transform -translate-x-1/2 rounded-[20px]">
+                    <div className="w-4/6 ">
+                      <div className="absolute left-[50%] -top-2.5">
                         <Image
                           src="/images/hover-icon.svg"
                           className="w-5 h-5 object-contain rounded-[1.2rem]"
@@ -168,7 +168,7 @@ export default function Editor() {
                           onClick={() => setShowToolbar(!showToolbar)}
                         />
                       </div>
-                      <div className="p-10">{renderBlock(block, index)}</div>
+                      <div className="p-10 animate__animated animate__zoomIn">{renderBlock(block, index)}</div>
                     </div>
                   </div>
                 </div>
