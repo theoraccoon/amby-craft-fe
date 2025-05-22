@@ -2,25 +2,12 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
-
-import Columnblock from '../blocks/text_blocks/column-block'
-import HeadingBlock from '../blocks/text_blocks/heading-block'
-import NoteBlock from '../blocks/text_blocks/note-block'
-import ParagraphBlock from '../blocks/text_blocks/paragraph-block'
-import HeadingWithParagraphBlock from '../blocks/text_blocks/paragraph-with-heading'
-import ParagraphWithSubheadinghBlock from '../blocks/text_blocks/paragraph-with-subheading-block'
-import StatementABlock from '../blocks/text_blocks/statement-a-block'
-import StatementBblock from '../blocks/text_blocks/statement-b-block'
-import StatementCblock from '../blocks/text_blocks/statement-c-block'
-import StatementDblock from '../blocks/text_blocks/statement-d-block'
 import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
-import blockRender from './block-render'
 import BlockRenderer from './block-render'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
-
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { StoredBlock } from '@/types'
@@ -65,8 +52,6 @@ export default function Editor() {
     setOpenModalForBlockId(null)
     setActiveDropdownBlockId(null)
   }
-
-  
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
@@ -135,7 +120,6 @@ export default function Editor() {
                     </div>
                   </div>
 
-                  
                   {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
                     <div className="absolute z-30">
                       <AddTextBlockModal
