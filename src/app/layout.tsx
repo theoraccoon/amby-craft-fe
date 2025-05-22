@@ -11,6 +11,7 @@ import { MobileDrawerProvider } from '@/context/mobile-drawer-context'
 import { TabletDrawerProvider } from '@/context/tablet-drawer-context'
 import { ViewModeProvider } from '@/context/view-mode-context'
 import { store } from '@/store'
+import 'animate.css';
 
 const comfortaa = Comfortaa({
   subsets: ['latin'],

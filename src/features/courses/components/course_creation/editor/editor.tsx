@@ -110,7 +110,7 @@ export default function Editor() {
                         </div>
                       )}
 
-                      <div className="p-10 transition">
+                      <div className="p-10 transition  animate__animated animate__zoomIn">
                         <BlockRenderer
                           key={block.id}
                           block={block}
