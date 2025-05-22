@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
-
 import Columnblock from '../blocks/text_blocks/column-block'
 import HeadingBlock from '../blocks/text_blocks/heading-block'
 import NoteBlock from '../blocks/text_blocks/note-block'
@@ -21,10 +20,7 @@ import { v4 as uuid } from 'uuid'
 
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
-import { TextBlock } from '@/types'
-import { VideoBlock } from '@/types'
-
-export type StoredBlock = (TextBlock & { id: string }) | (VideoBlock & { id: string })
+import { StoredBlock } from '@/types'
 
 export default function Editor() {
   const [blocks, setBlocks] = useState<StoredBlock[]>([])
