@@ -136,8 +136,16 @@ export default function Editor() {
                       <div
                         className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer "
                         onClick={() => {
-                          setOpenModalForBlockId(block.id)
-                          setActiveDropdownBlockId(block.id)
+                          if (
+                            activeDropdownBlockId === block.id &&
+                            openModalForBlockId === block.id
+                          ) {
+                            setOpenModalForBlockId(null)
+                            setActiveDropdownBlockId(null)
+                          } else {
+                            setOpenModalForBlockId(block.id)
+                            setActiveDropdownBlockId(block.id)
+                          }
                         }}
                       >
                         <p className="text-xs">{block.type}</p>
@@ -168,7 +176,9 @@ export default function Editor() {
                           onClick={() => setShowToolbar(!showToolbar)}
                         />
                       </div>
-                      <div className="p-10 animate__animated animate__zoomIn">{renderBlock(block, index)}</div>
+                      <div className="p-10 animate__animated animate__zoomIn">
+                        {renderBlock(block, index)}
+                      </div>
                     </div>
                   </div>
                 </div>
