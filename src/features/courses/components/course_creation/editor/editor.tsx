@@ -7,13 +7,13 @@ import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
 import BlockRenderer from './block-render'
+import './editor.css'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
 
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { StoredBlock } from '@/types'
-import './editor.css'
 
 export default function Editor() {
   const [blocks, setBlocks] = useState<StoredBlock[]>([])
@@ -56,7 +56,7 @@ export default function Editor() {
     setActiveDropdownBlockId(null)
   }
 
-    const handleBlockToggle = () => {
+  const handleBlockToggle = () => {
     setShowToolbar(!showToolbar)
     setShowTextFormat(false)
   }
@@ -89,8 +89,16 @@ export default function Editor() {
                         <div
                           className="flex w-[225px] justify-around items-center bg-[rgb(34,34,34)] h-10 rounded-[50px] cursor-pointer"
                           onClick={() => {
-                            setOpenModalForBlockId(block.id)
-                            setActiveDropdownBlockId(block.id)
+                            if (
+                              activeDropdownBlockId === block.id &&
+                              openModalForBlockId === block.id
+                            ) {
+                              setOpenModalForBlockId(null)
+                              setActiveDropdownBlockId(null)
+                            } else {
+                              setOpenModalForBlockId(block.id)
+                              setActiveDropdownBlockId(block.id)
+                            }
                           }}
                         >
                           <p className="text-xs">{block.type}</p>
@@ -129,7 +137,7 @@ export default function Editor() {
                   </div>
 
                   {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
-                    <div className="absolute z-30">
+                    <div className="absolute top-12 z-30">
                       <AddTextBlockModal
                         type={block.type}
                         onClose={() => setOpenModalForBlockId(null)}
