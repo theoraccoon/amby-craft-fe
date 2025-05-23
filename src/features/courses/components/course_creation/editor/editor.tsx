@@ -3,6 +3,9 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
+import AddFlashCardBlockModal from '../blocks/flash_card_blocks/components/add-flashcard-block-modal'
+import { FlashCardGrid } from '../blocks/flash_card_blocks/flash-card-grid'
+import { TEXT_BLOCKS } from '../blocks/text_blocks/block-data'
 import Columnblock from '../blocks/text_blocks/column-block'
 import HeadingBlock from '../blocks/text_blocks/heading-block'
 import NoteBlock from '../blocks/text_blocks/note-block'
@@ -13,17 +16,15 @@ import StatementABlock from '../blocks/text_blocks/statement-a-block'
 import StatementBblock from '../blocks/text_blocks/statement-b-block'
 import StatementCblock from '../blocks/text_blocks/statement-c-block'
 import StatementDblock from '../blocks/text_blocks/statement-d-block'
-import { TEXT_BLOCKS } from '../blocks/text_blocks/text-block-data'
 import SideToolBar from '../side-toolbar'
 import TextFormats from '../text-format'
+import { Text } from '@chakra-ui/react'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { v4 as uuid } from 'uuid'
 
 import AddTextBlockModal from '@/features/courses/components/course_creation/add-text-block-modal'
 import BlockToolbar from '@/features/courses/components/course_creation/tool-bar'
 import { TextBlock } from '@/types'
-import { Text } from '@chakra-ui/react'
-import { FlashCardGrid } from '../blocks/flash_card_blocks/flash-card-grid'
 
 export type StoredBlock = TextBlock & { id: string }
 
@@ -35,11 +36,11 @@ export default function Editor() {
   const [showTextFormat, setShowTextFormat] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
 
-const [cards, setCards] = useState([
+  const [cards, setCards] = useState([
     { front: 'What is the capital of France?', back: 'Paris' },
     { front: '2 + 2', back: '4' },
     { front: 'React is a...', back: 'JavaScript library for UI' },
-  ]);
+  ])
 
   const handleInsertBlock = () => {
     const defaultBlock = TEXT_BLOCKS.find(b => b.type === 'Paragraph with heading')
@@ -115,12 +116,11 @@ const [cards, setCards] = useState([
         return <Columnblock {...commonProps} />
       case 'Note':
         return <NoteBlock {...commonProps} />
-       default:
+      default:
         return <ParagraphBlock {...commonProps} />
     }
   }
 
-  
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
       <div className="w-[70%] flex flex-col justify-center items-center p-10">
@@ -156,6 +156,14 @@ const [cards, setCards] = useState([
                     <div className="absolute z-10">
                       {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
                         <AddTextBlockModal
+                          type={block.type}
+                          onClose={() => setOpenModalForBlockId(null)}
+                          onAddBlock={b => handleReplaceBlockType(block.id, b.type)}
+                          onTypeChange={() => {}}
+                        />
+                      )}
+                      {activeDropdownBlockId === block.id && openModalForBlockId === block.id && (
+                        <AddFlashCardBlockModal
                           type={block.type}
                           onClose={() => setOpenModalForBlockId(null)}
                           onAddBlock={b => handleReplaceBlockType(block.id, b.type)}

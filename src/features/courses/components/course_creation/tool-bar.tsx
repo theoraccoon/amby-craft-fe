@@ -1,29 +1,27 @@
 'use client'
 
 import React from 'react'
-import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
+
+import { TEXT_BLOCKS } from './blocks/text_blocks/block-data'
 import { BsBack, BsFillGrid1X2Fill } from 'react-icons/bs'
 import { FiLayers, FiVideo } from 'react-icons/fi'
 import { GoListUnordered } from 'react-icons/go'
 import { IoImage, IoSparklesSharp } from 'react-icons/io5'
 import { MdOutlineTextFields } from 'react-icons/md'
+
 import { TextBlock } from '@/types'
 
 interface BlockToolbarProps {
   showDropdown: boolean
   setShowDropdown: React.Dispatch<React.SetStateAction<boolean>>
   onOpenModal: (block: TextBlock) => void
-
 }
 const modalTypeMap: Record<string, TextBlock['type']> = {
   Text: 'Paragraph',
   Heading: 'Heading',
 }
 
-export default function BlockToolbar({
-  setShowDropdown,
-  onOpenModal,
-}: BlockToolbarProps) {
+export default function BlockToolbar({ setShowDropdown, onOpenModal }: BlockToolbarProps) {
   const blockIcons = [
     { type: 'ai', icon: <IoSparklesSharp color="#F8AF43" />, label: 'Ai' },
     { type: 'ai image', icon: <IoImage color="#F8AF43" />, label: 'Ai Image' },
@@ -32,7 +30,7 @@ export default function BlockToolbar({
     { type: 'Image', icon: <IoImage />, label: 'Image' },
     { type: 'video', icon: <FiVideo />, label: 'Video' },
     { type: 'process', icon: <IoImage />, label: 'Process' },
-    { type: 'flash cards', icon: <BsBack />, label: 'Flash Cards' },
+    { type: 'flash card', icon: <BsBack />, label: 'Flash Cards', modal: true },
     { type: 'sorting', icon: <FiLayers />, label: 'Sorting' },
   ]
 

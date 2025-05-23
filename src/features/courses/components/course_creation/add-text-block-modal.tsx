@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 
-import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
+import { TEXT_BLOCKS } from './blocks/text_blocks/block-data'
 
 import { TextBlock } from '@/types'
 

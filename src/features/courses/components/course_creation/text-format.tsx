@@ -1,4 +1,4 @@
-import { TEXT_BLOCKS } from './blocks/text_blocks/text-block-data'
+import { TEXT_BLOCKS } from './blocks/text_blocks/block-data'
 
 export default function TextFormats() {
   return (
